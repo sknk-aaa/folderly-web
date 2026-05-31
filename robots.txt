@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://folderlyapp.com/sitemap.xml
