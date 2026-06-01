@@ -84,7 +84,7 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(30px,4.7vw,46px);colo
 .lead p{margin-bottom:14px;}
 .byline{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--muted-2);font-weight:600;}
 .byline .dot{width:4px;height:4px;border-radius:50%;background:#cdd4e3;}
-.hero-img{margin:30px 0 0;}
+.hero-img{margin:0 0 28px;}
 .hero-img img{width:100%;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid rgba(20,40,90,.08);}
 
 /* article */
@@ -128,11 +128,11 @@ article ul.plain li::before{content:"";position:absolute;left:4px;top:.7em;width
 figure{margin:30px 0;}
 figure img{border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
 figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10px;}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 0;}
+.shots{display:flex;flex-direction:column;gap:16px;margin:24px 0 0;}
 .shots .shot{margin:0;}
-.shot.wide{margin:16px 0 0;}
 .shot img{box-shadow:var(--shadow-md);}
-@media (max-width:560px){.shots{grid-template-columns:1fr;}}
+.result{margin:26px auto;max-width:320px;}
+.result img{border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-md);}
 
 /* callouts */
 .callout{display:flex;gap:14px;background:linear-gradient(180deg,#f7faff,#eef4ff);border:1px solid #dbe6ff;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:14.5px;}
@@ -185,6 +185,9 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
 <section class="hero">
   <div class="hero-in">
     <nav class="crumbs"><a href="/">ホーム</a> › <a href="/blog/">ブログ</a> › フォルダのアイコンを画像に変更する方法</nav>
+    <figure class="hero-img fade">
+      <img src="/assets/hero.webp" alt="画像アイコンに変えたフォルダの例（アプリ・Python・Music・Photos など）" width="1400" height="788" fetchpriority="high" />
+    </figure>
     <span class="kicker fade">HOW-TO ガイド</span>
     <h1 class="fade d1">Windows 11でフォルダのアイコンを<br />画像に変更する方法</h1>
     <div class="lead fade d2">
@@ -192,9 +195,6 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>実は Windows でも、フォルダのアイコンは<strong>好きな画像</strong>に変えられます。この記事では、<strong>まず無料でできる標準のやり方</strong>から、写真をもっと手軽に使う方法、そして「うまく変えられない」ときの対処まで、順番に・つまずかないように解説します。</p>
     </div>
     <div class="byline fade d3">5分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-06-01</div>
-    <figure class="hero-img fade d3">
-      <img src="/assets/hero.webp" alt="画像アイコンに変えたフォルダの例（アプリ・Python・Music・Photos など）" width="1400" height="788" fetchpriority="high" />
-    </figure>
   </div>
 </section>
 
@@ -235,18 +235,18 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
 
       <div class="shots">
         <figure class="shot">
-          <img src="/assets/step1.webp" alt="フォルダを右クリックして「プロパティ」を選ぶ" width="901" height="1087" loading="lazy" />
+          <img src="/assets/step1.webp" alt="フォルダを右クリックして「プロパティ」を選ぶ" width="1100" height="733" loading="lazy" />
           <figcaption>① 右クリック →「プロパティ」</figcaption>
         </figure>
         <figure class="shot">
-          <img src="/assets/step2.webp" alt="「カスタマイズ」タブで「アイコンの変更」をクリック" width="918" height="1212" loading="lazy" />
+          <img src="/assets/step2.webp" alt="「カスタマイズ」タブで「アイコンの変更」をクリック" width="1100" height="733" loading="lazy" />
           <figcaption>②「カスタマイズ」→「アイコンの変更」</figcaption>
         </figure>
+        <figure class="shot">
+          <img src="/assets/step3.webp" alt="一覧から選ぶか .ico ファイルを指定して「OK」" width="1100" height="733" loading="lazy" />
+          <figcaption>③ 一覧から選ぶか <code>.ico</code> を指定して「OK」</figcaption>
+        </figure>
       </div>
-      <figure class="shot wide">
-        <img src="/assets/step3.webp" alt="一覧から選ぶか .ico ファイルを指定して「OK」" width="1000" height="652" loading="lazy" />
-        <figcaption>③ 一覧から選ぶか <code>.ico</code> を指定して「OK」</figcaption>
-      </figure>
 
       <h3>知っておきたい標準機能の「クセ」</h3>
       <p>手軽に見えますが、<strong>「手持ちの写真を使いたい」</strong>となると、いくつか引っかかる点があります。ここは正直にお伝えします。</p>
@@ -275,6 +275,11 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       </figure>
 
       <p>標準機能で面倒だった点が、そのまま解決します。色タグやタグ名でフォルダを分類できるので、用途ごとに色分けして「探さずに見つかる」状態にもできます。気が変わっても、<strong>履歴からいつでも元に戻せる</strong>ので安心して試せます。</p>
+
+      <figure class="result">
+        <img src="/assets/recipe.webp" alt="写真アイコンとカラータグを適用した「料理」フォルダの例" width="283" height="287" loading="lazy" />
+        <figcaption>写真アイコン＋カラータグを付けた実例。フォルダ自体が中身を物語る。</figcaption>
+      </figure>
 
       <a class="tip-app" href="https://apps.microsoft.com/detail/9N99JH5H91H8">
         <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
