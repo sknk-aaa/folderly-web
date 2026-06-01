@@ -125,6 +125,11 @@ article ul.plain li::before{content:"";position:absolute;left:4px;top:.7em;width
 figure{margin:30px 0;}
 figure img{border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
 figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10px;}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 0;}
+.shots .shot{margin:0;}
+.shot.wide{margin:16px 0 0;}
+.shot img{box-shadow:var(--shadow-md);}
+@media (max-width:560px){.shots{grid-template-columns:1fr;}}
 
 /* callouts */
 .callout{display:flex;gap:14px;background:linear-gradient(180deg,#f7faff,#eef4ff);border:1px solid #dbe6ff;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:14.5px;}
@@ -221,6 +226,21 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <li>「<b>カスタマイズ</b>」タブを開き、下のほうにある「<b>アイコンの変更</b>」をクリックします。</li>
         <li>表示された一覧から選ぶか、手持ちの <code>.ico</code> ファイルを指定して「<b>OK</b>」。これで完了です。</li>
       </ol>
+
+      <div class="shots">
+        <figure class="shot">
+          <img src="/assets/step1.webp" alt="フォルダを右クリックして「プロパティ」を選ぶ" width="901" height="1087" loading="lazy" />
+          <figcaption>① 右クリック →「プロパティ」</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/step2.webp" alt="「カスタマイズ」タブで「アイコンの変更」をクリック" width="918" height="1212" loading="lazy" />
+          <figcaption>②「カスタマイズ」→「アイコンの変更」</figcaption>
+        </figure>
+      </div>
+      <figure class="shot wide">
+        <img src="/assets/step3.webp" alt="一覧から選ぶか .ico ファイルを指定して「OK」" width="1000" height="652" loading="lazy" />
+        <figcaption>③ 一覧から選ぶか <code>.ico</code> を指定して「OK」</figcaption>
+      </figure>
 
       <h3>知っておきたい標準機能の「クセ」</h3>
       <p>手軽に見えますが、<strong>「手持ちの写真を使いたい」</strong>となると、いくつか引っかかる点があります。ここは正直にお伝えします。</p>
