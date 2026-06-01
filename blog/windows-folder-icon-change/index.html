@@ -45,6 +45,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/assets/hero.webp" />
 <style>
 :root{
   --blue:#2566EB;--blue-deep:#1455D6;--blue-grad:linear-gradient(135deg,#3F8BFF 0%,#1664F0 100%);
@@ -83,6 +84,8 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(30px,4.7vw,46px);colo
 .lead p{margin-bottom:14px;}
 .byline{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--muted-2);font-weight:600;}
 .byline .dot{width:4px;height:4px;border-radius:50%;background:#cdd4e3;}
+.hero-img{margin:30px 0 0;}
+.hero-img img{width:100%;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid rgba(20,40,90,.08);}
 
 /* article */
 main{padding:8px 0 40px;}
@@ -189,6 +192,9 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>実は Windows でも、フォルダのアイコンは<strong>好きな画像</strong>に変えられます。この記事では、<strong>まず無料でできる標準のやり方</strong>から、写真をもっと手軽に使う方法、そして「うまく変えられない」ときの対処まで、順番に・つまずかないように解説します。</p>
     </div>
     <div class="byline fade d3">5分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-06-01</div>
+    <figure class="hero-img fade d3">
+      <img src="/assets/hero.webp" alt="画像アイコンに変えたフォルダの例（アプリ・Python・Music・Photos など）" width="1400" height="788" fetchpriority="high" />
+    </figure>
   </div>
 </section>
 
@@ -212,8 +218,8 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>下の画像が、実際に変えるとどうなるかのイメージです。左が変更前、右が画像アイコンにした後。ひと目で中身が想像できて、探す時間がぐっと減ります。</p>
 
       <figure>
-        <img src="/assets/showcase-explorer.webp" alt="フォルダアイコンを画像に変更する前と後の比較" width="1070" height="685" />
-        <figcaption>同じ黄色のフォルダ（左）が、画像アイコンでひと目でわかるように（右）</figcaption>
+        <img src="/assets/compare.webp" alt="フォルダアイコンを変更する前と後の比較。変更前は同じ黄色いフォルダ、変更後は写真や色で見分けやすい" width="1400" height="596" loading="lazy" />
+        <figcaption>実際のエクスプローラー画面。色や写真で分けると、目当てのフォルダがすぐ見つかる。</figcaption>
       </figure>
 
       <p>やり方は大きく2通り。<strong>まずはお金のかからない標準の方法</strong>から見ていきましょう。</p>
