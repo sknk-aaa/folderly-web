@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Folderly — フォルダを、ひと目でわかる場所に。</title>
-<meta name="description" content="Windowsのフォルダアイコンを好きな画像に変更。.ico変換も面倒な設定も不要、ドラッグするだけ。色タグで一目で見分け。¥500買い切り・1日間の無料試用付き。Windows 10/11対応。" />
-<link rel="canonical" href="https://folderlyapp.com/" />
-<link rel="alternate" hreflang="ja" href="https://folderlyapp.com/" />
+<title>Folderly — Change Windows folder icons to any image</title>
+<meta name="description" content="Change Windows folder icons to your own photos — no .ico conversion, no fuss. Color-tag folders for instant recognition. $3.99 one-time, 1-day free trial. Windows 10/11." />
+<link rel="canonical" href="https://folderlyapp.com/en/" />
 <link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/" />
+<link rel="alternate" hreflang="ja" href="https://folderlyapp.com/" />
 <link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/" />
 <link rel="icon" href="/assets/app-icon.png" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Folderly — フォルダを、ひと目でわかる場所に。" />
-<meta property="og:description" content="Windowsのフォルダアイコンを好きな画像に変更。.ico変換不要、ドラッグするだけ。¥500買い切り・1日間の無料試用。" />
-<meta property="og:url" content="https://folderlyapp.com/" />
-<meta property="og:image" content="https://folderlyapp.com/assets/showcase-explorer.png" />
-<meta property="og:locale" content="ja_JP" />
+<meta property="og:title" content="Folderly — Change Windows folder icons to any image" />
+<meta property="og:description" content="Turn your own photos into Windows folder icons. No .ico conversion, just drag and drop. $3.99 one-time, 1-day free trial." />
+<meta property="og:url" content="https://folderlyapp.com/en/" />
+<meta property="og:image" content="https://folderlyapp.com/assets/en/showcase-explorer.png" />
+<meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,7 +48,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
-  font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   color:var(--ink);
   background:#fff;
   line-height:1.7;
@@ -279,6 +279,7 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
   .sec-pad{padding:64px 0;}
   .final{padding:44px 24px;}
   .price{padding:32px 22px;}
+  .nav-links{display:none;}
   .nav-cta .t{display:none;}
 }
 </style>
@@ -293,15 +294,15 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
       Folderly
     </div>
     <nav class="nav-links">
-      <a href="#how">使い方</a>
-      <a href="#features">機能</a>
-      <a href="#compare">比較</a>
-      <a href="#price">料金</a>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#compare">Compare</a>
+      <a href="#price">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-right">
-      <a href="/en/" class="nav-lang">English</a>
-      <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="nav-cta"><span class="win"><i></i><i></i><i></i><i></i></span><span class="t">Microsoft Storeで入手</span></a>
+      <a href="/" class="nav-lang">日本語</a>
+      <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="nav-cta"><span class="win"><i></i><i></i><i></i><i></i></span><span class="t">Get it on Microsoft Store</span></a>
     </div>
   </div>
 </header>
@@ -310,22 +311,22 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <h1>フォルダを、<br /><span class="hl">ひと目でわかる</span>場所に。</h1>
-      <p class="sub">好きな写真や画像を、そのままフォルダのアイコンに。<br />面倒な <code style="font-family:inherit;font-weight:700;color:var(--ink)">.ico</code> 変換も、複雑な設定も不要です。</p>
+      <h1>Folders you can<br /><span class="hl">spot at a glance</span>.</h1>
+      <p class="sub">Turn your own photos and images straight into folder icons.<br />No fiddly <code style="font-family:inherit;font-weight:700;color:var(--ink)">.ico</code> conversion, no complicated setup.</p>
       <div class="cta-row">
         <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
           <span class="win"><i></i><i></i><i></i><i></i></span>
-          <span class="lead">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+          <span class="lead">Get it on Microsoft Store<span class="sub">Includes a 1-day free trial</span></span>
         </a>
-        <a href="#how" class="btn btn-ghost">使い方を見る</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
       </div>
       <div class="trust">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-        1日間の無料試用付き <span class="dot"></span> ¥500 買い切り <span class="dot"></span> サブスクなし
+        1-day free trial <span class="dot"></span> $3.99 one-time <span class="dot"></span> No subscription
       </div>
     </div>
     <div class="hero-visual">
-      <div class="frame"><img src="/assets/showcase-explorer.png" alt="Folderly導入前後のフォルダ比較" /></div>
+      <div class="frame"><img src="/assets/en/showcase-explorer.png" alt="File Explorer before and after using Folderly" /></div>
     </div>
   </div>
 </section>
@@ -335,19 +336,19 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
   <div class="strip-inner">
     <div class="strip-item">
       <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.25 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg></span>
-      <div><b>Windows 10/11 対応</b><span>最新のWindowsに最適化</span></div>
+      <div><b>Windows 10/11 ready</b><span>Optimized for modern Windows</span></div>
     </div>
     <div class="strip-item">
       <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></span>
-      <div><b>買い切り ¥500</b><span>一度の支払いでずっと</span></div>
+      <div><b>$3.99 one-time</b><span>Pay once, yours forever</span></div>
     </div>
     <div class="strip-item">
       <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.4 2.6L3 8"/><path d="M3 3v5h5"/></svg></span>
-      <div><b>サブスクなし</b><span>追加課金は一切なし</span></div>
+      <div><b>No subscription</b><span>Zero extra charges</span></div>
     </div>
     <div class="strip-item">
       <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2.1-9.4L3 7"/></svg></span>
-      <div><b>いつでも元に戻せる</b><span>変更履歴から簡単復元</span></div>
+      <div><b>Revert anytime</b><span>Restore easily from history</span></div>
     </div>
   </div>
 </div>
@@ -357,8 +358,8 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
   <div class="wrap">
     <div class="ps">
       <div class="ps-card problem">
-        <span class="ps-tag">よくある悩み</span>
-        <h3>フォルダが全部同じ黄色。<br />Windows標準は .ico しか使えず、<br />写真の変換も面倒…</h3>
+        <span class="ps-tag">A common frustration</span>
+        <h3>Every folder is the same yellow.<br />Windows only accepts .ico files,<br />and converting photos is a hassle…</h3>
         <div class="folders">
           <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
           <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
@@ -369,9 +370,9 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
       </div>
       <div class="ps-mid"><span class="ps-arrow"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></div>
       <div class="ps-card solution">
-        <span class="ps-tag">Folderly が解決！</span>
-        <h3>画像を<span class="hl">ドロップするだけ</span>で、<br />フォルダがあなたらしく、<br />すぐに見分けやすくなります。</h3>
-        <div class="sol-shot"><img src="/assets/solution-folders.png" alt="写真や画像をアイコンにしたフォルダの一覧" loading="lazy" /></div>
+        <span class="ps-tag">Folderly solves it!</span>
+        <h3>Just <span class="hl">drop an image</span> and<br />your folders become uniquely yours,<br />instantly easy to tell apart.</h3>
+        <div class="sol-shot"><img src="/assets/en/solution-folders.png" alt="Folders using photos and images as icons" loading="lazy" /></div>
       </div>
     </div>
   </div>
@@ -381,28 +382,28 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="sec-pad" id="how" style="background:linear-gradient(180deg,#f6f9ff,#fff);padding-top:80px;">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow"><span class="num">1</span>かんたん 3ステップ</span>
-      <h2 class="h2">使い方は、たった3ステップ。</h2>
-      <p class="lead-sub">インストールしたその日から、数秒でフォルダを自分好みに。</p>
+      <span class="eyebrow"><span class="num">1</span>Easy 3 steps</span>
+      <h2 class="h2">Just three simple steps.</h2>
+      <p class="lead-sub">From day one, make folders your own in seconds.</p>
     </div>
     <div class="steps">
       <div class="step">
         <span class="ghostnum">1</span>
         <span class="sn">1</span>
-        <h4>右クリックで開く</h4>
-        <p>フォルダを右クリックして「Customize with Folderly」を選ぶだけ。エクスプローラーからすぐに起動できます。</p>
+        <h4>Right-click to open</h4>
+        <p>Right-click a folder and choose "Customize with Folderly." Launch it right from File Explorer.</p>
       </div>
       <div class="step">
         <span class="ghostnum">2</span>
         <span class="sn">2</span>
-        <h4>画像をドロップして調整</h4>
-        <p>好きな画像をドラッグ&ドロップ。プレビューを見ながらスケールや位置を微調整できます。</p>
+        <h4>Drop an image & adjust</h4>
+        <p>Drag and drop any image. Fine-tune scale and position while you preview the result.</p>
       </div>
       <div class="step">
         <span class="ghostnum">3</span>
         <span class="sn">3</span>
-        <h4>適用して完了</h4>
-        <p>「適用」をクリックすれば、すぐに新しいアイコンへ。面倒な再起動も変換作業も必要ありません。</p>
+        <h4>Apply and done</h4>
+        <p>Click "Apply" for an instant new icon. No reboot, no conversion work required.</p>
       </div>
     </div>
   </div>
@@ -412,31 +413,31 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="sec-pad" id="features">
   <div class="wrap spot">
     <div class="spot-text">
-      <span class="eyebrow"><span class="num">2</span>右クリックでカスタマイズ</span>
-      <h3>エクスプローラーから開いて、<br />数秒でフォルダを自分好みに。</h3>
-      <p>使い慣れたエクスプローラーの右クリックメニューから、そのまま Folderly を起動。画像を選んで調整するだけのシンプルな操作です。</p>
+      <span class="eyebrow"><span class="num">2</span>Customize with a right-click</span>
+      <h3>Open from File Explorer and<br />personalize any folder in seconds.</h3>
+      <p>Launch Folderly straight from the familiar right-click menu in File Explorer. Just pick an image and adjust — simple as that.</p>
       <div class="pts">
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>右クリックメニューにワンクリックで追加</div>
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>スケール・表示モード・位置を細かく調整</div>
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>適用前にプレビューで仕上がりを確認</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Adds to the right-click menu with one click</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Fine-tune scale, display mode, and position</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Preview the result before you apply</div>
       </div>
     </div>
-    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/showcase-customize.png" alt="右クリックメニューからFolderlyでカスタマイズ" loading="lazy" /></div></div>
+    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/en/showcase-customize.png" alt="Customize with Folderly from the right-click menu" loading="lazy" /></div></div>
   </div>
 </section>
 
 <!-- ===== SPOTLIGHT 2: tags ===== -->
 <section class="sec-pad" style="background:linear-gradient(180deg,#fff,#f6f9ff,#fff);">
   <div class="wrap spot rev">
-    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/showcase-tags.png" alt="色とアイコンのタグを編集する画面" loading="lazy" /></div></div>
+    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/en/showcase-tags.png" alt="Editing color and icon tags" loading="lazy" /></div></div>
     <div class="spot-text">
-      <span class="eyebrow"><span class="num">3</span>色タグ & アイコン</span>
-      <h3>色とアイコンを、<br />自由に組み合わせて整理。</h3>
-      <p>フォルダの種類に合わせたタグを、自分好みに作成。9色のカラーと豊富なアイコンから選んで、ひと目で見分けられるように。</p>
+      <span class="eyebrow"><span class="num">3</span>Color tags & icons</span>
+      <h3>Mix colors and icons freely<br />to keep everything organized.</h3>
+      <p>Create tags that match each folder type. Choose from 9 colors and a rich set of icons, so everything is easy to tell apart at a glance.</p>
       <div class="pts">
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>カラー9色 × 15種類以上のアイコン</div>
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>タグ名とアイコンは自由に編集・追加</div>
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>用途で色分けして探しやすく</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>9 colors × 15+ icons</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Freely edit and add tag names and icons</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Color-code by purpose to find folders fast</div>
       </div>
     </div>
   </div>
@@ -446,16 +447,16 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="sec-pad">
   <div class="wrap spot">
     <div class="spot-text">
-      <span class="eyebrow"><span class="num">4</span>まとめて管理</span>
-      <h3>スタートから開いて、<br />変更をまとめて管理。</h3>
-      <p>スタートメニューから Folderly を起動すれば、変更したフォルダを一覧で管理できます。気が変わっても、ワンクリックで元通り。</p>
+      <span class="eyebrow"><span class="num">4</span>Manage in one place</span>
+      <h3>Open from Start and<br />manage all your changes.</h3>
+      <p>Launch Folderly from the Start menu to manage every customized folder in one list. Changed your mind? Restore with a single click.</p>
       <div class="pts">
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>変更したフォルダを履歴で一覧表示</div>
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>個別 / 一括で元のアイコンに復元</div>
-        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>いつでも安心して試せる</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>See your changed folders in a history list</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Restore individually or all at once</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Try everything with total peace of mind</div>
       </div>
     </div>
-    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/showcase-manage.png" alt="スタートメニューから起動して変更を管理する画面" loading="lazy" /></div></div>
+    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/en/showcase-manage.png" alt="Manage your changes from the Start menu" loading="lazy" /></div></div>
   </div>
 </section>
 
@@ -463,30 +464,30 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="sec-pad" style="background:linear-gradient(180deg,#f6f9ff,#fff);">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow"><span class="num">5</span>便利な機能</span>
-      <h2 class="h2">もっと自由に、もっと快適に。</h2>
-      <p class="lead-sub">こまかな調整から元に戻す操作まで、思いどおりにカスタマイズ。</p>
+      <span class="eyebrow"><span class="num">5</span>Handy features</span>
+      <h2 class="h2">More freedom, more comfort.</h2>
+      <p class="lead-sub">From fine adjustments to undo — customize exactly the way you want.</p>
     </div>
     <div class="feat">
       <div class="fcard">
         <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
-        <h4>自分の画像が使える</h4>
-        <p>写真やイラストをそのままフォルダアイコンに。.ico への変換は不要です。</p>
+        <h4>Use your own images</h4>
+        <p>Turn photos and illustrations straight into folder icons. No .ico conversion needed.</p>
       </div>
       <div class="fcard">
         <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22a10 10 0 1 1 0-20 9 9 0 0 1 0 18h-1.5a1.5 1.5 0 0 1 0-3"/></svg></span>
-        <h4>色タグ・タグ名を設定</h4>
-        <p>フォルダに色やアイコンのタグを付けて、見た目でも管理しやすく。</p>
+        <h4>Set color tags & names</h4>
+        <p>Add color and icon tags to folders for easy visual management.</p>
       </div>
       <div class="fcard">
         <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/><path d="M8 9h4"/></svg></span>
-        <h4>表示モード・プレビュー</h4>
-        <p>スケールや位置を調整し、ベストな見え方をプレビューで確認できます。</p>
+        <h4>Display modes & preview</h4>
+        <p>Adjust scale and position, and confirm the best look in the live preview.</p>
       </div>
       <div class="fcard">
         <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2.1-9.4L3 7"/><path d="M12 7v5l3 2"/></svg></span>
-        <h4>まとめて管理・復元</h4>
-        <p>変更履歴から個別にも一括にも、いつでも元の状態へ戻せます。</p>
+        <h4>Manage & restore</h4>
+        <p>Restore from history individually or all at once, anytime.</p>
       </div>
     </div>
   </div>
@@ -496,55 +497,55 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="sec-pad" id="compare">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow"><span class="num">6</span>他の方法との比較</span>
-      <h2 class="h2">Folderly が選ばれる理由。</h2>
+      <span class="eyebrow"><span class="num">6</span>Compared to other ways</span>
+      <h2 class="h2">Why people choose Folderly.</h2>
     </div>
     <div class="cmp">
       <table>
         <thead>
           <tr>
             <th></th>
-            <th>Windows標準<br /><span style="font-weight:600;font-size:12px">(.ico 手動)</span></th>
-            <th>既製アイコンアプリ</th>
-            <th>高機能な有料ソフト</th>
-            <th class="own">Folderly <span class="pick">おすすめ</span></th>
+            <th>Windows built-in<br /><span style="font-weight:600;font-size:12px">(manual .ico)</span></th>
+            <th>Preset-icon apps</th>
+            <th>Full-featured paid software</th>
+            <th class="own">Folderly <span class="pick">PICK</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>自分の写真・画像が使える</th>
-            <td><span class="x">△</span> 変換が必要</td>
-            <td><span class="x">×</span> 既製のみ</td>
+            <th>Use your own photos / images</th>
+            <td><span class="x">△</span> Conversion needed</td>
+            <td><span class="x">×</span> Presets only</td>
             <td><span class="ok">◎</span></td>
-            <td class="own">画像をドロップするだけ</td>
+            <td class="own">Just drop an image</td>
           </tr>
           <tr>
-            <th>使いやすさ</th>
-            <td>手順が多く煩雑</td>
-            <td>限定的</td>
-            <td>多機能で難しい</td>
-            <td class="own">直感的でシンプル</td>
+            <th>Ease of use</th>
+            <td>Many fiddly steps</td>
+            <td>Limited</td>
+            <td>Powerful but complex</td>
+            <td class="own">Intuitive and simple</td>
           </tr>
           <tr>
-            <th>価格</th>
-            <td>無料</td>
-            <td>無料〜</td>
-            <td>¥3,000以上が多い</td>
-            <td class="own">¥500（買い切り）</td>
+            <th>Price</th>
+            <td>Free</td>
+            <td>Free+</td>
+            <td>Often $20+</td>
+            <td class="own">$3.99 (one-time)</td>
           </tr>
           <tr>
-            <th>サブスク・広告</th>
-            <td>なし</td>
-            <td>広告・課金あり</td>
-            <td>サブスクのものも</td>
-            <td class="own">なし（広告なし）</td>
+            <th>Subscription / ads</th>
+            <td>None</td>
+            <td>Ads & in-app purchases</td>
+            <td>Sometimes subscription</td>
+            <td class="own">None (no ads)</td>
           </tr>
           <tr>
-            <th>元に戻す機能</th>
-            <td>手動で戻す必要あり</td>
-            <td>一部のみ</td>
+            <th>Undo / restore</th>
+            <td>Restore manually</td>
+            <td>Partial only</td>
             <td><span class="ok">◎</span></td>
-            <td class="own">履歴から簡単に復元</td>
+            <td class="own">Easy restore from history</td>
           </tr>
         </tbody>
       </table>
@@ -557,21 +558,21 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
   <div class="wrap">
     <div class="price">
       <div class="price-left">
-        <h3>まずは無料でお試しください</h3>
-        <div class="big" style="margin-top:6px;">¥500 <small>買い切り</small></div>
-        <p class="note">1日間の無料トライアル付き。サブスク・広告なしで、安心して使えます。</p>
+        <h3>Try it free first</h3>
+        <div class="big" style="margin-top:6px;">$3.99 <small>one-time</small></div>
+        <p class="note">Includes a 1-day free trial. No subscription, no ads — use it with confidence.</p>
         <div class="price-tags">
-          <div class="ptag"><b>¥500</b><span>一度の支払いでずっと</span></div>
-          <div class="ptag"><b>1日間無料</b><span>すべての機能を試せる</span></div>
-          <div class="ptag"><b>広告なし</b><span>サクサク快適に使える</span></div>
+          <div class="ptag"><b>$3.99</b><span>Pay once, yours forever</span></div>
+          <div class="ptag"><b>1-day free</b><span>Try every feature</span></div>
+          <div class="ptag"><b>No ads</b><span>Smooth and fast</span></div>
         </div>
       </div>
       <div class="price-cta">
         <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store" style="width:100%;justify-content:center;">
           <span class="win"><i></i><i></i><i></i><i></i></span>
-          <span class="lead" style="align-items:center;">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+          <span class="lead" style="align-items:center;">Get it on Microsoft Store<span class="sub">Includes a 1-day free trial</span></span>
         </a>
-        <a href="#faq" class="lk">動作環境を見る ↓</a>
+        <a href="#faq" class="lk">See system requirements ↓</a>
       </div>
     </div>
   </div>
@@ -581,32 +582,32 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
 <section class="sec-pad" id="faq" style="padding-top:40px;">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow"><span class="num">7</span>よくあるご質問</span>
+      <span class="eyebrow"><span class="num">7</span>FAQ</span>
     </div>
     <div class="faq">
       <div class="qa">
-        <div class="q"><span class="badge">Q</span>どのWindowsに対応していますか？</div>
-        <div class="a"><span class="badge">A</span>Windows 10 / 11（64bit）に対応しています。最新のWindowsに最適化されています。</div>
+        <div class="q"><span class="badge">Q</span>Which versions of Windows are supported?</div>
+        <div class="a"><span class="badge">A</span>Windows 10 / 11 (64-bit). It's optimized for modern Windows.</div>
       </div>
       <div class="qa">
-        <div class="q"><span class="badge">Q</span>画像の形式に制限はありますか？</div>
-        <div class="a"><span class="badge">A</span>JPG・PNG・BMP・WebP など、一般的な画像形式に対応しています。</div>
+        <div class="q"><span class="badge">Q</span>Are there limits on image formats?</div>
+        <div class="a"><span class="badge">A</span>Common formats such as JPG, PNG, BMP, and WebP are supported.</div>
       </div>
       <div class="qa">
-        <div class="q"><span class="badge">Q</span>元に戻すことはできますか？</div>
-        <div class="a"><span class="badge">A</span>はい。履歴からいつでも元のアイコンに戻せます。個別・一括どちらにも対応しています。</div>
+        <div class="q"><span class="badge">Q</span>Can I undo changes?</div>
+        <div class="a"><span class="badge">A</span>Yes. Restore the original icon anytime from history — individually or all at once.</div>
       </div>
       <div class="qa">
-        <div class="q"><span class="badge">Q</span>商用利用はできますか？</div>
-        <div class="a"><span class="badge">A</span>はい。個人・法人問わずご利用いただけます。サブスクや追加課金はありません。</div>
+        <div class="q"><span class="badge">Q</span>Can I use it commercially?</div>
+        <div class="a"><span class="badge">A</span>Yes, for personal and business use alike. No subscription or extra charges.</div>
       </div>
       <div class="qa">
-        <div class="q"><span class="badge">Q</span>インターネット接続は必要ですか？</div>
-        <div class="a"><span class="badge">A</span>インストールとライセンス認証時のみ必要です。普段の利用はオフラインでも快適に動作します。</div>
+        <div class="q"><span class="badge">Q</span>Do I need an internet connection?</div>
+        <div class="a"><span class="badge">A</span>Only for install and license activation. Everyday use works great offline.</div>
       </div>
       <div class="qa">
-        <div class="q"><span class="badge">Q</span>サブスクや追加料金はありますか？</div>
-        <div class="a"><span class="badge">A</span>いいえ。¥500の買い切りで、追加料金は一切かかりません。</div>
+        <div class="q"><span class="badge">Q</span>Any subscription or hidden fees?</div>
+        <div class="a"><span class="badge">A</span>No. It's a one-time $3.99 purchase with no additional charges.</div>
       </div>
     </div>
   </div>
@@ -619,13 +620,13 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
       <span class="ffloat" style="left:6%;top:18%">📁</span>
       <span class="ffloat" style="right:8%;top:26%;font-size:64px">🖼️</span>
       <span class="ffloat" style="right:18%;bottom:10%;font-size:72px">📂</span>
-      <h2>フォルダ整理を、<br />もっとあなたらしく。</h2>
-      <p>今すぐ Folderly を手に入れて、見やすく・気持ちよく整理しましょう。</p>
+      <h2>Make organizing folders<br />feel more like you.</h2>
+      <p>Get Folderly today and keep everything tidy — and a pleasure to look at.</p>
       <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
         <span class="win blue"><i></i><i></i><i></i><i></i></span>
-        <span class="lead" style="align-items:center;">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+        <span class="lead" style="align-items:center;">Get it on Microsoft Store<span class="sub">Includes a 1-day free trial</span></span>
       </a>
-      <div class="fine">Windows 10 / 11 対応 ・ ¥500 買い切り ・ サブスクなし</div>
+      <div class="fine">Windows 10 / 11 ・ $3.99 one-time ・ No subscription</div>
     </div>
   </div>
 </section>
@@ -638,13 +639,13 @@ footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
       Folderly
     </div>
     <nav class="foot-links">
-      <a href="#how">使い方</a>
-      <a href="#features">機能</a>
-      <a href="#compare">比較</a>
-      <a href="#price">料金</a>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#compare">Compare</a>
+      <a href="#price">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="/privacy/">プライバシー・サポート</a>
-      <a href="/en/">English</a>
+      <a href="/privacy/">Privacy &amp; Support</a>
+      <a href="/">日本語</a>
     </nav>
     <div class="copy">© 2026 Folderly. All rights reserved.</div>
   </div>
