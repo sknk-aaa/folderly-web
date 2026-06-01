@@ -128,9 +128,11 @@ article ul.plain li::before{content:"";position:absolute;left:4px;top:.7em;width
 figure{margin:30px 0;}
 figure img{border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
 figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10px;}
-.shots{display:flex;flex-direction:column;gap:16px;margin:24px 0 0;}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 0;}
 .shots .shot{margin:0;}
+.shot.wide{margin:16px 0 0;}
 .shot img{box-shadow:var(--shadow-md);}
+@media (max-width:560px){.shots{grid-template-columns:1fr;}}
 .result{margin:26px auto;max-width:320px;}
 .result img{border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-md);}
 
@@ -242,11 +244,11 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
           <img src="/assets/step2.webp" alt="「カスタマイズ」タブで「アイコンの変更」をクリック" width="1100" height="733" loading="lazy" />
           <figcaption>②「カスタマイズ」→「アイコンの変更」</figcaption>
         </figure>
-        <figure class="shot">
-          <img src="/assets/step3.webp" alt="一覧から選ぶか .ico ファイルを指定して「OK」" width="1100" height="733" loading="lazy" />
-          <figcaption>③ 一覧から選ぶか <code>.ico</code> を指定して「OK」</figcaption>
-        </figure>
       </div>
+      <figure class="shot wide">
+        <img src="/assets/step3.webp" alt="一覧から選ぶか .ico ファイルを指定して「OK」" width="1100" height="733" loading="lazy" />
+        <figcaption>③ 一覧から選ぶか <code>.ico</code> を指定して「OK」</figcaption>
+      </figure>
 
       <h3>知っておきたい標準機能の「クセ」</h3>
       <p>手軽に見えますが、<strong>「手持ちの写真を使いたい」</strong>となると、いくつか引っかかる点があります。ここは正直にお伝えします。</p>
@@ -278,7 +280,7 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
 
       <figure class="result">
         <img src="/assets/recipe.webp" alt="写真アイコンとカラータグを適用した「料理」フォルダの例" width="283" height="287" loading="lazy" />
-        <figcaption>写真アイコン＋カラータグを付けた実例。フォルダ自体が中身を物語る。</figcaption>
+        <figcaption>写真アイコン＋カラータグを付けた実例。</figcaption>
       </figure>
 
       <a class="tip-app" href="https://apps.microsoft.com/detail/9N99JH5H91H8">
