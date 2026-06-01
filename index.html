@@ -1,44 +1,650 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Folderly – Folder Icon Changer for Windows 10 &amp; 11</title>
-  <meta name="description" content="Change Windows folder icons to your own photos — no .ico conversion. Color-tag and organize any folder. One-time purchase, free trial.">
-  <link rel="canonical" href="https://folderlyapp.com/">
-  <link rel="alternate" hreflang="en" href="https://folderlyapp.com/">
-  <link rel="alternate" hreflang="ja" href="https://folderlyapp.com/ja/">
-  <link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Folderly – Folder Icon Changer for Windows">
-  <meta property="og:description" content="Change Windows folder icons to your own photos. No .ico conversion needed.">
-  <meta property="og:url" content="https://folderlyapp.com/">
-  <meta property="og:image" content="https://folderlyapp.com/assets/og.png">
-  <style>
-    :root { --bg:#f7f8fb; --text:#1d2430; --muted:#5f6b7a; --accent:#0f63c6; --yellow:#FFC72C; }
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
-      font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.6;text-align:center}
-    main{max-width:760px;margin:0 auto;padding:96px 20px}
-    h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:0 0 16px}
-    p{color:var(--muted);font-size:1.1rem;margin:0 0 28px}
-    .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
-      font-weight:700;padding:14px 24px;border-radius:8px}
-    .links{margin-top:28px;font-size:.95rem}
-    .links a{color:var(--accent);text-decoration:none;margin:0 8px}
-    .soon{margin-top:40px;color:var(--muted);font-size:.85rem}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Folderly — フォルダを、ひと目でわかる場所に。</title>
+<meta name="description" content="Windowsのフォルダアイコンを好きな画像に変更。.ico変換も面倒な設定も不要、ドラッグするだけ。色タグで一目で見分け。¥500買い切り・1日間の無料試用付き。Windows 10/11対応。" />
+<link rel="canonical" href="https://folderlyapp.com/" />
+<link rel="alternate" hreflang="ja" href="https://folderlyapp.com/" />
+<link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/" />
+<link rel="icon" href="/assets/app-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Folderly — フォルダを、ひと目でわかる場所に。" />
+<meta property="og:description" content="Windowsのフォルダアイコンを好きな画像に変更。.ico変換不要、ドラッグするだけ。¥500買い切り・1日間の無料試用。" />
+<meta property="og:url" content="https://folderlyapp.com/" />
+<meta property="og:image" content="https://folderlyapp.com/assets/showcase-explorer.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --blue:#2566EB;
+  --blue-deep:#1455D6;
+  --blue-grad:linear-gradient(135deg,#3F8BFF 0%,#1664F0 100%);
+  --navy:#0E1A3C;
+  --ink:#1b2546;
+  --muted:#5b6680;
+  --muted-2:#8a93a8;
+  --line:#e7ecf7;
+  --line-2:#eef2fb;
+  --bg:#f3f6ff;
+  --card:#ffffff;
+  --lav-1:#eaf1ff;
+  --lav-2:#f6f4ff;
+  --peach:#ffe6c9;
+  --shadow-sm:0 1px 2px rgba(16,26,60,.05),0 4px 14px rgba(16,26,60,.05);
+  --shadow-md:0 8px 30px rgba(20,50,120,.10);
+  --shadow-lg:0 24px 70px rgba(20,50,120,.16);
+  --r:18px;
+  --maxw:1180px;
+  /* tag palette */
+  --t-blue:#2566EB; --t-teal:#16b3b0; --t-green:#1f9d52; --t-gold:#d6a214;
+  --t-orange:#ef7a17; --t-red:#e23a3a; --t-magenta:#d23397; --t-purple:#7c46e0; --t-gray:#7a8497;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:inherit;font-weight:800;cursor:pointer;border:none;
+  border-radius:14px;transition:transform .15s ease,box-shadow .2s ease,background .2s ease;
+}
+.btn-store{
+  background:var(--blue-grad);color:#fff;font-size:17px;
+  padding:16px 26px;box-shadow:0 10px 26px rgba(31,95,225,.36);
+  letter-spacing:.01em;
+}
+.btn-store:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(31,95,225,.44);}
+.btn-store .sub{font-size:11.5px;font-weight:600;opacity:.85;display:block;line-height:1.2;}
+.btn-store .lead{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;white-space:nowrap;}
+.btn-ghost{
+  background:#fff;color:var(--ink);border:1.5px solid var(--line);
+  font-size:14px;font-weight:700;padding:11px 18px;border-radius:12px;box-shadow:var(--shadow-sm);
+}
+.btn-ghost:hover{border-color:#cfdaf2;transform:translateY(-1px);}
+.win{display:inline-grid;grid-template-columns:1fr 1fr;gap:2.5px;width:22px;height:22px;flex:none;}
+.win i{background:#fff;border-radius:1.5px;display:block;}
+.win.blue i{background:var(--blue);}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:21px;color:var(--navy);letter-spacing:-.01em;}
+.logo{width:36px;height:36px;flex:none;object-fit:contain;filter:drop-shadow(0 3px 7px rgba(214,164,20,.28));}
+.nav-links{display:flex;gap:30px;font-size:14.5px;font-weight:700;}
+.nav-links a{color:#41496a;transition:color .15s;}
+.nav-links a:hover{color:var(--blue);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-cta{background:var(--blue-grad);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:11px;display:inline-flex;align-items:center;gap:9px;box-shadow:0 6px 16px rgba(31,95,225,.3);transition:transform .15s;}
+.nav-cta:hover{transform:translateY(-1px);}
+.nav-cta .t{white-space:nowrap;}
+
+/* ---------- section scaffolding ---------- */
+section{position:relative;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:800;color:var(--blue);background:#e9f0ff;padding:7px 15px;border-radius:999px;letter-spacing:.02em;white-space:nowrap;}
+.eyebrow .num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;}
+.h2{font-size:clamp(28px,3.6vw,44px);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.28;}
+.lead-sub{font-size:clamp(15px,1.5vw,18px);color:var(--muted);font-weight:500;}
+.sec-pad{padding:96px 0;}
+.center{text-align:center;}
+.sec-head{max-width:760px;margin:0 auto;}
+.sec-head .h2{margin:18px 0 14px;}
+
+/* decorative dot grids / blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(10px);opacity:.5;pointer-events:none;}
+.dotgrid{position:absolute;pointer-events:none;opacity:.6;
+  background-image:radial-gradient(currentColor 2px,transparent 2.4px);
+  background-size:18px 18px;width:130px;height:130px;}
+
+/* ---------- hero ---------- */
+.hero{background:
+  radial-gradient(1100px 520px at 12% -10%,#e4edff 0%,transparent 60%),
+  radial-gradient(900px 500px at 100% 0%,#ffeede 0%,transparent 55%),
+  linear-gradient(180deg,#f3f7ff 0%,#ffffff 100%);
+  overflow:hidden;padding:70px 0 84px;}
+.hero-grid{display:grid;grid-template-columns:1fr 1.06fr;gap:54px;align-items:center;}
+.hero h1{font-size:clamp(34px,4.7vw,60px);font-weight:900;color:var(--navy);line-height:1.18;letter-spacing:-.03em;}
+.hero h1 .hl{color:var(--blue);}
+.hero p.sub{font-size:clamp(16px,1.6vw,19px);color:var(--muted);margin:24px 0 30px;font-weight:500;max-width:520px;}
+.hero .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.trust{margin-top:20px;display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--muted-2);font-weight:600;}
+.trust .dot{width:5px;height:5px;border-radius:50%;background:#cdd4e3;}
+.trust svg{color:var(--blue);}
+.hero-visual{position:relative;}
+.hero-visual .frame{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid #e3eafc;background:#dfe9fb;}
+.hero-float{position:absolute;right:-14px;bottom:-26px;width:120px;transform:rotate(8deg);filter:drop-shadow(0 16px 24px rgba(20,50,120,.22));}
+
+/* ---------- trust strip ---------- */
+.strip{margin-top:-44px;position:relative;z-index:5;}
+.strip-inner{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-md);
+  display:grid;grid-template-columns:repeat(4,1fr);}
+.strip-item{display:flex;align-items:center;gap:14px;padding:24px 26px;}
+.strip-item + .strip-item{border-left:1px solid var(--line-2);}
+.strip-ic{width:44px;height:44px;border-radius:12px;background:#eef3ff;color:var(--blue);display:flex;align-items:center;justify-content:center;flex:none;}
+.strip-item b{display:block;font-size:14.5px;color:var(--navy);font-weight:800;white-space:nowrap;}
+.strip-item span{font-size:12.5px;color:var(--muted-2);font-weight:600;}
+
+/* ---------- problem / solution ---------- */
+.ps{display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:stretch;}
+.ps-card{border-radius:22px;padding:34px 32px;border:1px solid var(--line);}
+.ps-card.problem{background:linear-gradient(180deg,#f7f8fb,#f1f3f8);}
+.ps-card.solution{background:linear-gradient(180deg,#eef4ff,#e7efff);border-color:#d8e5ff;}
+.ps-tag{font-size:13px;font-weight:800;letter-spacing:.02em;}
+.problem .ps-tag{color:#97a0b3;}
+.solution .ps-tag{color:var(--blue);}
+.ps-card h3{font-size:clamp(20px,2.2vw,27px);font-weight:900;color:var(--navy);margin:10px 0 24px;line-height:1.4;}
+.solution h3 .hl{color:var(--blue);}
+.folders{display:flex;gap:14px;flex-wrap:wrap;}
+.folder{width:78px;height:62px;position:relative;flex:none;}
+.folder .tab{position:absolute;top:-7px;left:5px;width:30px;height:11px;border-radius:5px 5px 0 0;}
+.folder .face{position:absolute;inset:0;border-radius:8px;overflow:hidden;}
+.folder.plain .tab{background:#f0bf45;}
+.folder.plain .face{background:linear-gradient(160deg,#ffd96a,#f4b740);}
+.folder.col .cover{position:absolute;inset:0;}
+.ps-arrow{align-self:center;color:var(--blue);}
+.sol-shot{margin-top:4px;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(20,50,120,.22);border:1px solid rgba(20,50,120,.12);}
+.sol-shot img{display:block;width:100%;}
+.ps-mid{display:flex;align-items:center;}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;}
+.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
+.step .sn{width:38px;height:38px;border-radius:11px;background:var(--blue-grad);color:#fff;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(31,95,225,.3);}
+.step h4{font-size:18.5px;font-weight:900;color:var(--navy);margin:18px 0 8px;}
+.step p{font-size:14px;color:var(--muted);}
+.step .ghostnum{position:absolute;right:-6px;bottom:-26px;font-size:120px;font-weight:900;color:#f0f4ff;line-height:1;z-index:0;}
+.step > *{position:relative;z-index:1;}
+
+/* ---------- spotlight rows ---------- */
+.spot{display:grid;grid-template-columns:1.05fr 1.25fr;gap:56px;align-items:center;}
+.spot.rev{grid-template-columns:1.25fr 1.05fr;}
+.spot.rev .spot-text{order:2;}
+.spot h3{font-size:clamp(24px,2.5vw,33px);font-weight:900;color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:16px 0 16px;}
+.spot p{font-size:16px;color:var(--muted);font-weight:500;}
+.spot .pts{margin-top:24px;display:flex;flex-direction:column;gap:13px;}
+.pt{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink);font-weight:600;}
+.pt .ck{width:22px;height:22px;border-radius:7px;background:#e7f0ff;color:var(--blue);display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px;}
+.shot{border-radius:18px;overflow:hidden;border:1px solid #e3eafc;box-shadow:var(--shadow-lg);background:#eef3fc;}
+.spot-vis{position:relative;}
+.spot-vis .glow{position:absolute;inset:-30px;border-radius:40px;background:radial-gradient(circle at 50% 40%,rgba(63,139,255,.18),transparent 70%);z-index:-1;}
+
+/* ---------- feature grid ---------- */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px;}
+.fcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .2s;}
+.fcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.fcard .fic{width:46px;height:46px;border-radius:13px;background:#eef3ff;color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.fcard h4{font-size:16.5px;font-weight:900;color:var(--navy);margin-bottom:8px;line-height:1.45;}
+.fcard p{font-size:13.5px;color:var(--muted);}
+
+/* ---------- comparison ---------- */
+.cmp{margin-top:50px;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-md);background:#fff;}
+.cmp table{width:100%;border-collapse:collapse;font-size:14.5px;}
+.cmp th,.cmp td{padding:18px 20px;text-align:center;border-bottom:1px solid var(--line-2);}
+.cmp thead th{font-weight:800;color:var(--muted);background:#fafbff;font-size:13.5px;}
+.cmp tbody th{text-align:left;font-weight:800;color:var(--navy);background:#fafbff;width:24%;}
+.cmp td{color:var(--muted);font-weight:600;}
+.cmp .own{background:linear-gradient(180deg,#2f78ff,#1763f0);color:#fff !important;position:relative;}
+.cmp thead .own{background:linear-gradient(180deg,#2f78ff,#1763f0);color:#fff;font-size:16px;font-weight:900;}
+.cmp td.own{font-weight:800;}
+.cmp .own .pick{display:inline-block;margin-left:8px;font-size:11px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.22);color:#fff;vertical-align:middle;}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none;}
+.x{color:#c2c8d6;font-weight:800;}
+.ok{color:var(--t-green);font-weight:900;}
+
+/* ---------- pricing ---------- */
+.price{background:
+  radial-gradient(700px 360px at 88% 12%,#ffe9d2 0%,transparent 58%),
+  linear-gradient(135deg,#eef4ff,#e9f0ff);
+  border-radius:28px;padding:54px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;border:1px solid #dde7ff;overflow:hidden;position:relative;}
+.price .big{font-size:clamp(40px,5vw,62px);font-weight:900;color:var(--navy);letter-spacing:-.03em;line-height:1;}
+.price .big small{font-size:.42em;font-weight:800;color:var(--blue);}
+.price h3{font-size:14px;color:var(--blue);font-weight:800;}
+.price p.note{color:var(--muted);font-size:15px;margin-top:14px;font-weight:500;}
+.price-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.ptag{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px 16px;box-shadow:var(--shadow-sm);}
+.ptag b{display:block;font-size:14px;color:var(--navy);font-weight:800;}
+.ptag span{font-size:11.5px;color:var(--muted-2);font-weight:600;}
+.price-cta{background:#fff;border-radius:22px;padding:34px;box-shadow:var(--shadow-md);text-align:center;border:1px solid #e6ecf9;}
+.price-cta .lk{display:block;margin-top:16px;font-size:13.5px;color:var(--blue);font-weight:800;}
+
+/* ---------- faq ---------- */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px;}
+.qa{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow-sm);}
+.qa .q{display:flex;gap:12px;font-weight:800;color:var(--navy);font-size:15.5px;}
+.qa .q .badge{width:24px;height:24px;border-radius:8px;background:#e7f0ff;color:var(--blue);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;}
+.qa .a{display:flex;gap:12px;margin-top:12px;font-size:14px;color:var(--muted);font-weight:500;}
+.qa .a .badge{width:24px;height:24px;border-radius:8px;background:#f0f2f7;color:var(--muted-2);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;}
+
+/* ---------- final cta ---------- */
+.final{background:
+  radial-gradient(800px 400px at 15% 0%,rgba(255,255,255,.16),transparent 60%),
+  linear-gradient(135deg,#2b74ff 0%,#1457dd 60%,#1149c4 100%);
+  color:#fff;border-radius:30px;padding:64px;text-align:center;position:relative;overflow:hidden;}
+.final h2{font-size:clamp(28px,3.6vw,46px);font-weight:900;letter-spacing:-.02em;line-height:1.3;}
+.final p{color:rgba(255,255,255,.85);font-size:17px;margin:16px 0 32px;font-weight:500;}
+.final .btn-store{background:#fff;color:var(--blue);box-shadow:0 16px 40px rgba(0,0,0,.22);}
+.final .btn-store .win i{background:var(--blue);}
+.final .fine{margin-top:18px;font-size:13px;color:rgba(255,255,255,.7);font-weight:600;}
+.final .ffloat{position:absolute;font-size:90px;opacity:.16;}
+
+/* ---------- footer ---------- */
+footer{padding:48px 0 56px;border-top:1px solid var(--line-2);margin-top:90px;}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+.foot .brand{font-size:18px;}
+.foot-links{display:flex;gap:24px;font-size:13.5px;color:var(--muted);font-weight:700;flex-wrap:wrap;}
+.foot-links a:hover{color:var(--blue);}
+.copy{font-size:12.5px;color:var(--muted-2);font-weight:600;}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .strip-inner{grid-template-columns:1fr 1fr;}
+  .strip-item:nth-child(3){border-left:none;}
+  .strip-item:nth-child(odd){border-left:none;}
+  .strip-item:nth-child(n+3){border-top:1px solid var(--line-2);}
+  .ps{grid-template-columns:1fr;}
+  .ps-mid{justify-content:center;}.ps-arrow{transform:rotate(90deg);}
+  .steps{grid-template-columns:1fr;}
+  .spot,.spot.rev{grid-template-columns:1fr;gap:32px;}
+  .spot.rev .spot-text{order:0;}
+  .feat{grid-template-columns:1fr 1fr;}
+  .price{grid-template-columns:1fr;padding:40px 30px;}
+  .faq{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px;}
+  .strip-inner{grid-template-columns:1fr;}
+  .strip-item{border-left:none !important;}
+  .strip-item + .strip-item{border-top:1px solid var(--line-2);}
+  .feat{grid-template-columns:1fr;}
+  .sec-pad{padding:64px 0;}
+  .final{padding:44px 24px;}
+  .price{padding:32px 22px;}
+  .nav-cta .t{display:none;}
+}
+</style>
 </head>
 <body>
-  <!-- PLACEHOLDER: replace body with the ChatGPT landing-page mockup HTML -->
-  <main>
-    <h1>Turn any folder into one you can spot instantly</h1>
-    <p>Use your own photos as Windows folder icons. No .ico conversion, no hassle.</p>
-    <a class="cta" href="https://apps.microsoft.com/detail/9N99JH5H91H8">Get it on Microsoft Store</a>
-    <div class="links">
-      <a href="/ja/">日本語</a> ·
-      <a href="/privacy/">Privacy &amp; Support</a>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img class="logo" src="/assets/app-icon.png" alt="Folderly" />
+      Folderly
     </div>
-    <p class="soon">Full site coming soon.</p>
-  </main>
+    <nav class="nav-links">
+      <a href="#how">使い方</a>
+      <a href="#features">機能</a>
+      <a href="#compare">比較</a>
+      <a href="#price">料金</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="nav-cta"><span class="win"><i></i><i></i><i></i><i></i></span><span class="t">Microsoft Storeで入手</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>フォルダを、<br /><span class="hl">ひと目でわかる</span>場所に。</h1>
+      <p class="sub">好きな写真や画像を、そのままフォルダのアイコンに。<br />面倒な <code style="font-family:inherit;font-weight:700;color:var(--ink)">.ico</code> 変換も、複雑な設定も不要です。</p>
+      <div class="cta-row">
+        <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
+          <span class="win"><i></i><i></i><i></i><i></i></span>
+          <span class="lead">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+        </a>
+        <a href="#how" class="btn btn-ghost">使い方を見る</a>
+      </div>
+      <div class="trust">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        1日間の無料試用付き <span class="dot"></span> ¥500 買い切り <span class="dot"></span> サブスクなし
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame"><img src="/assets/showcase-explorer.png" alt="Folderly導入前後のフォルダ比較" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="wrap strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.25 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg></span>
+      <div><b>Windows 10/11 対応</b><span>最新のWindowsに最適化</span></div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></span>
+      <div><b>買い切り ¥500</b><span>一度の支払いでずっと</span></div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.4 2.6L3 8"/><path d="M3 3v5h5"/></svg></span>
+      <div><b>サブスクなし</b><span>追加課金は一切なし</span></div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2.1-9.4L3 7"/></svg></span>
+      <div><b>いつでも元に戻せる</b><span>変更履歴から簡単復元</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROBLEM / SOLUTION ===== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="ps">
+      <div class="ps-card problem">
+        <span class="ps-tag">よくある悩み</span>
+        <h3>フォルダが全部同じ黄色。<br />Windows標準は .ico しか使えず、<br />写真の変換も面倒…</h3>
+        <div class="folders">
+          <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
+          <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
+          <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
+          <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
+          <span class="folder plain"><span class="tab"></span><span class="face"></span></span>
+        </div>
+      </div>
+      <div class="ps-mid"><span class="ps-arrow"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></div>
+      <div class="ps-card solution">
+        <span class="ps-tag">Folderly が解決！</span>
+        <h3>画像を<span class="hl">ドロップするだけ</span>で、<br />フォルダがあなたらしく、<br />すぐに見分けやすくなります。</h3>
+        <div class="sol-shot"><img src="/assets/solution-folders.png" alt="写真や画像をアイコンにしたフォルダの一覧" loading="lazy" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="sec-pad" id="how" style="background:linear-gradient(180deg,#f6f9ff,#fff);padding-top:80px;">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="num">1</span>かんたん 3ステップ</span>
+      <h2 class="h2">使い方は、たった3ステップ。</h2>
+      <p class="lead-sub">インストールしたその日から、数秒でフォルダを自分好みに。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="ghostnum">1</span>
+        <span class="sn">1</span>
+        <h4>右クリックで開く</h4>
+        <p>フォルダを右クリックして「Customize with Folderly」を選ぶだけ。エクスプローラーからすぐに起動できます。</p>
+      </div>
+      <div class="step">
+        <span class="ghostnum">2</span>
+        <span class="sn">2</span>
+        <h4>画像をドロップして調整</h4>
+        <p>好きな画像をドラッグ&ドロップ。プレビューを見ながらスケールや位置を微調整できます。</p>
+      </div>
+      <div class="step">
+        <span class="ghostnum">3</span>
+        <span class="sn">3</span>
+        <h4>適用して完了</h4>
+        <p>「適用」をクリックすれば、すぐに新しいアイコンへ。面倒な再起動も変換作業も必要ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPOTLIGHT 1: customize ===== -->
+<section class="sec-pad" id="features">
+  <div class="wrap spot">
+    <div class="spot-text">
+      <span class="eyebrow"><span class="num">2</span>右クリックでカスタマイズ</span>
+      <h3>エクスプローラーから開いて、<br />数秒でフォルダを自分好みに。</h3>
+      <p>使い慣れたエクスプローラーの右クリックメニューから、そのまま Folderly を起動。画像を選んで調整するだけのシンプルな操作です。</p>
+      <div class="pts">
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>右クリックメニューにワンクリックで追加</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>スケール・表示モード・位置を細かく調整</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>適用前にプレビューで仕上がりを確認</div>
+      </div>
+    </div>
+    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/showcase-customize.png" alt="右クリックメニューからFolderlyでカスタマイズ" loading="lazy" /></div></div>
+  </div>
+</section>
+
+<!-- ===== SPOTLIGHT 2: tags ===== -->
+<section class="sec-pad" style="background:linear-gradient(180deg,#fff,#f6f9ff,#fff);">
+  <div class="wrap spot rev">
+    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/showcase-tags.png" alt="色とアイコンのタグを編集する画面" loading="lazy" /></div></div>
+    <div class="spot-text">
+      <span class="eyebrow"><span class="num">3</span>色タグ & アイコン</span>
+      <h3>色とアイコンを、<br />自由に組み合わせて整理。</h3>
+      <p>フォルダの種類に合わせたタグを、自分好みに作成。9色のカラーと豊富なアイコンから選んで、ひと目で見分けられるように。</p>
+      <div class="pts">
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>カラー9色 × 15種類以上のアイコン</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>タグ名とアイコンは自由に編集・追加</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>用途で色分けして探しやすく</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPOTLIGHT 3: manage ===== -->
+<section class="sec-pad">
+  <div class="wrap spot">
+    <div class="spot-text">
+      <span class="eyebrow"><span class="num">4</span>まとめて管理</span>
+      <h3>スタートから開いて、<br />変更をまとめて管理。</h3>
+      <p>スタートメニューから Folderly を起動すれば、変更したフォルダを一覧で管理できます。気が変わっても、ワンクリックで元通り。</p>
+      <div class="pts">
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>変更したフォルダを履歴で一覧表示</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>個別 / 一括で元のアイコンに復元</div>
+        <div class="pt"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>いつでも安心して試せる</div>
+      </div>
+    </div>
+    <div class="spot-vis"><span class="glow"></span><div class="shot"><img src="/assets/showcase-manage.png" alt="スタートメニューから起動して変更を管理する画面" loading="lazy" /></div></div>
+  </div>
+</section>
+
+<!-- ===== FEATURE GRID ===== -->
+<section class="sec-pad" style="background:linear-gradient(180deg,#f6f9ff,#fff);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="num">5</span>便利な機能</span>
+      <h2 class="h2">もっと自由に、もっと快適に。</h2>
+      <p class="lead-sub">こまかな調整から元に戻す操作まで、思いどおりにカスタマイズ。</p>
+    </div>
+    <div class="feat">
+      <div class="fcard">
+        <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
+        <h4>自分の画像が使える</h4>
+        <p>写真やイラストをそのままフォルダアイコンに。.ico への変換は不要です。</p>
+      </div>
+      <div class="fcard">
+        <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22a10 10 0 1 1 0-20 9 9 0 0 1 0 18h-1.5a1.5 1.5 0 0 1 0-3"/></svg></span>
+        <h4>色タグ・タグ名を設定</h4>
+        <p>フォルダに色やアイコンのタグを付けて、見た目でも管理しやすく。</p>
+      </div>
+      <div class="fcard">
+        <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/><path d="M8 9h4"/></svg></span>
+        <h4>表示モード・プレビュー</h4>
+        <p>スケールや位置を調整し、ベストな見え方をプレビューで確認できます。</p>
+      </div>
+      <div class="fcard">
+        <span class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2.1-9.4L3 7"/><path d="M12 7v5l3 2"/></svg></span>
+        <h4>まとめて管理・復元</h4>
+        <p>変更履歴から個別にも一括にも、いつでも元の状態へ戻せます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section class="sec-pad" id="compare">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="num">6</span>他の方法との比較</span>
+      <h2 class="h2">Folderly が選ばれる理由。</h2>
+    </div>
+    <div class="cmp">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Windows標準<br /><span style="font-weight:600;font-size:12px">(.ico 手動)</span></th>
+            <th>既製アイコンアプリ</th>
+            <th>高機能な有料ソフト</th>
+            <th class="own">Folderly <span class="pick">おすすめ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>自分の写真・画像が使える</th>
+            <td><span class="x">△</span> 変換が必要</td>
+            <td><span class="x">×</span> 既製のみ</td>
+            <td><span class="ok">◎</span></td>
+            <td class="own">画像をドロップするだけ</td>
+          </tr>
+          <tr>
+            <th>使いやすさ</th>
+            <td>手順が多く煩雑</td>
+            <td>限定的</td>
+            <td>多機能で難しい</td>
+            <td class="own">直感的でシンプル</td>
+          </tr>
+          <tr>
+            <th>価格</th>
+            <td>無料</td>
+            <td>無料〜</td>
+            <td>¥3,000以上が多い</td>
+            <td class="own">¥500（買い切り）</td>
+          </tr>
+          <tr>
+            <th>サブスク・広告</th>
+            <td>なし</td>
+            <td>広告・課金あり</td>
+            <td>サブスクのものも</td>
+            <td class="own">なし（広告なし）</td>
+          </tr>
+          <tr>
+            <th>元に戻す機能</th>
+            <td>手動で戻す必要あり</td>
+            <td>一部のみ</td>
+            <td><span class="ok">◎</span></td>
+            <td class="own">履歴から簡単に復元</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="sec-pad" id="price" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="price">
+      <div class="price-left">
+        <h3>まずは無料でお試しください</h3>
+        <div class="big" style="margin-top:6px;">¥500 <small>買い切り</small></div>
+        <p class="note">1日間の無料トライアル付き。サブスク・広告なしで、安心して使えます。</p>
+        <div class="price-tags">
+          <div class="ptag"><b>¥500</b><span>一度の支払いでずっと</span></div>
+          <div class="ptag"><b>1日間無料</b><span>すべての機能を試せる</span></div>
+          <div class="ptag"><b>広告なし</b><span>サクサク快適に使える</span></div>
+        </div>
+      </div>
+      <div class="price-cta">
+        <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store" style="width:100%;justify-content:center;">
+          <span class="win"><i></i><i></i><i></i><i></i></span>
+          <span class="lead" style="align-items:center;">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+        </a>
+        <a href="#faq" class="lk">動作環境を見る ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec-pad" id="faq" style="padding-top:40px;">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="num">7</span>よくあるご質問</span>
+      <h2 class="h2">気になることを、先に解決。</h2>
+    </div>
+    <div class="faq">
+      <div class="qa">
+        <div class="q"><span class="badge">Q</span>どのWindowsに対応していますか？</div>
+        <div class="a"><span class="badge">A</span>Windows 10 / 11（64bit）に対応しています。最新のWindowsに最適化されています。</div>
+      </div>
+      <div class="qa">
+        <div class="q"><span class="badge">Q</span>画像の形式に制限はありますか？</div>
+        <div class="a"><span class="badge">A</span>JPG・PNG・BMP・WebP など、一般的な画像形式に対応しています。</div>
+      </div>
+      <div class="qa">
+        <div class="q"><span class="badge">Q</span>元に戻すことはできますか？</div>
+        <div class="a"><span class="badge">A</span>はい。履歴からいつでも元のアイコンに戻せます。個別・一括どちらにも対応しています。</div>
+      </div>
+      <div class="qa">
+        <div class="q"><span class="badge">Q</span>商用利用はできますか？</div>
+        <div class="a"><span class="badge">A</span>はい。個人・法人問わずご利用いただけます。サブスクや追加課金はありません。</div>
+      </div>
+      <div class="qa">
+        <div class="q"><span class="badge">Q</span>インターネット接続は必要ですか？</div>
+        <div class="a"><span class="badge">A</span>インストールとライセンス認証時のみ必要です。普段の利用はオフラインでも快適に動作します。</div>
+      </div>
+      <div class="qa">
+        <div class="q"><span class="badge">Q</span>サブスクや追加料金はありますか？</div>
+        <div class="a"><span class="badge">A</span>いいえ。¥500の買い切りで、追加料金は一切かかりません。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="sec-pad" style="padding-top:0;">
+  <div class="wrap">
+    <div class="final">
+      <span class="ffloat" style="left:6%;top:18%">📁</span>
+      <span class="ffloat" style="right:8%;top:26%;font-size:64px">🖼️</span>
+      <span class="ffloat" style="right:18%;bottom:10%;font-size:72px">📂</span>
+      <h2>フォルダ整理を、<br />もっとあなたらしく。</h2>
+      <p>今すぐ Folderly を手に入れて、見やすく・気持ちよく整理しましょう。</p>
+      <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
+        <span class="win blue"><i></i><i></i><i></i><i></i></span>
+        <span class="lead" style="align-items:center;">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+      </a>
+      <div class="fine">Windows 10 / 11 対応 ・ ¥500 買い切り ・ サブスクなし</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot">
+    <div class="brand">
+      <img class="logo" src="/assets/app-icon.png" alt="Folderly" />
+      Folderly
+    </div>
+    <nav class="foot-links">
+      <a href="#how">使い方</a>
+      <a href="#features">機能</a>
+      <a href="#compare">比較</a>
+      <a href="#price">料金</a>
+      <a href="#faq">FAQ</a>
+      <a href="/privacy/">プライバシー・サポート</a>
+    </nav>
+    <div class="copy">© 2026 Folderly. All rights reserved.</div>
+  </div>
+</footer>
+
 </body>
 </html>

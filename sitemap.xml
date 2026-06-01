@@ -3,14 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://folderlyapp.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/"/>
-  </url>
-  <url>
-    <loc>https://folderlyapp.com/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/"/>
   </url>
   <url>

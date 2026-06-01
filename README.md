@@ -4,16 +4,16 @@ Folderly の紹介/マーケティングサイト。Cloudflare Pages で `folder
 （アプリ本体のリポジトリは別: `folderly-win`）
 
 ## 構成
-- `/`            英語 LP（x-default）
-- `/ja/`         日本語 LP
+- `/`            日本語 LP（x-default。主市場が日本のためルートに配置）
+- `/en/`         英語 LP（予定）
 - `/privacy/`    プライバシーポリシー＋FAQ＋サポート（日英1ページ）
 - `/blog/`       how-to 記事（予定）
 - `sitemap.xml`, `robots.txt`
-- `/assets/`     スクリーンショット等の画像（予定）
+- `/assets/`     LP用スクリーンショット・ロゴ画像
 
 ## SEO
-- 各ページに hreflang（en / ja / x-default）。canonical は apex（`folderlyapp.com`）。
-- title ≤ 60字 / description ≈ 120字 / H1 は1つ。
+- hreflang（ja / x-default = `/`）。`/en/` 作成時に `en` を追加。canonical は apex（`folderlyapp.com`）。
+- LP本体は Claude Design ハンドオフ（`Folderly LP.html`）を忠実再現したもの。価格は ¥500 買い切り。
 
 ## デプロイ（Cloudflare Pages）
 - Workers & Pages → Pages → このリポジトリを接続。
@@ -22,5 +22,5 @@ Folderly の紹介/マーケティングサイト。Cloudflare Pages で `folder
 - Cloudflare Web Analytics を有効化（無料・Cookie同意不要）。
 
 ## メモ
-- `/index.html`・`/ja/index.html` は ChatGPT モックの HTML を差し込む前提のプレースホルダ。
+- 画像は `/assets/`（app-icon・showcase-explorer/customize/tags/manage・solution-folders）。合計~9MBのため将来WebP化/リサイズ推奨。
 - マーケ戦略・狙いキーワード・LP構成は app リポの `docs/MARKETING.md` を参照。
