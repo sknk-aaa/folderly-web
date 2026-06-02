@@ -15,12 +15,39 @@
   </url>
   <url>
     <loc>https://folderlyapp.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/"/>
+  </url>
+  <url>
+    <loc>https://folderlyapp.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/"/>
   </url>
   <url>
     <loc>https://folderlyapp.com/blog/windows-folder-icon-change/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/windows-folder-icon-change/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/windows-folder-icon-change/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/windows-folder-icon-change/"/>
+  </url>
+  <url>
+    <loc>https://folderlyapp.com/en/blog/windows-folder-icon-change/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/windows-folder-icon-change/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/windows-folder-icon-change/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/windows-folder-icon-change/"/>
   </url>
   <url>
     <loc>https://folderlyapp.com/blog/folder-icon-not-changing/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folder-icon-not-changing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/"/>
+  </url>
+  <url>
+    <loc>https://folderlyapp.com/en/blog/folder-icon-not-changing/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folder-icon-not-changing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/"/>
   </url>
   <url>
     <loc>https://folderlyapp.com/privacy/</loc>
