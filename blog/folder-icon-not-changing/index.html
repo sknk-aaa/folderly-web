@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>フォルダアイコンが変更できない・元に戻る時の対処法【Windows 10/11】| Folderly</title>
+<meta name="description" content="Windowsでフォルダのアイコンが変更できない、設定しても反映されない、再起動すると元に戻る…。よくある原因を症状別に整理し、アイコンキャッシュ・.ico形式の制限・desktop.iniの仕組みまでやさしく解説します。" />
+<link rel="canonical" href="https://folderlyapp.com/blog/folder-icon-not-changing/" />
+<link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folder-icon-not-changing/" />
+<link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
+<link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
+<link rel="icon" href="/assets/app-icon.webp" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="フォルダアイコンが変更できない・元に戻る時の対処法" />
+<meta property="og:description" content="反映されない・元に戻る・写真が選べない…よくある原因を症状別に解説。" />
+<meta property="og:url" content="https://folderlyapp.com/blog/folder-icon-not-changing/" />
+<meta property="og:image" content="https://folderlyapp.com/assets/showcase-explorer.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "フォルダアイコンが変更できない・元に戻る時の対処法",
+  "description": "反映されない・元に戻る・写真が選べない…よくある原因を症状別に解説。",
+  "image": "https://folderlyapp.com/assets/showcase-explorer.png",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-01",
+  "inLanguage": "ja",
+  "author": {"@type": "Organization", "name": "Folderly"},
+  "publisher": {"@type": "Organization", "name": "Folderly"},
+  "mainEntityOfPage": "https://folderlyapp.com/blog/folder-icon-not-changing/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://folderlyapp.com/"},
+    {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://folderlyapp.com/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "フォルダアイコンが変更できない・元に戻る時の対処法"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/assets/hero.webp" />
+<style>
+:root{
+  --blue:#2566EB;--blue-deep:#1455D6;--blue-grad:linear-gradient(135deg,#3F8BFF 0%,#1664F0 100%);
+  --navy:#0E1A3C;--ink:#222a44;--muted:#5b6680;--muted-2:#8a93a8;
+  --line:#e7ecf7;--line-2:#eef2fb;--paper:#fbfcfe;
+  --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --shadow-sm:0 1px 2px rgba(16,26,60,.05),0 4px 14px rgba(16,26,60,.05);
+  --shadow-md:0 8px 30px rgba(20,50,120,.10);--shadow-lg:0 24px 70px rgba(20,50,120,.14);
+  --measure:700px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.95;font-size:16.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 24px;}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1080px;margin:0 auto;padding:0 24px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;color:var(--navy);}
+.brand img{width:30px;height:30px;}
+.nav-cta{background:var(--blue-grad);color:#fff;font-weight:800;font-size:13px;padding:9px 15px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;}
+.nav-cta:hover{text-decoration:none;}
+
+/* hero / opening */
+.hero{background:radial-gradient(900px 380px at 20% -10%,#e9f0ff 0%,transparent 60%),radial-gradient(700px 320px at 100% 0%,#fff1e2 0%,transparent 55%);border-bottom:1px solid var(--line-2);}
+.hero-in{max-width:var(--measure);margin:0 auto;padding:44px 24px 40px;}
+.crumbs{font-size:12px;color:var(--muted-2);margin-bottom:22px;letter-spacing:.01em;}
+.crumbs a{color:var(--muted);}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);background:#e9f0ff;padding:6px 13px;border-radius:999px;margin-bottom:18px;}
+h1{font-family:var(--sans);font-weight:900;font-size:clamp(30px,4.7vw,46px);color:var(--navy);line-height:1.28;letter-spacing:-.02em;margin-bottom:18px;}
+.lead{font-size:clamp(16px,1.8vw,18px);color:#3a4566;line-height:1.95;}
+.lead p{margin-bottom:14px;}
+.byline{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--muted-2);font-weight:600;}
+.byline .dot{width:4px;height:4px;border-radius:50%;background:#cdd4e3;}
+.hero-img{margin:0 0 28px;}
+.hero-img img{width:100%;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid rgba(20,40,90,.08);}
+
+/* article */
+main{padding:8px 0 40px;}
+article{padding-top:14px;}
+.fade{opacity:0;transform:translateY(14px);animation:fade .7s cubic-bezier(.2,.7,.2,1) forwards;}
+.fade.d1{animation-delay:.05s}.fade.d2{animation-delay:.12s}.fade.d3{animation-delay:.19s}
+@keyframes fade{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+
+/* table of contents */
+.toc{border:1px solid var(--line);background:var(--paper);border-radius:16px;padding:20px 24px;margin:30px 0 8px;}
+.toc .t{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--muted-2);margin-bottom:12px;}
+.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:9px;}
+.toc li{counter-increment:toc;}
+.toc a{display:flex;gap:11px;align-items:baseline;color:var(--ink);font-weight:600;font-size:14.5px;}
+.toc a:hover{color:var(--blue);text-decoration:none;}
+.toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-weight:700;color:var(--blue);font-size:13px;min-width:24px;}
+
+/* section headings */
+article h2{font-family:var(--sans);font-weight:900;font-size:clamp(23px,3.1vw,32px);color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
+.eyebrow{display:block;font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--blue);margin-bottom:10px;}
+article h2 + p{margin-top:14px;}
+article h3{font-size:18px;font-weight:800;color:var(--navy);margin:34px 0 10px;}
+article p{margin:0 0 18px;}
+article strong{font-weight:800;color:var(--navy);}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;color:#33406a;padding:1px 7px;border-radius:6px;font-size:.9em;}
+
+/* numbered steps */
+.steps{counter-reset:step;list-style:none;margin:18px 0 6px;display:flex;flex-direction:column;gap:14px;}
+.steps>li{counter-increment:step;position:relative;padding:18px 20px 18px 64px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow-sm);}
+.steps>li::before{content:counter(step);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:9px;background:var(--blue-grad);color:#fff;font-family:var(--serif);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 13px rgba(31,95,225,.3);}
+.steps>li b{color:var(--navy);}
+
+/* generic lists */
+article ul.plain{list-style:none;margin:6px 0 18px;display:flex;flex-direction:column;gap:11px;}
+article ul.plain li{position:relative;padding-left:26px;font-size:15.5px;}
+article ul.plain li::before{content:"";position:absolute;left:4px;top:.7em;width:7px;height:7px;border-radius:50%;background:#c5d3f2;}
+
+/* figures */
+figure{margin:30px 0;}
+figure img{border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
+figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10px;}
+.result{margin:26px auto;max-width:520px;}
+.result img{border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-md);}
+
+/* callouts */
+.callout{display:flex;gap:14px;background:linear-gradient(180deg,#f7faff,#eef4ff);border:1px solid #dbe6ff;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:14.5px;}
+.callout .ic{flex:none;width:26px;height:26px;border-radius:8px;background:#e0ebff;color:var(--blue);display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.callout b{color:var(--navy);}
+.callout code{background:#e3ebfb;}
+.pull{font-family:var(--serif);font-weight:700;font-size:clamp(18px,2.4vw,23px);color:var(--navy);line-height:1.7;border-left:3px solid var(--blue);padding:4px 0 4px 22px;margin:30px 0;}
+
+/* soft product mention */
+.tip-app{display:flex;gap:16px;align-items:center;border:1px solid #dbe6ff;border-radius:16px;padding:18px 20px;margin:22px 0;background:#fff;box-shadow:var(--shadow-sm);color:inherit;transition:transform .15s,box-shadow .2s,border-color .2s;}
+.tip-app:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:#bcd3ff;}
+.tip-app img{width:48px;height:48px;border-radius:12px;flex:none;}
+.tip-app .x .h{font-weight:800;color:var(--navy);font-size:15px;}
+.tip-app .x .d{font-size:13px;color:var(--muted);margin-top:2px;}
+.tip-app .go{margin-left:auto;color:var(--blue);font-weight:900;font-size:20px;flex:none;}
+
+/* CTA */
+.cta{background:radial-gradient(600px 300px at 85% 10%,#ffe9d2 0%,transparent 60%),linear-gradient(135deg,#eef4ff,#e9f0ff);border:1px solid #dde7ff;border-radius:22px;padding:34px 30px;margin:48px 0 10px;text-align:center;}
+.cta h3{font-family:var(--sans);font-weight:900;font-size:23px;letter-spacing:-.01em;color:var(--navy);margin-bottom:8px;}
+.cta p{font-size:14px;color:var(--muted);margin-bottom:20px;}
+.btn-store{display:inline-flex;align-items:center;gap:11px;background:var(--blue-grad);color:#fff;font-weight:800;font-size:15.5px;padding:15px 26px;border-radius:14px;box-shadow:0 12px 28px rgba(31,95,225,.33);transition:transform .15s,box-shadow .2s;}
+.btn-store:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 18px 38px rgba(31,95,225,.4);}
+.btn-store .l{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;}
+.btn-store .sub{font-size:11px;font-weight:600;opacity:.85;}
+.cta .fine{margin-top:14px;font-size:12px;color:var(--muted-2);font-weight:600;}
+
+/* footer */
+footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;background:var(--paper);}
+.foot{max-width:var(--measure);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);}
+.foot a{color:var(--muted);font-weight:700;}.foot .links{display:flex;gap:18px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/app-icon.webp" alt="Folderly" width="30" height="30" />Folderly</a>
+    <a class="nav-cta" href="/">Folderly を見る</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <nav class="crumbs"><a href="/">ホーム</a> › <a href="/blog/">ブログ</a> › 変更できない・元に戻る時の対処法</nav>
+    <figure class="hero-img fade">
+      <img src="/assets/hero.webp" alt="フォルダアイコンを画像に変更した例" width="1400" height="788" fetchpriority="high" />
+    </figure>
+    <span class="kicker fade">トラブル解決</span>
+    <h1 class="fade d1">フォルダアイコンが変更できない・<br />元に戻る時の対処法</h1>
+    <div class="lead fade d2">
+      <p>アイコンを変えたはずなのに、なぜか反映されない。せっかく設定したのに、再起動したら元の黄色いフォルダに逆戻り——。Windowsのアイコン変更は、実はつまずく人がとても多いところです。</p>
+      <p>でも安心してください。原因は<strong>いくつかの決まったパターン</strong>に分かれていて、わかってしまえば対処はかんたんです。この記事では、よくある症状ごとに「<strong>なぜ起きるか</strong>」と「<strong>どう直すか</strong>」を順番に解説します。</p>
+    </div>
+    <div class="byline fade d3">6分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-06-01</div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <article>
+
+      <nav class="toc">
+        <div class="t">この記事でわかること</div>
+        <ol>
+          <li><a href="#causes">まず確認：つまずく原因は4つ</a></li>
+          <li><a href="#cache">変更したのに反映されない</a></li>
+          <li><a href="#revert">設定しても元に戻る</a></li>
+          <li><a href="#format">写真（JPG/PNG）が選べない</a></li>
+          <li><a href="#missing">「アイコンの変更」が見つからない</a></li>
+          <li><a href="#folderly">二度とつまずかない方法</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="causes"><span class="eyebrow">はじめに</span>まず確認：つまずく原因は4つ</h2>
+      <p>フォルダアイコンの変更がうまくいかないとき、原因はたいてい次の4つのどれかです。自分の症状がどれに当てはまるか、目星をつけてから読み進めると早いです。</p>
+      <ul class="plain">
+        <li><strong>① 表示の更新（キャッシュ）</strong>：設定は正しいのに、古い見た目が残っている</li>
+        <li><strong>② 指定したファイルの場所</strong>：アイコンに使ったファイルを移動・削除して戻ってしまう</li>
+        <li><strong>③ 画像の形式</strong>：写真（JPG/PNG）が選べない＝標準は <code>.ico</code> のみ</li>
+        <li><strong>④ フォルダの種類・権限</strong>：そもそも「アイコンの変更」が出てこない</li>
+      </ul>
+      <p>※「アイコンを変える手順そのもの」をまだ確認していない方は、先に <a href="/blog/windows-folder-icon-change/">フォルダのアイコンを画像に変更する方法</a> を読むと、この記事がスッと入ってきます。</p>
+
+      <h2 id="cache"><span class="eyebrow">症状 1</span>変更したのに反映されない</h2>
+      <p>「OKを押したのに、見た目が変わらない」。これは<strong>アイコンキャッシュ</strong>が原因のことがほとんどです。Windows は表示を速くするためにアイコンを一時保存していて、古い表示が残ってしまうことがあります。設定自体は成功しているので、<strong>表示を更新してあげれば直ります</strong>。</p>
+
+      <ol class="steps">
+        <li>まず、対象フォルダの<b>ひとつ上の階層を開き直す</b>か、エクスプローラー上で <b>F5（更新）</b>。</li>
+        <li>直らなければ、<b>タスクマネージャー</b>（タスクバー右クリック → タスクマネージャー）で「<b>エクスプローラー</b>」を選び、<b>〔再起動〕</b>。</li>
+        <li>それでもダメなら、いったん <b>PCを再起動</b>。多くはこれで反映されます。</li>
+      </ol>
+
+      <div class="callout">
+        <span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/></svg></span>
+        <div><b>上級者向け：アイコンキャッシュを手動でクリア</b><br />タスクマネージャーでエクスプローラーを終了 → コマンドプロンプトで <code>del /a %localappdata%\IconCache.db</code> と <code>del /a %localappdata%\Microsoft\Windows\Explorer\iconcache*</code> を実行 → エクスプローラーを再起動。コマンド操作に慣れている場合のみどうぞ。</div>
+      </div>
+
+      <h2 id="revert"><span class="eyebrow">症状 2</span>設定しても、しばらくすると元に戻る</h2>
+      <p>「変えたのに、再起動したら元通り」「数日後に黄色いフォルダに戻っていた」。これは標準のアイコン変更が、<strong>指定したファイルの“場所を覚えているだけ”</strong>という仕組みだからです。次のどれかが起きると、参照が切れて元に戻ります。</p>
+      <ul class="plain">
+        <li>アイコンに指定した <code>.ico</code> ファイルを<strong>移動・削除・リネーム</strong>した</li>
+        <li>設定を保存している隠しファイル <code>desktop.ini</code> が<strong>消えた・書き換わった</strong></li>
+        <li><strong>OneDrive などのクラウド同期</strong>が <code>desktop.ini</code> を上書きした</li>
+      </ul>
+      <p>対処は「<strong>参照が切れないようにする</strong>」こと。<code>.ico</code> は移動しない安全な場所（理想はそのフォルダの中）に置き、<code>desktop.ini</code> は消さない。同期フォルダ内では起きやすいので、同期対象から外すか、別の方法を検討します。</p>
+
+      <p class="pull">そもそも「ファイルの場所を覚えているだけ」が原因。<br />画像を内部で抱えてくれる方法なら、移動しても削除しても戻りません。</p>
+
+      <h2 id="format"><span class="eyebrow">症状 3</span>写真（JPG / PNG）が選べない</h2>
+      <p>「アイコンの変更」を開いても、手持ちの写真が一覧に出てこない——これは仕様です。標準機能が受け付けるのは <strong><code>.ico</code> という専用形式（と一部の <code>.exe</code> / <code>.dll</code>）だけ</strong>。スマホやカメラの JPG・PNG は、そのままでは指定できません。</p>
+
+      <figure>
+        <img src="/assets/step3.webp" alt="アイコン変更ダイアログ。ファイルの種類が「アイコン ファイル(*.ico)」に限定されている" width="1100" height="733" loading="lazy" />
+        <figcaption>ファイルの種類が <code>.ico</code> に限定されているため、写真はそのままでは選べない。</figcaption>
+      </figure>
+
+      <p>解決策は2つです。</p>
+      <ul class="plain">
+        <li>画像を <strong><code>.ico</code> に変換</strong>するツールを探して使う（ひと手間かかります）</li>
+        <li><strong>変換が不要なアプリ</strong>を使い、写真をそのままドラッグして指定する</li>
+      </ul>
+
+      <h2 id="missing"><span class="eyebrow">症状 4</span>「アイコンの変更」が見つからない・押せない</h2>
+      <p>プロパティを開いても「カスタマイズ」タブや「アイコンの変更」が見当たらない場合、<strong>そのフォルダが対象外</strong>のことがあります。</p>
+      <ul class="plain">
+        <li><strong>特殊フォルダ</strong>（ドキュメント・ピクチャ等）や<strong>ライブラリ</strong>を操作している → 設定箇所が異なります</li>
+        <li><strong>ネットワークドライブ・読み取り専用・権限不足</strong> → 書き込みできず変更が反映されません</li>
+      </ul>
+      <p>通常のフォルダを右クリック →「プロパティ」→「<strong>カスタマイズ</strong>」タブの順で開けば、「アイコンの変更」が出てきます。カスタマイズタブ自体が無いフォルダは、標準機能では変更できません。</p>
+
+      <h2 id="folderly"><span class="eyebrow">根本解決</span>二度とつまずかないために</h2>
+      <p>ここまでの原因——<strong>形式の制限・ファイル移動で戻る・キャッシュで反映されない</strong>——は、その多くが標準機能の仕組みに由来します。私たちが作った <a href="/">Folderly</a> は、ここを構造から解決しています。</p>
+      <ul class="plain">
+        <li><strong><code>.ico</code> 変換は不要</strong>。写真（PNG / JPG）をドラッグするだけ（症状3の解決）</li>
+        <li>画像を<strong>内部にコピーして管理</strong>するので、元画像を移動・削除しても<strong>戻らない</strong>（症状2の解決）</li>
+        <li>適用後に<strong>表示を自動更新</strong>するので、キャッシュで悩まない（症状1の解決）</li>
+        <li>気が変わっても<strong>履歴からワンクリックで元に戻せる</strong></li>
+      </ul>
+
+      <figure>
+        <img src="/assets/compare.webp" alt="フォルダアイコンを変更する前と後の比較。変更前は同じ黄色いフォルダ、変更後は写真や色で見分けやすい" width="1400" height="596" loading="lazy" />
+        <figcaption>標準機能のつまずきを避けて、写真アイコンで見分けやすく。</figcaption>
+      </figure>
+
+      <a class="tip-app" href="/">
+        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
+        <div class="x">
+          <div class="h">Folderly について</div>
+          <div class="d">.ico変換なし・移動しても戻らない・適用後に自動更新。1日間の無料試用付き・¥500買い切り。</div>
+        </div>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+
+      <h2 id="summary"><span class="eyebrow">まとめ</span>原因がわかれば、ほぼ直る</h2>
+      <p>フォルダアイコンの不調は、<strong>①キャッシュ ②ファイルの場所 ③形式 ④フォルダの種類</strong>のどれかが原因です。反映されないなら表示の更新、戻るならファイル参照の見直し、写真が使えないなら形式の問題——と切り分ければ、たいてい解決できます。</p>
+      <p>「毎回つまずくのが面倒」「写真をそのまま・確実に使いたい」なら、変換も復元も気にせず使える <a href="/">Folderly</a> も覗いてみてください。</p>
+
+      <div class="cta">
+        <h3>もう、アイコンで悩まない。</h3>
+        <p>.ico変換なし。移動しても戻らない。適用後は自動で反映。</p>
+        <a class="btn-store" href="/">
+          <span class="l">Folderly を詳しく見る<span class="sub">1日間の無料試用付き</span></span>
+        </a>
+        <div class="fine">Windows 10 / 11 対応 ・ ¥500 買い切り ・ サブスクなし</div>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>© 2026 Folderly</div>
+    <nav class="links">
+      <a href="/">トップ</a>
+      <a href="/blog/">ブログ</a>
+      <a href="/privacy/">プライバシー・サポート</a>
+      <a href="/en/">English</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
