@@ -1,5 +1,35 @@
 # folderly-web
 
+## 2026-07-30 Update
+
+### 今日反映したこと
+
+- 日本語LPのH1を「フォルダアイコンを、好きな画像に変更。」へ変更。
+- 訴求を「フォルダを写真と色タグで見分けやすく」に統一。
+- 日本語/英語LPに「Windows標準 vs Folderly」の比較ブロックを追加。
+- FAQに無料試用、安全性、日本語対応、色タグだけ利用の説明を追加。
+- `/blog/windows-folder-icon-change/` を「フォルダアイコン 変更方法」寄りの本命SEO記事として更新。
+- `/blog/folder-icon-not-changing/` に症状別CTAを追加。
+- `/blog/folderly-how-to/` を新規作成。
+- `blog/index.html` と `sitemap.xml` に新規記事を追加。
+
+### 公開後に見るURL
+
+| URL | 見る理由 |
+|---|---|
+| `https://folderlyapp.com/` | 日本語LP。ファーストビュー、比較ブロック、FAQ、CTAが購入につながるか確認する。 |
+| `https://folderlyapp.com/en/` | 英語LP。海外向けに `photos + color tags` と `no .ico conversion` が自然に伝わるか確認する。 |
+| `https://folderlyapp.com/blog/windows-folder-icon-change/` | 本命SEO記事。検索意図に答えてから自然にFolderlyへ送客できているか確認する。 |
+| `https://folderlyapp.com/blog/folder-icon-not-changing/` | 困りごと記事。症状別CTAが押しつけに見えないか確認する。 |
+| `https://folderlyapp.com/blog/folderly-how-to/` | 新規使い方記事。購入前の不安解消になっているか確認する。 |
+| `https://folderlyapp.com/blog/` | 新規記事と更新記事が一覧に出ているか確認する。 |
+
+### 公開後の作業
+
+1. Cloudflare Pagesのデプロイ完了を確認する。
+2. Search Consoleで更新URLと新規URLのインデックス登録をリクエストする。
+3. 2-4週間後にGSCで表示回数/CTR/クエリを見て、記事タイトルと本文を微調整する。
+
 Folderly の紹介/マーケティングサイト。Cloudflare Pages で `folderlyapp.com` に公開する静的サイト。
 （アプリ本体のリポジトリは別: `folderly-win`）
 
