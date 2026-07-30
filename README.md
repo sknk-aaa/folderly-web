@@ -13,7 +13,7 @@ Folderly の紹介/マーケティングサイト。Cloudflare Pages で `folder
 
 ## SEO
 - hreflang（ja / x-default = `/`）。`/en/` 作成時に `en` を追加。canonical は apex（`folderlyapp.com`）。
-- LP本体は Claude Design ハンドオフ（`Folderly LP.html`）を忠実再現したもの。価格は ¥500 買い切り。
+- LP本体は Claude Design ハンドオフ（`Folderly LP.html`）を忠実再現したもの。価格は ¥480 買い切り。
 
 ## デプロイ（Cloudflare Pages）
 - Workers & Pages → Pages → このリポジトリを接続。
