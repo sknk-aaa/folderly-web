@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Folderlyの使い方：フォルダアイコンを好きな画像に変更する手順 | Folderly</title>
+<meta name="description" content="Folderlyの使い方を初めての方向けに解説。フォルダを右クリックして開く方法、写真や画像をドラッグして調整する手順、色タグの付け方、元に戻す方法、安全性までまとめます。" />
+<link rel="canonical" href="https://folderlyapp.com/blog/folderly-how-to/" />
+<link rel="icon" href="/assets/app-icon.webp" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Folderlyの使い方：フォルダアイコンを好きな画像に変更する手順" />
+<meta property="og:description" content="画像をドラッグするだけでフォルダアイコンを変更。色タグ・復元・安全性まで、Folderlyの使い方を解説。" />
+<meta property="og:url" content="https://folderlyapp.com/blog/folderly-how-to/" />
+<meta property="og:image" content="https://folderlyapp.com/assets/showcase-customize.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Folderlyの使い方：フォルダアイコンを好きな画像に変更する手順",
+  "description": "Folderlyの使い方を初めての方向けに解説。画像をドラッグして調整する手順、色タグの付け方、元に戻す方法、安全性までまとめます。",
+  "image": "https://folderlyapp.com/assets/showcase-customize.png",
+  "datePublished": "2026-07-30",
+  "dateModified": "2026-07-30",
+  "inLanguage": "ja",
+  "author": {"@type": "Organization", "name": "Folderly"},
+  "publisher": {"@type": "Organization", "name": "Folderly"},
+  "mainEntityOfPage": "https://folderlyapp.com/blog/folderly-how-to/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://folderlyapp.com/"},
+    {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://folderlyapp.com/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Folderlyの使い方"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/assets/showcase-customize.webp" />
+<style>
+:root{--blue:#2566EB;--blue-grad:linear-gradient(135deg,#3F8BFF 0%,#1664F0 100%);--navy:#0E1A3C;--ink:#222a44;--muted:#5b6680;--muted-2:#8a93a8;--line:#e7ecf7;--line-2:#eef2fb;--paper:#fbfcfe;--serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;--shadow-sm:0 1px 2px rgba(16,26,60,.05),0 4px 14px rgba(16,26,60,.05);--shadow-md:0 8px 30px rgba(20,50,120,.10);--shadow-lg:0 24px 70px rgba(20,50,120,.14);--measure:720px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.95;font-size:16.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 24px;}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1080px;margin:0 auto;padding:0 24px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;color:var(--navy);}
+.brand img{width:30px;height:30px;border-radius:8px;}
+.nav-cta{background:var(--blue-grad);color:#fff;font-weight:800;font-size:13px;padding:9px 15px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;}
+.nav-cta:hover{text-decoration:none;}
+.hero{background:radial-gradient(900px 380px at 20% -10%,#e9f0ff 0%,transparent 60%),radial-gradient(700px 320px at 100% 0%,#fff1e2 0%,transparent 55%);border-bottom:1px solid var(--line-2);}
+.hero-in{max-width:var(--measure);margin:0 auto;padding:44px 24px 40px;}
+.crumbs{font-size:12px;color:var(--muted-2);margin-bottom:22px;letter-spacing:.01em;}
+.crumbs a{color:var(--muted);}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);background:#e9f0ff;padding:6px 13px;border-radius:999px;margin-bottom:18px;}
+h1{font-weight:900;font-size:clamp(30px,4.7vw,46px);color:var(--navy);line-height:1.28;letter-spacing:-.02em;margin-bottom:18px;}
+.lead{font-size:clamp(16px,1.8vw,18px);color:#3a4566;line-height:1.95;}
+.lead p{margin-bottom:14px;}
+.byline{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--muted-2);font-weight:600;flex-wrap:wrap;}
+.byline .dot{width:4px;height:4px;border-radius:50%;background:#cdd4e3;}
+.hero-img{margin:0 0 28px;}
+.hero-img img{width:100%;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid rgba(20,40,90,.08);}
+main{padding:8px 0 40px;}
+article{padding-top:14px;}
+.toc{border:1px solid var(--line);background:var(--paper);border-radius:16px;padding:20px 24px;margin:30px 0 8px;}
+.toc .t{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--muted-2);margin-bottom:12px;}
+.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:9px;}
+.toc li{counter-increment:toc;}
+.toc a{display:flex;gap:11px;align-items:baseline;color:var(--ink);font-weight:600;font-size:14.5px;}
+.toc a:hover{color:var(--blue);text-decoration:none;}
+.toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-weight:700;color:var(--blue);font-size:13px;min-width:24px;}
+article h2{font-weight:900;font-size:clamp(23px,3.1vw,32px);color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
+.eyebrow{display:block;font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--blue);margin-bottom:10px;}
+article h2 + p{margin-top:14px;}
+article h3{font-size:18px;font-weight:800;color:var(--navy);margin:34px 0 10px;}
+article p{margin:0 0 18px;}
+article strong{font-weight:800;color:var(--navy);}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;color:#33406a;padding:1px 7px;border-radius:6px;font-size:.9em;}
+.steps{counter-reset:step;list-style:none;margin:18px 0 6px;display:flex;flex-direction:column;gap:14px;}
+.steps>li{counter-increment:step;position:relative;padding:18px 20px 18px 64px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow-sm);}
+.steps>li::before{content:counter(step);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:9px;background:var(--blue-grad);color:#fff;font-family:var(--serif);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 13px rgba(31,95,225,.3);}
+.steps>li b{color:var(--navy);}
+article ul.plain{list-style:none;margin:6px 0 18px;display:flex;flex-direction:column;gap:11px;}
+article ul.plain li{position:relative;padding-left:26px;font-size:15.5px;}
+article ul.plain li::before{content:"";position:absolute;left:4px;top:.7em;width:7px;height:7px;border-radius:50%;background:#c5d3f2;}
+figure{margin:30px 0;}
+figure img{border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
+figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10px;}
+.note{border:1px solid #dbe6ff;background:linear-gradient(180deg,#fff,#f5f8ff);border-radius:18px;padding:22px 24px;margin:28px 0;box-shadow:var(--shadow-sm);}
+.note b{color:var(--navy);}
+.cta{background:radial-gradient(600px 300px at 85% 10%,#ffe9d2 0%,transparent 60%),linear-gradient(135deg,#eef4ff,#e9f0ff);border:1px solid #dde7ff;border-radius:22px;padding:34px 30px;margin:48px 0 10px;text-align:center;}
+.cta h3{font-weight:900;font-size:23px;letter-spacing:-.01em;color:var(--navy);margin-bottom:8px;}
+.cta p{font-size:14px;color:var(--muted);margin-bottom:20px;}
+.btn-store{display:inline-flex;align-items:center;gap:11px;background:var(--blue-grad);color:#fff;font-weight:800;font-size:15.5px;padding:15px 26px;border-radius:14px;box-shadow:0 12px 28px rgba(31,95,225,.33);transition:transform .15s,box-shadow .2s;}
+.btn-store:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 18px 38px rgba(31,95,225,.4);}
+.btn-store .l{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;}
+.btn-store .sub{font-size:11px;font-weight:600;opacity:.85;}
+.cta .fine{margin-top:14px;font-size:12px;color:var(--muted-2);font-weight:600;}
+footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;background:var(--paper);}
+.foot{max-width:var(--measure);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);}
+.foot a{color:var(--muted);font-weight:700;}.foot .links{display:flex;gap:18px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/app-icon.webp" alt="Folderly" width="30" height="30" />Folderly</a>
+    <a class="nav-cta" href="/">Folderly を見る</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <nav class="crumbs"><a href="/">ホーム</a> › <a href="/blog/">ブログ</a> › Folderlyの使い方</nav>
+    <figure class="hero-img">
+      <img src="/assets/showcase-customize.webp" alt="Folderlyでフォルダアイコンを画像に変更する編集画面" width="1300" height="636" fetchpriority="high" />
+    </figure>
+    <span class="kicker">使い方ガイド</span>
+    <h1>Folderlyの使い方：<br />フォルダアイコンを好きな画像に変更する手順</h1>
+    <div class="lead">
+      <p>Folderlyは、Windowsのフォルダアイコンを写真や画像に変更し、色タグで見分けやすくするアプリです。<code>.ico</code> 変換は不要で、画像をドラッグするだけで使えます。</p>
+      <p>この記事では、初めて使う方向けに、右クリックから開く方法、画像の調整、色タグ、元に戻す操作、安全性までまとめて説明します。</p>
+    </div>
+    <div class="byline">5分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-07-30</div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <article>
+      <nav class="toc">
+        <div class="t">この記事でわかること</div>
+        <ol>
+          <li><a href="#start">Folderlyでできること</a></li>
+          <li><a href="#apply">フォルダアイコンを画像に変更する手順</a></li>
+          <li><a href="#tags">色タグで見分けやすくする方法</a></li>
+          <li><a href="#restore">元に戻す方法</a></li>
+          <li><a href="#safe">無料試用・安全性・日本語対応</a></li>
+        </ol>
+      </nav>
+
+      <div class="note">
+        <b>先に結論：</b> Folderlyは「写真と色タグでフォルダを見分けやすくする」ためのアプリです。Windows標準のように <code>.ico</code> ファイルを用意する必要はありません。
+      </div>
+
+      <h2 id="start"><span class="eyebrow">はじめに</span>Folderlyでできること</h2>
+      <p>Folderlyでできる主なことは、次の4つです。</p>
+      <ul class="plain">
+        <li>PNG / JPG / WebP などの画像を、フォルダアイコンとして使う</li>
+        <li>画像の位置・大きさ・表示範囲をプレビューしながら調整する</li>
+        <li>色タグとタグ名で、仕事・写真・資料などのフォルダを見分けやすくする</li>
+        <li>変更履歴から、いつでも元のアイコンに戻す</li>
+      </ul>
+
+      <figure>
+        <img src="/assets/showcase-explorer.webp" alt="写真と色タグで見分けやすくしたフォルダ一覧" width="1070" height="685" loading="lazy" />
+        <figcaption>写真や色タグを付けると、フォルダ名を読まなくても中身を想像しやすくなります。</figcaption>
+      </figure>
+
+      <h2 id="apply"><span class="eyebrow">基本手順</span>フォルダアイコンを画像に変更する</h2>
+      <ol class="steps">
+        <li>変更したいフォルダを<b>右クリック</b>し、メニューから「<b>Customize with Folderly</b>」を選びます。</li>
+        <li>編集画面が開いたら、使いたい画像を<b>ドラッグ＆ドロップ</b>します。写真、イラスト、ロゴなどを使えます。</li>
+        <li>プレビューを見ながら、画像の<b>大きさ・位置・表示モード</b>を調整します。</li>
+        <li>仕上がりを確認して「<b>適用</b>」を押します。エクスプローラー上のフォルダアイコンが更新されます。</li>
+      </ol>
+
+      <figure>
+        <img src="/assets/showcase-customize.webp" alt="Folderlyの編集画面。画像の大きさや位置を調整できる" width="1300" height="636" loading="lazy" />
+        <figcaption>プレビューを見ながら調整できるので、写真の見せたい部分を合わせやすいです。</figcaption>
+      </figure>
+
+      <h2 id="tags"><span class="eyebrow">整理のコツ</span>色タグで見分けやすくする</h2>
+      <p>Folderlyの主役は画像だけではありません。フォルダに色タグを付けると、似た名前のフォルダでも視覚的に分類できます。</p>
+      <ul class="plain">
+        <li>仕事フォルダは青、写真フォルダは緑、重要資料は赤、のように用途で色を決める</li>
+        <li>タグ名を「Work」「Photos」「Design」などにして、フォルダの意味を補足する</li>
+        <li>写真アイコンと色タグを組み合わせて、見た目で探せる状態にする</li>
+      </ul>
+
+      <figure>
+        <img src="/assets/showcase-tags.webp" alt="Folderlyで色タグとアイコンを設定する画面" width="1180" height="770" loading="lazy" />
+        <figcaption>色タグを使うと、フォルダを用途別に整理しやすくなります。</figcaption>
+      </figure>
+
+      <h2 id="restore"><span class="eyebrow">安心機能</span>元に戻す方法</h2>
+      <p>「試してみたけど、やっぱり元に戻したい」という時も大丈夫です。Folderlyは変更履歴を記録しているので、スタートメニューからFolderlyを開き、対象フォルダを選んで復元できます。</p>
+      <ol class="steps">
+        <li>スタートメニューから<b>Folderly</b>を起動します。</li>
+        <li>変更済みフォルダの一覧から、戻したいフォルダを選びます。</li>
+        <li><b>元に戻す</b>操作を実行します。複数のフォルダをまとめて戻すこともできます。</li>
+      </ol>
+
+      <figure>
+        <img src="/assets/showcase-manage.webp" alt="Folderlyで変更済みフォルダを管理し、元に戻す画面" width="1300" height="750" loading="lazy" />
+        <figcaption>変更したフォルダを一覧で管理し、あとから復元できます。</figcaption>
+      </figure>
+
+      <h2 id="safe"><span class="eyebrow">購入前の確認</span>無料試用・安全性・日本語対応</h2>
+      <h3>Folderlyは無料で試せますか？</h3>
+      <p>はい。Microsoft Storeで1日間の無料試用ができます。気に入った場合は、¥480の買い切りで使い続けられます。サブスクや広告はありません。</p>
+
+      <h3>Folderlyは安全ですか？</h3>
+      <p>画像の編集とアイコン作成はPC内で行います。選んだ画像を外部サーバーにアップロードする仕組みはありません。インストールとライセンス認証にはMicrosoft Storeを使います。</p>
+
+      <h3>日本語で使えますか？</h3>
+      <p>はい。Folderlyは日本語と英語に対応しています。Windowsの表示言語に合わせて使えます。</p>
+
+      <h2 id="summary"><span class="eyebrow">まとめ</span>写真と色タグで、フォルダを見分けやすく</h2>
+      <p>Folderlyは、Windows標準の <code>.ico</code> 変換や手動管理を減らし、画像をドラッグするだけでフォルダアイコンを変更できるアプリです。写真と色タグを組み合わせると、仕事・写真・資料フォルダを探しやすくなります。</p>
+
+      <div class="cta">
+        <h3>Folderlyを無料で試す</h3>
+        <p>写真と色タグで、フォルダをひと目で見分けやすく。</p>
+        <a class="btn-store" href="https://apps.microsoft.com/detail/9N99JH5H91H8">
+          <span class="l">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+        </a>
+        <div class="fine">Windows 10 / 11 対応 ・ ¥480 買い切り ・ サブスクなし</div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>© 2026 Folderly</div>
+    <nav class="links">
+      <a href="/">トップ</a>
+      <a href="/blog/">ブログ</a>
+      <a href="/privacy/">プライバシー・サポート</a>
+      <a href="/en/">English</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

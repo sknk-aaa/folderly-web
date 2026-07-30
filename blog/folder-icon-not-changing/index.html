@@ -25,7 +25,7 @@
   "description": "反映されない・元に戻る・写真が選べない…よくある原因を症状別に解説。",
   "image": "https://folderlyapp.com/assets/showcase-explorer.png",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-06-01",
+  "dateModified": "2026-07-30",
   "inLanguage": "ja",
   "author": {"@type": "Organization", "name": "Folderly"},
   "publisher": {"@type": "Organization", "name": "Folderly"},
@@ -227,6 +227,15 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <div><b>上級者向け：アイコンキャッシュを手動でクリア</b><br />タスクマネージャーでエクスプローラーを終了 → コマンドプロンプトで <code>del /a %localappdata%\IconCache.db</code> と <code>del /a %localappdata%\Microsoft\Windows\Explorer\iconcache*</code> を実行 → エクスプローラーを再起動。コマンド操作に慣れている場合のみどうぞ。</div>
       </div>
 
+      <a class="tip-app" href="/">
+        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
+        <div class="x">
+          <div class="h">毎回キャッシュ更新でつまずく場合</div>
+          <div class="d">Folderlyは適用後に表示更新まで行うので、変更したのに反映されないストレスを減らせます。</div>
+        </div>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+
       <h2 id="revert"><span class="eyebrow">症状 2</span>設定しても、しばらくすると元に戻る</h2>
       <p>「変えたのに、再起動したら元通り」「数日後に黄色いフォルダに戻っていた」。これは標準のアイコン変更が、<strong>指定したファイルの“場所を覚えているだけ”</strong>という仕組みだからです。次のどれかが起きると、参照が切れて元に戻ります。</p>
       <ul class="plain">
@@ -237,6 +246,15 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>対処は「<strong>参照が切れないようにする</strong>」こと。<code>.ico</code> は移動しない安全な場所（理想はそのフォルダの中）に置き、<code>desktop.ini</code> は消さない。同期フォルダ内では起きやすいので、同期対象から外すか、別の方法を検討します。</p>
 
       <p class="pull">そもそも「ファイルの場所を覚えているだけ」が原因。<br />画像を内部で抱えてくれる方法なら、移動しても削除しても戻りません。</p>
+
+      <a class="tip-app" href="/">
+        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
+        <div class="x">
+          <div class="h">画像を移動しても戻りにくくしたい場合</div>
+          <div class="d">Folderlyは選んだ画像をアプリ側で管理します。元画像を整理しても、設定したフォルダアイコンを保ちやすくなります。</div>
+        </div>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
 
       <h2 id="format"><span class="eyebrow">症状 3</span>写真（JPG / PNG）が選べない</h2>
       <p>「アイコンの変更」を開いても、手持ちの写真が一覧に出てこない——これは仕様です。標準機能が受け付けるのは <strong><code>.ico</code> という専用形式（と一部の <code>.exe</code> / <code>.dll</code>）だけ</strong>。スマホやカメラの JPG・PNG は、そのままでは指定できません。</p>
@@ -251,6 +269,15 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <li>画像を <strong><code>.ico</code> に変換</strong>するツールを探して使う（ひと手間かかります）</li>
         <li><strong>変換が不要なアプリ</strong>を使い、写真をそのままドラッグして指定する</li>
       </ul>
+
+      <a class="tip-app" href="/">
+        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
+        <div class="x">
+          <div class="h">写真やPNG/JPGをそのまま使いたい場合</div>
+          <div class="d">Folderlyなら.ico変換なし。写真と色タグで、仕事・写真・資料フォルダを見分けやすくできます。</div>
+        </div>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
 
       <h2 id="missing"><span class="eyebrow">症状 4</span>「アイコンの変更」が見つからない・押せない</h2>
       <p>プロパティを開いても「カスタマイズ」タブや「アイコンの変更」が見当たらない場合、<strong>そのフォルダが対象外</strong>のことがあります。</p>
@@ -278,7 +305,7 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
         <div class="x">
           <div class="h">Folderly について</div>
-          <div class="d">.ico変換なし・移動しても戻らない・適用後に自動更新。1日間の無料試用付き・¥480買い切り。</div>
+          <div class="d">写真と色タグでフォルダを見分けやすく。.ico変換なし・移動しても戻りにくい・適用後に自動更新。</div>
         </div>
         <span class="go" aria-hidden="true">→</span>
       </a>
@@ -288,8 +315,8 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>「毎回つまずくのが面倒」「写真をそのまま・確実に使いたい」なら、変換も復元も気にせず使える <a href="/">Folderly</a> も覗いてみてください。</p>
 
       <div class="cta">
-        <h3>もう、アイコンで悩まない。</h3>
-        <p>.ico変換なし。移動しても戻らない。適用後は自動で反映。</p>
+        <h3>写真と色タグで、フォルダを見分けやすく。</h3>
+        <p>.ico変換なし。移動しても戻りにくく、適用後は自動で反映。</p>
         <a class="btn-store" href="/">
           <span class="l">Folderly を詳しく見る<span class="sub">1日間の無料試用付き</span></span>
         </a>
