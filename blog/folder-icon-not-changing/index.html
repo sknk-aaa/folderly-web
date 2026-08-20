@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>フォルダアイコンが変更できない・元に戻る時の対処法【Windows 10/11】| Folderly</title>
-<meta name="description" content="Windowsでフォルダのアイコンが変更できない、設定しても反映されない、再起動すると元に戻る…。よくある原因を症状別に整理し、アイコンキャッシュ・.ico形式の制限・desktop.iniの仕組みまでやさしく解説します。" />
+<title>フォルダアイコンが変更できない/反映されない時の直し方【Windows 11/10】 | Folderly</title>
+<meta name="description" content="Windows 11/10でフォルダアイコンが変更できない、反映されない、再起動後に元に戻る原因を症状別に解説。アイコンキャッシュ、desktop.ini、.ico形式、OneDriveやネットワークフォルダまで確認できます。" />
 <link rel="canonical" href="https://folderlyapp.com/blog/folder-icon-not-changing/" />
 <link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folder-icon-not-changing/" />
 <link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
 <link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
 <link rel="icon" href="/assets/app-icon.webp" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="フォルダアイコンが変更できない・元に戻る時の対処法" />
-<meta property="og:description" content="反映されない・元に戻る・写真が選べない…よくある原因を症状別に解説。" />
+<meta property="og:title" content="フォルダアイコンが変更できない/反映されない時の直し方" />
+<meta property="og:description" content="反映されない・元に戻る・写真が選べない原因を症状別に切り分けます。" />
 <meta property="og:url" content="https://folderlyapp.com/blog/folder-icon-not-changing/" />
 <meta property="og:image" content="https://folderlyapp.com/assets/showcase-explorer.png" />
 <meta property="og:locale" content="ja_JP" />
@@ -21,8 +21,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "フォルダアイコンが変更できない・元に戻る時の対処法",
-  "description": "反映されない・元に戻る・写真が選べない…よくある原因を症状別に解説。",
+  "headline": "フォルダアイコンが変更できない/反映されない時の直し方",
+  "description": "反映されない・元に戻る・写真が選べない原因を症状別に切り分けます。",
   "image": "https://folderlyapp.com/assets/showcase-explorer.png",
   "datePublished": "2026-06-01",
   "dateModified": "2026-08-20",
@@ -40,6 +40,46 @@
     {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://folderlyapp.com/"},
     {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://folderlyapp.com/blog/"},
     {"@type": "ListItem", "position": 3, "name": "フォルダアイコンが変更できない・元に戻る時の対処法"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "フォルダアイコンを変更したのに反映されない原因は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くの場合はWindowsのアイコンキャッシュが原因です。エクスプローラーでF5更新、親フォルダを開き直す、またはエクスプローラーを再起動すると反映されることがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "再起動するとフォルダアイコンが元に戻るのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "指定した.icoファイルを移動・削除した、desktop.iniが消えた、クラウド同期が設定を上書きした、などで参照が切れると元に戻ることがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "JPGやPNGをフォルダアイコンに直接使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windows標準の変更機能では基本的に.ico形式が必要です。JPGやPNGを使う場合は.icoへ変換するか、Folderlyのような変換不要のツールを使う方法があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ネットワークフォルダのアイコンも変更できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NASや共有フォルダでは、Windowsやファイルサーバーの設定によりdesktop.iniによるカスタム表示が反映されない場合があります。ローカルフォルダでの利用を推奨します。"
+      }
+    }
   ]
 }
 </script>
@@ -104,6 +144,17 @@ article{padding-top:14px;}
 .toc a:hover{color:var(--blue);text-decoration:none;}
 .toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-weight:700;color:var(--blue);font-size:13px;min-width:24px;}
 
+.answer-box{border:1px solid #dbe6ff;background:radial-gradient(520px 260px at 100% 0%,#fff1e2 0%,transparent 58%),linear-gradient(180deg,#fff,#f7faff);border-radius:18px;padding:24px;margin:28px 0 8px;box-shadow:var(--shadow-md);}
+.answer-box h2{margin:0 0 10px;font-size:clamp(22px,3vw,29px);scroll-margin-top:90px;}
+.answer-box p{margin:0 0 16px;color:#3a4566;font-size:15.5px;}
+.answer-label{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:11.5px;font-weight:900;letter-spacing:.12em;margin-bottom:10px;}
+.answer-label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);}
+.answer-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.answer-actions a{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #dbe6ff;background:#fff;border-radius:13px;padding:12px 14px;color:var(--navy);font-size:13.5px;font-weight:900;box-shadow:var(--shadow-sm);}
+.answer-actions a:hover{text-decoration:none;border-color:#bdd3ff;box-shadow:var(--shadow-md);}
+.answer-actions a::after{content:"→";color:var(--blue);font-weight:900;}
+@media (max-width:560px){.answer-actions{grid-template-columns:1fr;}}
+
 .solution-map{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 8px;}
 .solution-map a{display:block;border:1px solid #dbe6ff;background:linear-gradient(180deg,#fff,#f7faff);border-radius:15px;padding:16px 17px;color:inherit;box-shadow:var(--shadow-sm);}
 .solution-map a:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:#bdd3ff;}
@@ -118,7 +169,7 @@ article h2 + p{margin-top:14px;}
 article h3{font-size:18px;font-weight:800;color:var(--navy);margin:34px 0 10px;}
 article p{margin:0 0 18px;}
 article strong{font-weight:800;color:var(--navy);}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;color:#33406a;padding:1px 7px;border-radius:6px;font-size:.9em;}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;color:#33406a;padding:1px 7px;border-radius:6px;font-size:.9em;overflow-wrap:anywhere;word-break:break-word;}
 
 /* numbered steps */
 .steps{counter-reset:step;list-style:none;margin:18px 0 6px;display:flex;flex-direction:column;gap:14px;}
@@ -140,6 +191,7 @@ figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10
 
 /* callouts */
 .callout{display:flex;gap:14px;background:linear-gradient(180deg,#f7faff,#eef4ff);border:1px solid #dbe6ff;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:14.5px;}
+.callout>*{min-width:0;}
 .callout .ic{flex:none;width:26px;height:26px;border-radius:8px;background:#e0ebff;color:var(--blue);display:flex;align-items:center;justify-content:center;margin-top:1px;}
 .callout b{color:var(--navy);}
 .callout code{background:#e3ebfb;}
@@ -180,14 +232,14 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
 
 <section class="hero">
   <div class="hero-in">
-    <nav class="crumbs"><a href="/">ホーム</a> › <a href="/blog/">ブログ</a> › 変更できない・元に戻る時の対処法</nav>
+    <nav class="crumbs"><a href="/">ホーム</a> › <a href="/blog/">ブログ</a> › 変更できない・反映されない時の直し方</nav>
     <figure class="hero-img fade">
       <img src="/assets/hero.webp" alt="フォルダアイコンを画像に変更した例" width="1400" height="788" fetchpriority="high" />
     </figure>
     <span class="kicker fade">トラブル解決</span>
-    <h1 class="fade d1">フォルダアイコンが変更できない・<br />元に戻る時の対処法</h1>
+    <h1 class="fade d1">フォルダアイコンが変更できない・<br />反映されない時の直し方</h1>
     <div class="lead fade d2">
-      <p>アイコンを変えたはずなのに、なぜか反映されない。せっかく設定したのに、再起動したら元の黄色いフォルダに逆戻り——。Windowsのアイコン変更は、実はつまずく人がとても多いところです。</p>
+      <p>アイコンを変えたはずなのに反映されない。せっかく設定したのに、再起動したら元の黄色いフォルダに逆戻り——。Windowsのフォルダアイコン変更は、実はつまずく人がとても多いところです。</p>
       <p>でも安心してください。原因は<strong>いくつかの決まったパターン</strong>に分かれていて、わかってしまえば対処はかんたんです。この記事では、よくある症状ごとに「<strong>なぜ起きるか</strong>」と「<strong>どう直すか</strong>」を順番に解説します。</p>
     </div>
     <div class="byline fade d3">6分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-08-20 更新</div>
@@ -201,7 +253,8 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <nav class="toc">
         <div class="t">この記事でわかること</div>
         <ol>
-          <li><a href="#causes">まず確認：つまずく原因は4つ</a></li>
+          <li><a href="#quick-answer">まず結論：症状別に直す</a></li>
+          <li><a href="#causes">つまずく原因は4つ</a></li>
           <li><a href="#cache">変更したのに反映されない</a></li>
           <li><a href="#revert">設定しても元に戻る</a></li>
           <li><a href="#format">写真（JPG/PNG）が選べない</a></li>
@@ -209,6 +262,18 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
           <li><a href="#folderly">二度とつまずかない方法</a></li>
         </ol>
       </nav>
+
+      <section class="answer-box" aria-labelledby="quick-answer">
+        <div class="answer-label">まず結論</div>
+        <h2 id="quick-answer">反映されないなら「キャッシュ」、戻るなら「参照切れ」を疑う。</h2>
+        <p>設定直後に見た目が変わらない場合は、Windowsのアイコンキャッシュが残っていることが多いです。再起動後や数日後に戻る場合は、指定した.icoファイルや <code>desktop.ini</code> の参照が切れている可能性があります。</p>
+        <div class="answer-actions">
+          <a href="#cache">変更したのに表示されない</a>
+          <a href="#revert">再起動後に元に戻る</a>
+          <a href="#format">JPG / PNG が選べない</a>
+          <a href="#missing">変更メニューが見つからない</a>
+        </div>
+      </section>
 
       <div class="solution-map" aria-label="症状別の近道">
         <a href="#cache"><b>変えたのに表示されない</b><span>まずはキャッシュ更新。Folderlyなら適用後の表示更新も行います。</span></a>
@@ -335,10 +400,10 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <div class="cta">
         <h3>写真と色タグで、フォルダを見分けやすく。</h3>
         <p>.ico変換なし。移動しても戻りにくく、適用後は自動で反映。</p>
-        <a class="btn-store" href="/">
-          <span class="l">Folderly を詳しく見る<span class="sub">1日間の無料試用付き</span></span>
+        <a class="btn-store" href="https://apps.microsoft.com/detail/9N99JH5H91H8?hl=ja-JP&gl=JP">
+          <span class="l">Microsoft Storeで試す<span class="sub">1日間の無料試用付き</span></span>
         </a>
-        <div class="fine">Windows 10 / 11 対応 ・ 9/2まで ¥300 ・ サブスクなし</div>
+        <div class="fine">Windows 10 / 11 対応 ・ 9/2まで ¥300 ・ <a href="/">Folderlyの詳細を見る</a></div>
       </div>
 
     </article>

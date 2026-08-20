@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Why Won't My Folder Icon Change on Windows 11? 7 Fixes | Folderly</title>
-<meta name="description" content="If your folder icon won't change, won't update, or keeps reverting on Windows 11/10, here are the common causes: icon cache, .ico limits, desktop.ini, and file location issues." />
+<title>Folder Icon Won't Change or Keeps Reverting on Windows 11? | Folderly</title>
+<meta name="description" content="Fix folder icons that won't update, won't accept JPG/PNG, or keep reverting on Windows 11/10. Check icon cache, desktop.ini, .ico limits, OneDrive, and network folders." />
 <link rel="canonical" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
 <link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
 <link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folder-icon-not-changing/" />
 <link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
 <link rel="icon" href="/assets/app-icon.webp" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Why Won't My Folder Icon Change on Windows 11?" />
-<meta property="og:description" content="Common causes and fixes: icon cache, .ico limits, desktop.ini, and file location issues." />
+<meta property="og:title" content="Folder Icon Won't Change or Keeps Reverting on Windows 11?" />
+<meta property="og:description" content="Fix icon cache, desktop.ini, .ico limits, OneDrive, and network folder issues." />
 <meta property="og:url" content="https://folderlyapp.com/en/blog/folder-icon-not-changing/" />
 <meta property="og:image" content="https://folderlyapp.com/assets/en/showcase-explorer.png" />
 <meta property="og:locale" content="en_US" />
@@ -21,11 +21,11 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Why Won't My Folder Icon Change on Windows 11? 7 Fixes",
-  "description": "Common causes and fixes: icon cache, .ico limits, desktop.ini, and file location issues.",
+  "headline": "Folder Icon Won't Change or Keeps Reverting on Windows 11?",
+  "description": "Fix icon cache, desktop.ini, .ico limits, OneDrive, and network folder issues.",
   "image": "https://folderlyapp.com/assets/en/showcase-explorer.png",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-07-30",
+  "dateModified": "2026-08-20",
   "inLanguage": "en",
   "author": {"@type": "Organization", "name": "Folderly"},
   "publisher": {"@type": "Organization", "name": "Folderly"},
@@ -40,6 +40,46 @@
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://folderlyapp.com/en/"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://folderlyapp.com/en/blog/"},
     {"@type": "ListItem", "position": 3, "name": "Folder icon won't change or keeps reverting"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why doesn't my folder icon change after I apply it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common reason is the Windows icon cache. Refresh File Explorer, reopen the parent folder, restart Windows Explorer, or restart your PC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my folder icon keep reverting after restart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can revert when the .ico file was moved or deleted, desktop.ini was removed or overwritten, or a cloud sync tool such as OneDrive changed the folder metadata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use JPG or PNG files as folder icons on Windows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The built-in Windows picker generally requires .ico files. To use JPG or PNG directly, convert them to .ico or use a tool such as Folderly that handles conversion for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do custom folder icons work on network folders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Network folders, NAS locations, and shared drives may ignore desktop.ini customizations depending on Windows and server settings. Local folders are recommended."
+      }
+    }
   ]
 }
 </script>
@@ -104,6 +144,23 @@ article{padding-top:14px;}
 .toc a:hover{color:var(--blue);text-decoration:none;}
 .toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-weight:700;color:var(--blue);font-size:13px;min-width:24px;}
 
+.answer-box{border:1px solid #dbe6ff;background:radial-gradient(520px 260px at 100% 0%,#fff1e2 0%,transparent 58%),linear-gradient(180deg,#fff,#f7faff);border-radius:18px;padding:24px;margin:28px 0 8px;box-shadow:var(--shadow-md);}
+.answer-box h2{margin:0 0 10px;font-size:clamp(22px,3vw,29px);scroll-margin-top:90px;}
+.answer-box p{margin:0 0 16px;color:#3a4566;font-size:15.5px;}
+.answer-label{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:11.5px;font-weight:900;letter-spacing:.12em;margin-bottom:10px;}
+.answer-label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);}
+.answer-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.answer-actions a{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #dbe6ff;background:#fff;border-radius:13px;padding:12px 14px;color:var(--navy);font-size:13.5px;font-weight:900;box-shadow:var(--shadow-sm);}
+.answer-actions a:hover{text-decoration:none;border-color:#bdd3ff;box-shadow:var(--shadow-md);}
+.answer-actions a::after{content:"→";color:var(--blue);font-weight:900;}
+
+.solution-map{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 8px;}
+.solution-map a{display:block;border:1px solid #dbe6ff;background:linear-gradient(180deg,#fff,#f7faff);border-radius:15px;padding:16px 17px;color:inherit;box-shadow:var(--shadow-sm);}
+.solution-map a:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:#bdd3ff;}
+.solution-map b{display:block;color:var(--navy);font-size:14.5px;font-weight:900;line-height:1.45;}
+.solution-map span{display:block;color:var(--muted);font-size:12.5px;font-weight:600;line-height:1.55;margin-top:4px;}
+@media (max-width:560px){.answer-actions,.solution-map{grid-template-columns:1fr;}}
+
 /* section headings */
 article h2{font-family:var(--sans);font-weight:900;font-size:clamp(23px,3.1vw,32px);color:var(--navy);line-height:1.25;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
 .eyebrow{display:block;font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--blue);margin-bottom:10px;}
@@ -111,7 +168,7 @@ article h2 + p{margin-top:14px;}
 article h3{font-size:18px;font-weight:800;color:var(--navy);margin:34px 0 10px;}
 article p{margin:0 0 18px;}
 article strong{font-weight:800;color:var(--navy);}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;color:#33406a;padding:1px 7px;border-radius:6px;font-size:.9em;}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;color:#33406a;padding:1px 7px;border-radius:6px;font-size:.9em;overflow-wrap:anywhere;word-break:break-word;}
 
 /* numbered steps */
 .steps{counter-reset:step;list-style:none;margin:18px 0 6px;display:flex;flex-direction:column;gap:14px;}
@@ -131,6 +188,7 @@ figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10
 
 /* callouts */
 .callout{display:flex;gap:14px;background:linear-gradient(180deg,#f7faff,#eef4ff);border:1px solid #dbe6ff;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:14.5px;}
+.callout>*{min-width:0;}
 .callout .ic{flex:none;width:26px;height:26px;border-radius:8px;background:#e0ebff;color:var(--blue);display:flex;align-items:center;justify-content:center;margin-top:1px;}
 .callout b{color:var(--navy);}
 .callout code{background:#e3ebfb;}
@@ -180,17 +238,17 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
 
 <section class="hero">
   <div class="hero-in">
-    <nav class="crumbs"><a href="/en/">Home</a> › <a href="/en/blog/">Blog</a> › Why folder icons won't change</nav>
+    <nav class="crumbs"><a href="/en/">Home</a> › <a href="/en/blog/">Blog</a> › Folder icon won't change or keeps reverting</nav>
     <figure class="hero-img fade">
       <img src="/assets/hero.webp" alt="Examples of folders with image icons" width="1400" height="788" fetchpriority="high" />
     </figure>
     <span class="kicker fade">TROUBLESHOOTING</span>
-    <h1 class="fade d1">Why won't my folder icon change<br />on Windows 11?</h1>
+    <h1 class="fade d1">Folder icon won't change<br />or keeps reverting?</h1>
     <div class="lead fade d2">
       <p>You changed a folder's icon, but nothing happens. Or you set it perfectly — then a restart brings the plain yellow folder right back. If Windows icons keep fighting you, you're not alone: this trips up a lot of people.</p>
       <p>The good news: the causes fall into a <strong>handful of predictable patterns</strong>, and once you know which one you're hitting, the fix is easy. Below, we go symptom by symptom — <strong>why it happens</strong> and <strong>how to fix it</strong>.</p>
     </div>
-    <div class="byline fade d3">6 min read<span class="dot"></span>Windows 10 / 11<span class="dot"></span>Updated 2026-07-30</div>
+    <div class="byline fade d3">6 min read<span class="dot"></span>Windows 10 / 11<span class="dot"></span>Updated 2026-08-20</div>
   </div>
 </section>
 
@@ -201,7 +259,8 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <nav class="toc">
         <div class="t">WHAT YOU'LL LEARN</div>
         <ol>
-          <li><a href="#causes">First: the four common causes</a></li>
+          <li><a href="#quick-answer">Quick answer: fix by symptom</a></li>
+          <li><a href="#causes">The four common causes</a></li>
           <li><a href="#cache">The change doesn't show up</a></li>
           <li><a href="#revert">It keeps reverting back</a></li>
           <li><a href="#format">You can't select a photo (JPG/PNG)</a></li>
@@ -209,6 +268,25 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
           <li><a href="#folderly">Stop fighting it for good</a></li>
         </ol>
       </nav>
+
+      <section class="answer-box" aria-labelledby="quick-answer">
+        <div class="answer-label">QUICK ANSWER</div>
+        <h2 id="quick-answer">If it doesn't show, check the cache. If it reverts, check the icon reference.</h2>
+        <p>If the icon looks unchanged right after applying it, Windows is probably showing an old cached icon. If it comes back after a restart, the <code>.ico</code> file or <code>desktop.ini</code> reference may have been moved, deleted, or overwritten.</p>
+        <div class="answer-actions">
+          <a href="#cache">It doesn't show up</a>
+          <a href="#revert">It reverts after restart</a>
+          <a href="#format">JPG / PNG won't work</a>
+          <a href="#missing">Change Icon is missing</a>
+        </div>
+      </section>
+
+      <div class="solution-map" aria-label="Symptom shortcuts">
+        <a href="#cache"><b>Changed, but not visible</b><span>Start with File Explorer refresh and icon cache checks.</span></a>
+        <a href="#revert"><b>Goes back to yellow</b><span>Usually a broken .ico or desktop.ini reference.</span></a>
+        <a href="#format"><b>Photo files do not appear</b><span>Windows built-in settings expect .ico files.</span></a>
+        <a href="#missing"><b>No Change Icon button</b><span>Check folder type, permissions, network, or special folders.</span></a>
+      </div>
 
       <h2 id="causes"><span class="eyebrow">START HERE</span>First: the four common causes</h2>
       <p>When changing a folder icon doesn't work, it's almost always one of these four. Spot which one matches your symptom, and you'll get to the fix faster.</p>
@@ -291,10 +369,10 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <div class="cta">
         <h3>Never fight a folder icon again.</h3>
         <p>No .ico conversion. Won't revert when files move. Refreshes automatically.</p>
-        <a class="btn-store" href="/en/">
-          <span class="l">See Folderly<span class="sub">1-day free trial</span></span>
+        <a class="btn-store" href="https://apps.microsoft.com/detail/9N99JH5H91H8?hl=en-US&gl=US">
+          <span class="l">Try it on Microsoft Store<span class="sub">1-day free trial</span></span>
         </a>
-        <div class="fine">Windows 10 / 11 ・ $1.49 until Sep 2 ・ no subscription</div>
+        <div class="fine">Windows 10 / 11 ・ $1.49 until Sep 2 ・ <a href="/en/">see product details</a></div>
       </div>
 
     </article>
