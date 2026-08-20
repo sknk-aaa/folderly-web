@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>フォルダアイコンを好きな画像に変更 | Folderly（Windows 10/11）</title>
-<meta name="description" content="Windowsのフォルダアイコンを写真や画像に変更。色タグで仕事・写真・資料フォルダをひと目で見分けやすく。面倒な.ico変換なし、ドラッグするだけ。9/2まで¥300・1日間の無料試用付き。" />
+<title>フォルダアイコンを、好きな画像に変更。 | Folderly - Windows 10/11</title>
+<meta name="description" content="Folderlyは、Windowsのフォルダアイコンを写真や画像に変更し、色タグで見分けやすくするアプリです。.ico変換なしで画像をドラッグ。9/2まで¥300、1日無料試用付き。" />
 <link rel="canonical" href="https://folderlyapp.com/" />
 <link rel="alternate" hreflang="ja" href="https://folderlyapp.com/" />
 <link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/" />
 <link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/" />
 <link rel="icon" href="/assets/app-icon.webp" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="フォルダアイコンを好きな画像に変更 | Folderly" />
-<meta property="og:description" content="写真と色タグで、仕事・写真・資料フォルダをひと目で見分けやすく。Windows標準では面倒な.ico変換なし。" />
+<meta property="og:title" content="フォルダアイコンを、好きな画像に変更。 | Folderly" />
+<meta property="og:description" content="写真と色タグで、仕事・写真・資料フォルダをひと目で見つけやすく。.ico変換なしで、Windowsフォルダを自分好みに。" />
 <meta property="og:url" content="https://folderlyapp.com/" />
-<meta property="og:image" content="https://folderlyapp.com/assets/folderly-playground-bg.png" />
+<meta property="og:image" content="https://folderlyapp.com/assets/showcase-explorer.png" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json">
@@ -24,7 +24,7 @@
   "name": "Folderly",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Windows 10, Windows 11",
-  "description": "Windowsのフォルダアイコンを写真や画像に変更し、色タグで見分けやすくするアプリ。",
+  "description": "Windowsのフォルダアイコンを写真や画像に変更し、色タグで見分けやすくするアプリです。",
   "softwareVersion": "1.6.3",
   "offers": {
     "@type": "Offer",
@@ -37,9 +37,9 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="/assets/folderly-playground-bg.png" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@92,700;100,800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 <link rel="preload" as="image" href="/assets/showcase-explorer.webp" />
+<link rel="preload" as="image" href="/assets/app-icon.webp" />
 <script>
 document.documentElement.classList.add("js");
 if (window.location.hash) {
@@ -47,381 +47,1468 @@ if (window.location.hash) {
 }
 </script>
 <style>
-:root{
-  --paper:#fffdf8;
-  --paper-2:#f6fbff;
-  --ink:#101a3f;
-  --muted:#5b6687;
-  --blue:#246cff;
-  --cyan:#22d7ff;
-  --pink:#ff5da8;
-  --coral:#ff7b6e;
-  --yellow:#ffd84f;
-  --mint:#51e5bf;
-  --violet:#8b5cff;
-  --line:rgba(24,38,86,.12);
-  --shadow:0 24px 70px rgba(38,84,180,.16);
-  --shadow-soft:0 14px 40px rgba(38,84,180,.10);
-  --font:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  --display:"Bricolage Grotesque","Noto Sans JP",system-ui,sans-serif;
-  --max:1180px;
+:root {
+  --paper: #fffaf1;
+  --paper-plain: #fffefb;
+  --paper-blue: #f0f8ff;
+  --ink: #21160f;
+  --soft-ink: #584839;
+  --muted: #786b61;
+  --line: rgba(80, 58, 38, .14);
+  --orange: #ff6b13;
+  --orange-2: #ff8a2f;
+  --blue: #1673ff;
+  --sky: #49c6ff;
+  --mint: #4fd1b0;
+  --yellow: #ffd36b;
+  --pink: #ff79ac;
+  --cream: #fff3d9;
+  --shadow: 0 28px 60px rgba(76, 56, 33, .15);
+  --shadow-soft: 0 16px 34px rgba(76, 56, 33, .10);
+  --max: 1140px;
+  --font: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  --display: "Archivo", "Noto Sans JP", sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
-img{display:block;max-width:100%;height:auto;}
-a{color:inherit;text-decoration:none;}
-button{font:inherit;}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-.display{font-family:var(--display);letter-spacing:-.045em;}
-.en{font-family:var(--display);letter-spacing:.01em;}
-.spark{display:inline-flex;align-items:center;gap:8px;width:max-content;border:1px solid var(--line);background:rgba(255,255,255,.72);box-shadow:0 10px 28px rgba(33,78,160,.08);backdrop-filter:blur(16px);border-radius:999px;padding:8px 14px;color:var(--blue);font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
-.spark::before{content:"";width:9px;height:9px;border-radius:4px;background:linear-gradient(135deg,var(--cyan),var(--pink));box-shadow:0 0 0 5px rgba(34,215,255,.14);}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:18px;font-weight:900;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;}
-.btn:hover{transform:translateY(-3px);}
-.btn-store{background:linear-gradient(135deg,#1f73ff,#7c55ff 68%,#ff5da8);color:#fff;padding:17px 24px;box-shadow:0 18px 38px rgba(36,108,255,.28),inset 0 1px 0 rgba(255,255,255,.32);}
-.btn-store .sub{display:block;font-size:11px;font-weight:700;opacity:.86;line-height:1.1;}
-.btn-store .lead{line-height:1.15;text-align:left;}
-.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);padding:14px 20px;box-shadow:var(--shadow-soft);}
-.win{display:grid;grid-template-columns:1fr 1fr;gap:2.5px;width:21px;height:21px;flex:none;}
-.win i{background:currentColor;border-radius:2px;display:block;}
-.win.white{color:#fff;}
-.reveal{opacity:1;transform:none;}
-.js:not(.anchor-start) .reveal{opacity:0;transform:translateY(32px) scale(.98);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);}
-.js .reveal.is-visible{opacity:1;transform:none;}
-.stagger > *{transition-delay:calc(var(--i,0) * 80ms);}
-.shape{position:absolute;pointer-events:none;filter:drop-shadow(0 18px 26px rgba(37,82,165,.12));}
-.shape.zig{width:92px;height:34px;background:linear-gradient(90deg,var(--yellow),var(--coral));clip-path:polygon(0 35%,22% 35%,22% 0,45% 0,45% 35%,68% 35%,68% 0,100% 0,100% 65%,78% 65%,78% 100%,55% 100%,55% 65%,32% 65%,32% 100%,0 100%);}
-.shape.sticker{width:78px;height:78px;background:linear-gradient(135deg,#fff,var(--paper-2));border:1px solid rgba(36,108,255,.18);border-radius:31% 69% 41% 59% / 54% 38% 62% 46%;}
-.shape.tab{width:112px;height:72px;background:linear-gradient(135deg,var(--cyan),var(--mint));border-radius:22px 34px 18px 30px;clip-path:polygon(0 22%,26% 22%,32% 0,58% 0,64% 22%,100% 22%,100% 100%,0 100%);}
-header{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.76);border-bottom:1px solid rgba(24,38,86,.08);backdrop-filter:blur(18px);}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px;}
-.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:900;color:var(--ink);}
-.brand img{width:38px;height:38px;border-radius:10px;filter:drop-shadow(0 8px 14px rgba(16,26,63,.22));}
-.nav-links{display:flex;align-items:center;gap:26px;font-size:13.5px;font-weight:900;color:#3b456b;}
-.nav-links a{position:relative;}
-.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:999px;transform:scaleX(0);transform-origin:left;transition:transform .2s ease;}
-.nav-links a:hover::after{transform:scaleX(1);}
-.nav-right{display:flex;align-items:center;gap:14px;}
-.nav-lang{font-size:13px;font-weight:900;color:#445072;}
-.nav-cta{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;box-shadow:0 14px 30px rgba(36,108,255,.25);}
-.hero{position:relative;min-height:calc(100vh - 72px);padding:72px 0 86px;background:linear-gradient(180deg,#f7fbff 0%,#fffdf8 66%,#fff 100%);overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url("/assets/folderly-playground-bg.png") center/cover no-repeat;opacity:.74;transform:scale(1.02);mix-blend-mode:multiply;}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,253,248,.96) 0%,rgba(255,253,248,.86) 38%,rgba(255,253,248,.22) 72%,rgba(255,253,248,.62) 100%);}
-.hero .wrap{position:relative;z-index:2;}
-.hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:center;gap:42px;}
-.hero-copy{position:relative;z-index:2;}
-.hero-kicker{margin-bottom:22px;}
-.hero-title{font-size:clamp(43px,6.2vw,78px);line-height:.98;font-weight:800;color:var(--ink);max-width:720px;}
-.hero-title .pop{display:inline-block;color:var(--blue);text-shadow:10px 10px 0 rgba(34,215,255,.18);}
-.hero-sub{margin:28px 0 26px;color:#465173;font-size:clamp(16px,1.6vw,19px);font-weight:700;max-width:570px;}
-.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:28px 0 20px;}
-.hero-proof{display:flex;gap:10px;flex-wrap:wrap;color:#65708f;font-size:13px;font-weight:900;}
-.hero-proof span{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:999px;padding:8px 12px;box-shadow:0 8px 24px rgba(36,108,255,.07);}
-.hero-proof span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);}
-.scroll-sign{position:absolute;left:28px;bottom:-50px;writing-mode:vertical-rl;font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.16em;color:#697394;}
-.hero-visual{position:relative;min-height:540px;}
-.visual-stage{position:absolute;inset:0;display:grid;place-items:center;}
-.screen-card{position:relative;width:min(650px,100%);transform:rotate(-2.5deg);filter:drop-shadow(0 34px 46px rgba(40,82,160,.22));}
-.screen-mask{overflow:hidden;border:8px solid #fff;background:#fff;border-radius:34% 66% 42% 58% / 57% 34% 66% 43%;box-shadow:inset 0 0 0 1px rgba(24,38,86,.06);}
-.screen-mask img{width:100%;transform:scale(1.02);}
-.mini-card{position:absolute;background:rgba(255,255,255,.9);border:1px solid rgba(24,38,86,.1);box-shadow:var(--shadow-soft);backdrop-filter:blur(16px);border-radius:24px;padding:16px 18px;min-width:180px;}
-.mini-card b{display:block;color:var(--ink);font-size:15px;font-weight:900;}
-.mini-card span{display:block;color:var(--muted);font-size:12px;font-weight:800;margin-top:2px;}
-.mini-card.one{left:-26px;top:70px;transform:rotate(5deg);}
-.mini-card.two{right:-18px;bottom:72px;transform:rotate(-5deg);}
-.folder-chip{position:absolute;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#fff,#f2fbff);border:1px solid rgba(36,108,255,.14);border-radius:999px;padding:10px 14px;font-size:12px;font-weight:900;color:#33405f;box-shadow:var(--shadow-soft);}
-.folder-chip::before{content:"";width:22px;height:16px;background:linear-gradient(135deg,var(--yellow),var(--coral));border-radius:5px;clip-path:polygon(0 18%,35% 18%,42% 0,64% 0,71% 18%,100% 18%,100% 100%,0 100%);}
-.folder-chip.c1{left:50px;bottom:20px;}
-.folder-chip.c2{right:70px;top:16px;}
-.hero .zig{right:42%;top:22px;animation:floatA 7s ease-in-out infinite;}
-.hero .sticker{right:8%;top:18%;animation:floatB 8s ease-in-out infinite;}
-.hero .tab{left:54%;bottom:2%;animation:floatA 9s ease-in-out infinite reverse;}
-@keyframes floatA{50%{transform:translateY(18px) rotate(5deg);}}
-@keyframes floatB{50%{transform:translateY(-16px) rotate(-7deg);}}
-.marquee{position:relative;z-index:3;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;}
-.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite;}
-.marquee span{display:inline-flex;align-items:center;gap:16px;padding:18px 26px;font-family:var(--display);font-size:18px;font-weight:800;color:#253259;white-space:nowrap;}
-.marquee span::after{content:"";width:12px;height:12px;border-radius:5px;background:var(--pink);}
-@keyframes marquee{to{transform:translateX(-50%);}}
-.section{position:relative;padding:106px 0;}
-.section.alt{background:linear-gradient(180deg,#fff,#f5fbff);}
-.sec-head{display:grid;grid-template-columns:.7fr 1fr;gap:40px;align-items:end;margin-bottom:42px;}
-.sec-label{font-family:var(--display);font-weight:800;color:var(--blue);font-size:clamp(38px,6vw,72px);line-height:.95;letter-spacing:-.05em;}
-.sec-title{font-size:clamp(27px,3.6vw,45px);line-height:1.22;font-weight:900;letter-spacing:-.04em;}
-.sec-sub{margin-top:14px;color:var(--muted);font-size:16px;font-weight:700;}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.service{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:32px;padding:28px;min-height:270px;box-shadow:var(--shadow-soft);}
-.service::before{content:"";position:absolute;right:-28px;top:-28px;width:130px;height:130px;background:var(--tone);clip-path:polygon(15% 0,100% 12%,88% 82%,28% 100%,0 48%);opacity:.22;}
-.service-num{font-family:var(--display);font-size:15px;font-weight:800;color:var(--blue);}
-.service h3{font-size:23px;font-weight:900;line-height:1.3;margin:46px 0 12px;}
-.service p{color:var(--muted);font-size:14.5px;font-weight:700;}
-.service-icon{position:absolute;right:26px;bottom:24px;width:70px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--tone),#fff);box-shadow:0 18px 26px rgba(38,84,180,.13);clip-path:polygon(0 22%,30% 22%,38% 0,62% 0,70% 22%,100% 22%,100% 100%,0 100%);}
-.showcase{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch;}
-.show-main,.show-side{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden;}
-.show-main{border-radius:44px 24px 52px 28px;}
-.show-side{border-radius:28px 48px 24px 42px;display:grid;align-content:space-between;padding:24px;}
-.show-img{overflow:hidden;clip-path:polygon(0 0,100% 0,100% 88%,88% 100%,0 100%);}
-.show-caption{padding:24px 26px 28px;}
-.show-caption b,.show-side b{display:block;font-size:22px;font-weight:900;}
-.show-caption span,.show-side span{display:block;color:var(--muted);font-size:14px;font-weight:700;margin-top:6px;}
-.usecase-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
-.usecase-pills span{background:#fff;border:1px solid var(--line);box-shadow:0 8px 22px rgba(38,84,180,.08);padding:10px 13px;border-radius:999px;font-size:13px;font-weight:900;color:#34405e;}
-.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:34px;align-items:center;}
-.blob-shot{position:relative;}
-.blob-shot img{border-radius:38% 62% 44% 56% / 54% 40% 60% 46%;border:8px solid #fff;box-shadow:var(--shadow);}
-.strength-list{display:grid;gap:14px;}
-.strength{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow-soft);}
-.strength-mark{width:56px;height:56px;display:grid;place-items:center;border-radius:19px;background:linear-gradient(135deg,var(--tone),#fff);font-family:var(--display);font-weight:800;color:#152047;}
-.strength b{display:block;font-size:18px;font-weight:900;margin-bottom:2px;}
-.strength span{display:block;color:var(--muted);font-size:14px;font-weight:700;}
-.price-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:stretch;}
-.price-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#eaf8ff,#fff9dc 52%,#ffe9f3);border:1px solid var(--line);border-radius:42px;padding:36px;box-shadow:var(--shadow);}
-.price-hero .tag{display:inline-flex;background:#fff;border:1px solid rgba(36,108,255,.16);border-radius:999px;padding:8px 13px;color:var(--blue);font-weight:900;font-size:12px;}
-.price-hero .amount{font-family:var(--display);font-size:clamp(62px,8vw,104px);line-height:.9;font-weight:800;color:var(--ink);margin:34px 0 8px;letter-spacing:-.07em;}
-.price-hero .amount small{font-size:.25em;color:var(--blue);letter-spacing:0;}
-.price-hero p{color:var(--muted);font-weight:800;}
-.price-features{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.price-feature{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:var(--shadow-soft);}
-.price-feature b{display:block;font-size:17px;font-weight:900;}
-.price-feature span{display:block;margin-top:6px;color:var(--muted);font-size:13.5px;font-weight:700;}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.faq{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px 26px;box-shadow:var(--shadow-soft);}
-.faq b{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:900;}
-.faq b::before{content:"Q";display:grid;place-items:center;width:28px;height:28px;border-radius:10px;background:linear-gradient(135deg,var(--yellow),var(--coral));font-family:var(--display);font-weight:800;}
-.faq p{margin-top:12px;color:var(--muted);font-size:14px;font-weight:700;}
-.final{position:relative;overflow:hidden;padding:92px 0;background:#fff;}
-.final-panel{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:48px;background:linear-gradient(135deg,#f3fbff,#fff 45%,#fff1f8);box-shadow:var(--shadow);padding:60px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;}
-.final-panel::before{content:"";position:absolute;inset:0;background:url("/assets/folderly-playground-bg.png") center/cover no-repeat;opacity:.16;}
-.final-panel > *{position:relative;}
-.final h2{font-size:clamp(32px,5vw,64px);line-height:1.05;font-weight:900;letter-spacing:-.06em;}
-.final p{margin-top:16px;color:var(--muted);font-weight:800;}
-footer{padding:46px 0 58px;background:#fff;border-top:1px solid var(--line);}
-.foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.foot-links{display:flex;gap:20px;flex-wrap:wrap;color:#5b6687;font-size:13px;font-weight:900;}
-.copy{color:#8a94ad;font-size:12px;font-weight:800;}
-@media (max-width:980px){
-  .nav-links{display:none;}
-  .hero{min-height:auto;padding:54px 0 76px;}
-  .hero-grid,.sec-head,.showcase,.split,.price-wrap,.final-panel{grid-template-columns:1fr;}
-  .hero-visual{min-height:430px;}
-  .service-grid,.faq-grid{grid-template-columns:1fr;}
-  .price-features{grid-template-columns:1fr 1fr;}
-  .scroll-sign{display:none;}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-@media (max-width:620px){
-  .wrap{padding:0 18px;}
-  .nav{height:68px;}
-  .nav-right{gap:9px;flex:none;}
-  .nav-cta{width:42px;height:42px;border-radius:15px;}
-  .brand{font-size:19px;}
-  .nav-lang{font-size:12px;}
-  .hero-bg{opacity:.42;background-position:60% 0;}
-  .hero::after{background:linear-gradient(180deg,rgba(255,253,248,.96),rgba(255,253,248,.83));}
-  .hero-title{font-size:clamp(43px,13vw,60px);}
-  .hero-actions,.hero-proof{display:grid;grid-template-columns:1fr;}
-  .btn{width:100%;}
-  .mini-card{position:relative;left:auto !important;right:auto !important;top:auto !important;bottom:auto !important;transform:none !important;margin:10px 0;}
-  .hero-visual{min-height:auto;margin-top:32px;}
-  .visual-stage{position:relative;display:block;}
-  .screen-card{transform:none;width:100%;}
-  .folder-chip{display:none;}
-  .shape{display:none;}
-  .section{padding:76px 0;}
-  .service{min-height:auto;}
-  .price-features{grid-template-columns:1fr;}
-  .final-panel{padding:40px 24px;border-radius:34px;}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
-  .reveal{opacity:1;transform:none;}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 14% 12%, rgba(255, 211, 107, .18), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(73, 198, 255, .14), transparent 24%),
+    var(--paper);
+  font-family: var(--font);
+  line-height: 1.75;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.display {
+  font-family: var(--display);
+  font-stretch: 100%;
+  letter-spacing: 0;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js:not(.anchor-start) .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .65s ease, transform .65s cubic-bezier(.2, .8, .2, 1);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger > * {
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: max-content;
+  border: 1px solid rgba(255, 107, 19, .24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  color: #c84d00;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  padding: 8px 14px;
+  box-shadow: 0 10px 24px rgba(255, 107, 19, .09);
+}
+
+.pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--orange);
+  transform: rotate(12deg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 900;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  padding: 15px 28px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--orange), #ff7d1f);
+  box-shadow: 0 18px 34px rgba(255, 107, 19, .25);
+}
+
+.btn-secondary {
+  padding: 13px 20px;
+  color: var(--soft-ink);
+  background: rgba(255, 255, 255, .75);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.win-mark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.win-mark i {
+  display: block;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 88px;
+  pointer-events: none;
+}
+
+.wave path {
+  fill: var(--paper-plain);
+}
+
+.wave-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 35px;
+  height: 24px;
+  pointer-events: none;
+  opacity: .9;
+  background:
+    url("data:image/svg+xml,%3Csvg width='720' height='24' viewBox='0 0 720 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14C60 2 92 2 150 14C210 26 246 26 308 14C370 2 408 2 470 14C532 26 570 26 632 14C674 6 696 4 720 6' fill='none' stroke='%23ff6b13' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/720px 24px repeat-x;
+}
+
+.blob {
+  position: absolute;
+  pointer-events: none;
+  opacity: .86;
+}
+
+.blob::before,
+.blob::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 46% 54% 43% 57% / 55% 42% 58% 45%;
+}
+
+.blob::before {
+  background: linear-gradient(135deg, rgba(255, 211, 107, .78), rgba(255, 138, 47, .46));
+}
+
+.blob::after {
+  border: 2px solid rgba(70, 73, 140, .58);
+  transform: translate(18px, 14px) rotate(12deg);
+}
+
+.dots {
+  position: absolute;
+  width: 86px;
+  height: 74px;
+  background-image: radial-gradient(rgba(255, 107, 19, .45) 2px, transparent 2.5px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+.handline {
+  position: relative;
+  display: inline-block;
+}
+
+.handline::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -8px;
+  height: 13px;
+  background:
+    url("data:image/svg+xml,%3Csvg width='360' height='16' viewBox='0 0 360 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 11C55 3 91 6 143 8C209 11 258 2 357 5' stroke='%23ff6b13' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  z-index: -1;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 250, 241, .78);
+  border-bottom: 1px solid rgba(80, 58, 38, .12);
+  backdrop-filter: blur(18px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  gap: 22px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.brand img {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  box-shadow: 0 9px 16px rgba(33, 22, 15, .18);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  color: #5a4634;
+  font-size: 13.5px;
+  font-weight: 900;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .18s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon-link {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #5c4a38;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 18px;
+  transition: color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.icon-link:hover {
+  color: var(--orange);
+  background: rgba(255, 107, 19, .08);
+  transform: rotate(-6deg);
+}
+
+.nav-store {
+  padding: 10px 18px;
+  color: #fff;
+  background: var(--orange);
+  box-shadow: 0 12px 24px rgba(255, 107, 19, .22);
+}
+
+.lang-link {
+  color: #6b5846;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.hero {
+  position: relative;
+  padding: 52px 0 48px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, .92), rgba(255, 250, 241, .96)),
+    radial-gradient(circle at 82% 18%, rgba(255, 211, 107, .28), transparent 24%),
+    radial-gradient(circle at 14% 72%, rgba(255, 138, 47, .12), transparent 22%);
+  overflow: hidden;
+}
+
+.hero .blob.top {
+  width: 165px;
+  height: 126px;
+  right: -28px;
+  top: 62px;
+}
+
+.hero .blob.bottom {
+  width: 150px;
+  height: 128px;
+  left: 72px;
+  bottom: 136px;
+  opacity: .58;
+}
+
+.hero .dots.one {
+  right: 116px;
+  top: 198px;
+}
+
+.hero .dots.two {
+  left: 198px;
+  bottom: 112px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+  align-items: center;
+  gap: 46px;
+}
+
+.hero-inner > * {
+  min-width: 0;
+}
+
+.hero-copy {
+  max-width: 570px;
+  min-width: 0;
+}
+
+.hero h1 {
+  margin-top: 24px;
+  font-size: clamp(38px, 5.2vw, 64px);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.hero h1 strong {
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.hero-lead {
+  margin-top: 28px;
+  color: var(--soft-ink);
+  font-size: clamp(15.5px, 1.35vw, 18px);
+  font-weight: 700;
+  line-height: 1.95;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.hero-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 19px;
+  color: #6d5a48;
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.hero-notes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid rgba(80, 58, 38, .12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .62);
+}
+
+.hero-notes span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 440px;
+  min-width: 0;
+}
+
+.screen {
+  position: absolute;
+  inset: 40px 0 auto 0;
+  border: 8px solid #fff;
+  border-radius: 34px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(-1.6deg);
+}
+
+.screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  box-shadow: inset 0 0 0 1px rgba(80, 58, 38, .10);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.screen img {
+  min-height: 310px;
+  object-fit: cover;
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 3;
+  width: 212px;
+  padding: 16px 17px;
+  border: 1px solid rgba(80, 58, 38, .12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.floating-card b {
+  display: block;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.floating-card span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.floating-card.one {
+  left: -18px;
+  top: 12px;
+  transform: rotate(3.5deg);
+}
+
+.floating-card.two {
+  right: -14px;
+  bottom: 30px;
+  transform: rotate(-4deg);
+}
+
+.folder-sample {
+  position: absolute;
+  left: 32px;
+  bottom: 6px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(80, 58, 38, .12);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  color: #5a4634;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.folder-sample::before {
+  content: "";
+  width: 25px;
+  height: 18px;
+  background: linear-gradient(135deg, var(--yellow), var(--orange-2));
+  border-radius: 5px;
+  clip-path: polygon(0 20%, 32% 20%, 40% 0, 64% 0, 72% 20%, 100% 20%, 100% 100%, 0 100%);
+}
+
+.section {
+  position: relative;
+  padding: 98px 0;
+  background: var(--paper-plain);
+}
+
+.section.blue {
+  background: var(--paper-blue);
+}
+
+.section.cream {
+  background: var(--cream);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: .74fr 1fr;
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-family: var(--display);
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 800;
+  line-height: .95;
+}
+
+.section-title {
+  font-size: clamp(25px, 3.1vw, 38px);
+  font-weight: 900;
+  line-height: 1.36;
+}
+
+.section-copy {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15.5px;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature {
+  position: relative;
+  min-height: 244px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.feature::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -24px;
+  width: 106px;
+  height: 86px;
+  border-radius: 42% 58% 47% 53% / 55% 46% 54% 45%;
+  background: var(--tone);
+  opacity: .22;
+}
+
+.feature-number {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--tone);
+  font-family: var(--display);
+  font-weight: 800;
+}
+
+.feature h3 {
+  margin-top: 34px;
+  font-size: 21px;
+  line-height: 1.38;
+  font-weight: 900;
+}
+
+.feature p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.show-main,
+.show-side {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .86);
+  box-shadow: var(--shadow-soft);
+}
+
+.show-main {
+  overflow: hidden;
+  border-radius: 36px;
+}
+
+.show-main figure {
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 90% 100%, 0 100%);
+  overflow: hidden;
+  background: #fff;
+}
+
+.show-main figcaption {
+  padding: 24px 26px 28px;
+}
+
+.show-main b,
+.show-side b {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.show-main span,
+.show-side span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.show-side {
+  display: grid;
+  align-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 28px 40px 28px 40px;
+}
+
+.show-side img {
+  border-radius: 24px 36px 22px 34px;
+  border: 6px solid #fff;
+  box-shadow: 0 14px 30px rgba(76, 56, 33, .12);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag-list span {
+  padding: 8px 12px;
+  border: 1px solid rgba(80, 58, 38, .12);
+  border-radius: 999px;
+  background: #fff;
+  color: #5c4a38;
+  font-size: 12.5px;
+  font-weight: 900;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.step {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+}
+
+.step-img {
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 28px 28px 14px 28px;
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+}
+
+.step:nth-child(2) .step-img {
+  border-radius: 18px 34px 28px 16px;
+}
+
+.step:nth-child(3) .step-img {
+  border-radius: 34px 16px 24px 28px;
+}
+
+.step-body {
+  position: relative;
+  padding: 22px 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.step-body small {
+  color: var(--orange);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.step-body b {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.step-body p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.soft-mask {
+  position: relative;
+}
+
+.soft-mask::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border: 2px solid rgba(70, 73, 140, .32);
+  border-radius: 42% 58% 45% 55% / 55% 42% 58% 45%;
+  transform: rotate(-5deg);
+}
+
+.soft-mask img {
+  position: relative;
+  border: 8px solid #fff;
+  border-radius: 38% 62% 40% 60% / 57% 42% 58% 43%;
+  box-shadow: var(--shadow);
+}
+
+.reason-list {
+  display: grid;
+  gap: 14px;
+}
+
+.reason {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 15px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: var(--shadow-soft);
+}
+
+.reason-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  background: var(--tone);
+  color: #fff;
+  font-family: var(--display);
+  font-weight: 800;
+}
+
+.reason b {
+  display: block;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.reason span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.price-panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 28px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 38px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .56)),
+    radial-gradient(circle at 12% 16%, rgba(255, 211, 107, .42), transparent 28%),
+    radial-gradient(circle at 92% 84%, rgba(73, 198, 255, .20), transparent 30%);
+  box-shadow: var(--shadow);
+}
+
+.price-main .sale {
+  display: inline-flex;
+  color: #c84d00;
+  background: #fff;
+  border: 1px solid rgba(255, 107, 19, .20);
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.price {
+  margin-top: 26px;
+  font-family: var(--display);
+  font-size: clamp(54px, 8vw, 92px);
+  line-height: .95;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.price small {
+  color: var(--orange);
+  font-size: .24em;
+}
+
+.price-main p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.price-item {
+  padding: 20px;
+  border: 1px solid rgba(80, 58, 38, .12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .82);
+}
+
+.price-item b {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 900;
+}
+
+.price-item span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.faq {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.faq b {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15.5px;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.faq b::before {
+  content: "Q";
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  flex: none;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--orange);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.faq p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.final {
+  position: relative;
+  padding: 94px 0 104px;
+  background: var(--paper-plain);
+  overflow: hidden;
+}
+
+.final .blob {
+  width: 180px;
+  height: 128px;
+  right: 9%;
+  top: 42px;
+  opacity: .55;
+}
+
+.final-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: 44px;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  background: linear-gradient(135deg, #fff, #fff4df 54%, #eef8ff);
+  box-shadow: var(--shadow);
+}
+
+.final-panel h2 {
+  margin-top: 16px;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.22;
+  font-weight: 900;
+}
+
+.final-panel p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+footer {
+  padding: 42px 0 56px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: #6b5846;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.copy {
+  color: #8d7c69;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+@media (max-width: 980px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 54px 0 120px;
+  }
+
+  .hero-inner,
+  .section-head,
+  .showcase,
+  .steps,
+  .split,
+  .price-panel,
+  .final-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+    text-align: left;
+  }
+
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .screen {
+    inset: 20px 0 auto 0;
+  }
+
+  .feature-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding: 0 18px;
+  }
+
+  .nav {
+    min-height: 66px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-store {
+    display: none;
+  }
+
+  .lang-link {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+
+  .hero-inner {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9.6vw, 42px);
+  }
+
+  .hero-copy,
+  .hero-visual {
+    width: 100%;
+    max-width: calc(100vw - 36px);
+  }
+
+  .hero-lead {
+    max-width: calc(100vw - 36px);
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-notes {
+    display: grid;
+  }
+
+  .hero-visual {
+    min-height: auto;
+    margin-top: 34px;
+  }
+
+  .screen,
+  .floating-card,
+  .folder-sample {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    transform: none !important;
+  }
+
+  .screen {
+    border-width: 5px;
+    border-radius: 24px;
+  }
+
+  .screen img {
+    min-height: 0;
+  }
+
+  .floating-card {
+    margin-top: 12px;
+  }
+
+  .folder-sample {
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .blob,
+  .dots {
+    display: none;
+  }
+
+  .section {
+    padding: 76px 0;
+  }
+
+  .section-head {
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .eyebrow {
+    font-size: 34px;
+  }
+
+  .show-side,
+  .price-panel,
+  .final-panel {
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="/">
-      <img src="/assets/app-icon.webp" alt="Folderly" width="38" height="38" />
-      <span class="en">Folderly</span>
+    <a class="brand" href="/" aria-label="Folderly ホーム">
+      <img src="/assets/app-icon.webp" alt="" width="38" height="38" />
+      <span>Folderly</span>
     </a>
     <nav class="nav-links" aria-label="メインナビゲーション">
-      <a href="#service">できること</a>
-      <a href="#showcase">見え方</a>
-      <a href="#strength">強み</a>
+      <a href="#features">特徴</a>
+      <a href="#look">見た目</a>
+      <a href="#how">使い方</a>
       <a href="#price">料金</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="nav-right">
-      <a class="nav-lang" href="/en/">English</a>
-      <a class="nav-cta btn" href="https://apps.microsoft.com/detail/9N99JH5H91H8" aria-label="Microsoft Storeで入手">
-        <span class="win white"><i></i><i></i><i></i><i></i></span>
-      </a>
+    <div class="nav-actions">
+      <a class="icon-link" href="https://x.com/intent/tweet?text=Folderly%20-%20%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E5%A4%89%E6%9B%B4%E3%83%84%E3%83%BC%E3%83%AB&url=https%3A%2F%2Ffolderlyapp.com%2F" aria-label="Xで共有" rel="noopener noreferrer">𝕏</a>
+      <a class="lang-link" href="/en/">English</a>
+      <a class="btn nav-store" href="https://apps.microsoft.com/detail/9N99JH5H91H8?hl=ja-JP&gl=JP">Store</a>
     </div>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <div class="hero-bg" data-parallax="0.08"></div>
-    <span class="shape zig" data-parallax="0.18"></span>
-    <span class="shape sticker" data-parallax="-0.12"></span>
-    <span class="shape tab" data-parallax="0.16"></span>
-    <div class="wrap hero-grid">
+    <span class="blob top" data-float="slow"></span>
+    <span class="blob bottom" data-float="soft"></span>
+    <span class="dots one"></span>
+    <span class="dots two"></span>
+    <div class="wrap hero-inner">
       <div class="hero-copy reveal">
-        <div class="spark hero-kicker">Folder Icon Playground</div>
-        <h1 class="hero-title display">フォルダ<br />探しを、<br /><span class="pop">ワクワクに。</span></h1>
-        <p class="hero-sub">Folderlyは、Windowsのフォルダアイコンを好きな画像に変更し、色タグでひと目で見分けやすくするアプリです。.ico変換なし。画像を置いて、整えて、すぐ反映。</p>
+        <span class="pill">Windows folder icon changer</span>
+        <h1>フォルダが、<br /><strong>ひと目で</strong><br /><span class="handline">見つかる。</span></h1>
+        <p class="hero-lead">
+          Folderlyは、フォルダアイコンを好きな画像に変えられるWindowsアプリです。<br />
+          写真と色タグで、仕事・写真・資料フォルダを見分けやすくします。
+        </p>
         <div class="hero-actions">
-          <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
-            <span class="win white"><i></i><i></i><i></i><i></i></span>
-            <span class="lead">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9N99JH5H91H8?hl=ja-JP&gl=JP">
+            <span class="win-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            Microsoft Storeで入手
           </a>
-          <a href="#service" class="btn btn-ghost">どんなアプリ？</a>
+          <a class="btn btn-secondary" href="#how">使い方を見る</a>
         </div>
-        <div class="hero-proof">
+        <div class="hero-notes">
           <span>9/2まで ¥300</span>
-          <span>サブスクなし</span>
-          <span>画像処理はPC内</span>
+          <span>1日無料試用付き</span>
+          <span>.ico変換なし</span>
         </div>
-        <div class="scroll-sign">SCROLL</div>
       </div>
+
       <div class="hero-visual reveal">
-        <div class="visual-stage">
-          <div class="screen-card" data-parallax="-0.06">
-            <div class="screen-mask">
-              <img src="/assets/showcase-explorer.webp" alt="写真と色タグで見分けやすくしたフォルダ一覧" width="1070" height="685" fetchpriority="high" decoding="async" />
-            </div>
-            <div class="mini-card one"><b>Before</b><span>名前を読まないと探せない。</span></div>
-            <div class="mini-card two"><b>After</b><span>写真と色タグで直感的に。</span></div>
-          </div>
-          <div class="folder-chip c1">Work / Photos / Study</div>
-          <div class="folder-chip c2">Drag image, no .ico</div>
+        <div class="screen">
+          <img src="/assets/showcase-explorer.webp" alt="写真と色タグで整理されたFolderlyのフォルダ表示例" width="1070" height="685" fetchpriority="high" decoding="async" />
         </div>
+        <div class="floating-card one">
+          <b>名前を読む前に、見た目でわかる。</b>
+          <span>写真・色・小さなタグで、探す時間を減らします。</span>
+        </div>
+        <div class="floating-card two">
+          <b>普通のフォルダを、自分用に。</b>
+          <span>仕事、写真、制作素材、旅行計画まで。</span>
+        </div>
+        <div class="folder-sample">Work / Photo / Design</div>
       </div>
     </div>
+    <div class="wave-line"></div>
+    <svg class="wave" viewBox="0 0 1440 92" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,48 C180,92 360,4 540,42 C720,80 870,86 1040,44 C1190,8 1330,20 1440,50 L1440,92 L0,92 Z"></path>
+    </svg>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>MAKE FOLDERS POP</span><span>PHOTO COVERS</span><span>COLOR TAGS</span><span>NO .ICO CONVERSION</span><span>LOCAL ON YOUR PC</span>
-      <span>MAKE FOLDERS POP</span><span>PHOTO COVERS</span><span>COLOR TAGS</span><span>NO .ICO CONVERSION</span><span>LOCAL ON YOUR PC</span>
-    </div>
-  </div>
-
-  <section class="section" id="service">
+  <section class="section" id="features">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="sec-label">Services</div>
+      <div class="section-head reveal">
+        <div class="eyebrow">Features</div>
         <div>
-          <h2 class="sec-title">黄色いフォルダの海に、<br />自分だけの目印をつける。</h2>
-          <p class="sec-sub">写真カバー、色タグ、履歴復元。毎日見るフォルダを、少し楽しく、かなり探しやすくします。</p>
+          <h2 class="section-title">ただ変えるだけじゃなく、<br />毎日使うフォルダを探しやすく。</h2>
+          <p class="section-copy">Folderlyの中心は「見分けやすさ」です。画像、色タグ、復元の3つで、Windowsのフォルダ整理を軽くします。</p>
         </div>
       </div>
-      <div class="service-grid stagger">
-        <article class="service reveal" style="--i:0;--tone:var(--cyan)">
-          <div class="service-num">01</div>
-          <h3>画像をそのまま<br />フォルダカバーに</h3>
-          <p>PNG / JPG / WebPなどをドラッグするだけ。.ico変換や保存場所の管理を減らせます。</p>
-          <span class="service-icon"></span>
+      <div class="feature-grid stagger">
+        <article class="feature reveal" style="--i:0; --tone:#1673ff">
+          <div class="feature-number">01</div>
+          <h3>好きな画像を<br />フォルダカバーに</h3>
+          <p>PNG、JPG、WebPなどを選んで、プレビューしながらアイコンにできます。面倒な.ico変換は不要です。</p>
         </article>
-        <article class="service reveal" style="--i:1;--tone:var(--yellow)">
-          <div class="service-num">02</div>
+        <article class="feature reveal" style="--i:1; --tone:#ff6b13">
+          <div class="feature-number">02</div>
           <h3>色タグで<br />用途を見分ける</h3>
-          <p>仕事、写真、資料、学習。フォルダの種類を色とアイコンで視覚的に分類できます。</p>
-          <span class="service-icon"></span>
+          <p>仕事、写真、音楽、資料などをタグ色で分類。フォルダ名を読む前に、どの種類かが分かります。</p>
         </article>
-        <article class="service reveal" style="--i:2;--tone:var(--pink)">
-          <div class="service-num">03</div>
-          <h3>履歴から<br />いつでも戻せる</h3>
-          <p>試した後に元へ戻したい時も大丈夫。変更履歴から個別・一括で復元できます。</p>
-          <span class="service-icon"></span>
+        <article class="feature reveal" style="--i:2; --tone:#4fd1b0">
+          <div class="feature-number">03</div>
+          <h3>履歴から<br />元に戻せる</h3>
+          <p>試してみて違ったら、履歴から復元。気軽にカスタマイズできるようにしています。</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section alt" id="showcase">
+  <section class="section blue" id="look">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="sec-label">Works</div>
+      <div class="section-head reveal">
+        <div class="eyebrow">Look</div>
         <div>
-          <h2 class="sec-title">フォルダ一覧が、<br />小さなギャラリーに変わる。</h2>
-          <p class="sec-sub">制作実績の代わりに、Folderlyで実際に作れる“見え方”を並べました。</p>
+          <h2 class="section-title">エクスプローラーが、<br />小さなギャラリーになる。</h2>
+          <p class="section-copy">アプリの説明より、見た目で伝わる方が早い。Folderlyで実際に作れるフォルダの雰囲気です。</p>
         </div>
       </div>
       <div class="showcase">
         <article class="show-main reveal">
-          <div class="show-img">
-            <img src="/assets/showcase-customize.webp" alt="Folderlyで画像の大きさや位置を調整する画面" width="1300" height="636" loading="lazy" />
-          </div>
-          <div class="show-caption">
-            <b>プレビューしながら調整</b>
-            <span>写真の見せたい部分を、スケールと位置で気持ちよく合わせられます。</span>
-          </div>
+          <figure>
+            <img src="/assets/showcase-customize.webp" alt="右クリックからFolderlyを開き、画像とタグを調整している画面" width="1300" height="636" loading="lazy" />
+          </figure>
+          <figcaption>
+            <b>エクスプローラーから開いて、そのままカスタマイズ。</b>
+            <span>右クリックでFolderlyを起動。選んだ画像をプレビューしながら、サイズや位置を調整できます。</span>
+          </figcaption>
         </article>
         <aside class="show-side reveal">
           <div>
-            <div class="spark">Use cases</div>
-            <b>使い道がすぐ想像できる</b>
-            <span>スタートアップの資料整理にも、個人の写真整理にも。名前を読む前に、視覚で探せます。</span>
+            <span class="pill">For your folders</span>
+            <b>仕事にも、趣味にも、写真整理にも。</b>
+            <span>色タグと画像カバーを組み合わせると、同じ黄色いフォルダの山から目的の場所を探す必要が減ります。</span>
+            <div class="tag-list" aria-label="利用例">
+              <span>仕事</span>
+              <span>写真</span>
+              <span>制作素材</span>
+              <span>旅行</span>
+              <span>レシピ</span>
+              <span>学習</span>
+            </div>
           </div>
-          <div class="usecase-pills">
-            <span>仕事フォルダ</span>
-            <span>写真フォルダ</span>
-            <span>制作素材</span>
-            <span>学習ノート</span>
-            <span>旅行計画</span>
-            <span>請求書</span>
-          </div>
+          <img src="/assets/showcase-tags.webp" alt="色タグを編集しているFolderlyの画面" width="1180" height="770" loading="lazy" />
         </aside>
       </div>
     </div>
   </section>
 
-  <section class="section" id="strength">
+  <section class="section cream" id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">How to</div>
+        <div>
+          <h2 class="section-title">フォルダを選んで、画像を置いて、保存。</h2>
+          <p class="section-copy">普段のWindows操作の流れから外れないように、手順はできるだけ短くしています。</p>
+        </div>
+      </div>
+      <div class="steps stagger">
+        <article class="step reveal" style="--i:0">
+          <div class="step-img">
+            <img src="/assets/step1.webp" alt="フォルダの右クリックメニューからFolderlyでカスタマイズを選ぶ" width="1100" height="733" loading="lazy" />
+          </div>
+          <div class="step-body">
+            <small>Step 1</small>
+            <b>フォルダを右クリック</b>
+            <p>エクスプローラーから、変えたいフォルダをそのまま選べます。</p>
+          </div>
+        </article>
+        <article class="step reveal" style="--i:1">
+          <div class="step-img">
+            <img src="/assets/step2.webp" alt="Folderlyで画像を選択してプレビューを調整する" width="1100" height="733" loading="lazy" />
+          </div>
+          <div class="step-body">
+            <small>Step 2</small>
+            <b>画像とタグを調整</b>
+            <p>見せたい部分、色タグ、タグアイコンをプレビューで確認します。</p>
+          </div>
+        </article>
+        <article class="step reveal" style="--i:2">
+          <div class="step-img">
+            <img src="/assets/step3.webp" alt="Folderlyで変更後のフォルダアイコンが表示されている" width="1100" height="733" loading="lazy" />
+          </div>
+          <div class="step-body">
+            <small>Step 3</small>
+            <b>保存して見つけやすく</b>
+            <p>変更後は、フォルダ一覧の中でもぱっと見分けやすくなります。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap split">
-      <div class="blob-shot reveal">
-        <img src="/assets/showcase-tags.webp" alt="Folderlyのタグ編集画面" width="1180" height="770" loading="lazy" />
+      <div class="soft-mask reveal">
+        <img src="/assets/solution-folders.webp" alt="写真カバー付きフォルダの一覧イメージ" width="1300" height="867" loading="lazy" />
       </div>
       <div>
-        <div class="spark reveal">Strengths</div>
-        <h2 class="sec-title reveal" style="margin-top:18px;">かわいいだけで終わらない、<br />日常作業に効く設計。</h2>
-        <div class="strength-list stagger" style="margin-top:28px;">
-          <div class="strength reveal" style="--i:0;--tone:var(--cyan)"><div class="strength-mark">01</div><div><b>.ico変換を省ける</b><span>画像を選び、プレビューを見ながら調整して適用できます。</span></div></div>
-          <div class="strength reveal" style="--i:1;--tone:var(--yellow)"><div class="strength-mark">02</div><div><b>PC内だけで画像処理</b><span>選んだ画像を外部サーバーへアップロードする仕組みはありません。</span></div></div>
-          <div class="strength reveal" style="--i:2;--tone:var(--pink)"><div class="strength-mark">03</div><div><b>戻せるから試しやすい</b><span>履歴から元のアイコンへ戻せるので、気軽にカスタムできます。</span></div></div>
+        <span class="pill reveal">Why Folderly</span>
+        <h2 class="section-title reveal" style="margin-top:18px;">Windows標準の変更より、<br />日常の整理に向いています。</h2>
+        <div class="reason-list stagger" style="margin-top:28px;">
+          <div class="reason reveal" style="--i:0; --tone:#1673ff">
+            <div class="reason-icon">A</div>
+            <div><b>.icoファイルを自分で作らなくていい</b><span>画像を選んで調整するだけ。変換作業を減らせます。</span></div>
+          </div>
+          <div class="reason reveal" style="--i:1; --tone:#ff6b13">
+            <div class="reason-icon">B</div>
+            <div><b>見た目をそろえやすい</b><span>フォルダらしさを残したまま、画像と色タグをのせられます。</span></div>
+          </div>
+          <div class="reason reveal" style="--i:2; --tone:#4fd1b0">
+            <div class="reason-icon">C</div>
+            <div><b>戻す導線まで用意</b><span>試行錯誤しやすいように、変更履歴から復元できます。</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section alt" id="price">
+  <section class="section blue" id="price">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="sec-label">Pricing</div>
+      <div class="section-head reveal">
+        <div class="eyebrow">Pricing</div>
         <div>
-          <h2 class="sec-title">まずは無料で試して、<br />気に入ったら買い切り。</h2>
-          <p class="sec-sub">小さなアプリなので、価格も軽く。レビューが増えるまでの改善版リリース記念価格です。</p>
+          <h2 class="section-title">買い切り。まずは無料で試せます。</h2>
+          <p class="section-copy">サブスクではありません。必要なときに購入して、そのまま使えます。</p>
         </div>
       </div>
-      <div class="price-wrap">
-        <div class="price-hero reveal">
-          <span class="tag">9/2までの期間限定</span>
-          <div class="amount">¥300 <small>税込</small></div>
-          <p>通常¥480の買い切り。1日間の無料試用付き。サブスク・広告なし。</p>
-          <div style="margin-top:28px;">
-            <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
-              <span class="win white"><i></i><i></i><i></i><i></i></span>
-              <span class="lead">Microsoft Storeで入手<span class="sub">1日間の無料試用付き</span></span>
+      <div class="price-panel reveal">
+        <div class="price-main">
+          <span class="sale">9/2までの期間限定価格</span>
+          <div class="price">¥300 <small>税込</small></div>
+          <p>通常¥480。Microsoft Storeで1日無料試用してから購入できます。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9N99JH5H91H8?hl=ja-JP&gl=JP">
+              <span class="win-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              Storeで試す
             </a>
           </div>
         </div>
-        <div class="price-features stagger">
-          <div class="price-feature reveal" style="--i:0"><b>Windows 10/11</b><span>最新のWindows環境に対応。</span></div>
-          <div class="price-feature reveal" style="--i:1"><b>主要画像形式</b><span>JPG / PNG / BMP / WebPなど。</span></div>
-          <div class="price-feature reveal" style="--i:2"><b>ローカル処理</b><span>普段の編集はPC内で完結。</span></div>
-          <div class="price-feature reveal" style="--i:3"><b>履歴復元</b><span>変更したフォルダを元に戻せる。</span></div>
+        <div class="price-grid">
+          <div class="price-item"><b>Windows 10 / 11</b><span>普段のエクスプローラーで使えます。</span></div>
+          <div class="price-item"><b>主要画像形式</b><span>JPG、PNG、BMP、WebPなどに対応。</span></div>
+          <div class="price-item"><b>ローカル処理</b><span>通常の編集はPC内で完結します。</span></div>
+          <div class="price-item"><b>履歴から復元</b><span>変更前のアイコンに戻せます。</span></div>
         </div>
       </div>
     </div>
@@ -429,32 +1516,45 @@ footer{padding:46px 0 58px;background:#fff;border-top:1px solid var(--line);}
 
   <section class="section" id="faq">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="sec-label">FAQ</div>
+      <div class="section-head reveal">
+        <div class="eyebrow">FAQ</div>
         <div>
-          <h2 class="sec-title">購入前の小さな不安を、<br />ここで解消。</h2>
+          <h2 class="section-title">購入前に気になりやすいこと。</h2>
         </div>
       </div>
       <div class="faq-grid stagger">
-        <div class="faq reveal" style="--i:0"><b>どのWindowsに対応していますか？</b><p>Windows 10 / 11（64bit）に対応しています。</p></div>
-        <div class="faq reveal" style="--i:1"><b>画像は外部に送信されますか？</b><p>いいえ。画像の編集とアイコン作成はPC内で行います。</p></div>
-        <div class="faq reveal" style="--i:2"><b>元に戻すことはできますか？</b><p>はい。履歴から個別・一括で元の状態へ戻せます。</p></div>
-        <div class="faq reveal" style="--i:3"><b>ネットワークフォルダでも使えますか？</b><p>ローカルフォルダでの利用を推奨しています。NASや共有フォルダではWindowsやサーバー設定により表示が反映されない場合があります。</p></div>
+        <div class="faq reveal" style="--i:0">
+          <b>どのWindowsで使えますか？</b>
+          <p>Windows 10 / 11に対応しています。</p>
+        </div>
+        <div class="faq reveal" style="--i:1">
+          <b>画像は外部サーバーに送られますか？</b>
+          <p>いいえ。画像の編集とアイコン作成は、通常PC内で処理されます。</p>
+        </div>
+        <div class="faq reveal" style="--i:2">
+          <b>元に戻せますか？</b>
+          <p>はい。履歴から個別に復元できます。不要になったカスタムも戻せます。</p>
+        </div>
+        <div class="faq reveal" style="--i:3">
+          <b>ネットワークフォルダでも使えますか？</b>
+          <p>ローカルフォルダでの利用を推奨しています。NASや共有フォルダでは、Windowsやサーバー設定により表示が反映されない場合があります。</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="final">
+    <span class="blob"></span>
     <div class="wrap">
       <div class="final-panel reveal">
         <div>
-          <div class="spark">Ready?</div>
-          <h2>フォルダ探しを、<br />ちょっと楽しい時間に。</h2>
-          <p>.ico変換なしで、好きな画像をフォルダアイコンに。まずは無料で試せます。</p>
+          <span class="pill">Ready?</span>
+          <h2>今日から、フォルダ探しを少し楽しく。</h2>
+          <p>好きな画像と色タグで、よく使うフォルダを自分らしく整理できます。</p>
         </div>
-        <a href="https://apps.microsoft.com/detail/9N99JH5H91H8" class="btn btn-store">
-          <span class="win white"><i></i><i></i><i></i><i></i></span>
-          <span class="lead">Microsoft Storeで入手<span class="sub">9/2まで ¥300</span></span>
+        <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9N99JH5H91H8?hl=ja-JP&gl=JP">
+          <span class="win-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          Microsoft Storeで入手
         </a>
       </div>
     </div>
@@ -463,16 +1563,17 @@ footer{padding:46px 0 58px;background:#fff;border-top:1px solid var(--line);}
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="/">
-      <img src="/assets/app-icon.webp" alt="Folderly" width="38" height="38" />
-      <span class="en">Folderly</span>
+    <a class="brand" href="/" aria-label="Folderly ホーム">
+      <img src="/assets/app-icon.webp" alt="" width="38" height="38" />
+      <span>Folderly</span>
     </a>
     <nav class="foot-links" aria-label="フッターナビゲーション">
-      <a href="#service">できること</a>
+      <a href="#features">特徴</a>
       <a href="#price">料金</a>
       <a href="/blog/">ブログ</a>
       <a href="/privacy/">プライバシー・サポート</a>
       <a href="/en/">English</a>
+      <a href="https://x.com/intent/tweet?text=Folderly%20-%20%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E5%A4%89%E6%9B%B4%E3%83%84%E3%83%BC%E3%83%AB&url=https%3A%2F%2Ffolderlyapp.com%2F" rel="noopener noreferrer">Xで共有</a>
     </nav>
     <div class="copy">© 2026 Folderly</div>
   </div>
@@ -480,6 +1581,7 @@ footer{padding:46px 0 58px;background:#fff;border-top:1px solid var(--line);}
 
 <script>
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 if (!reduceMotion) {
   const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
@@ -489,7 +1591,9 @@ if (!reduceMotion) {
       }
     }
   }, { threshold: 0.14 });
+
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
   const revealVisibleItems = () => {
     document.querySelectorAll(".reveal:not(.is-visible)").forEach((el) => {
       const rect = el.getBoundingClientRect();
@@ -498,25 +1602,25 @@ if (!reduceMotion) {
       }
     });
   };
+
   window.requestAnimationFrame(revealVisibleItems);
   window.addEventListener("load", revealVisibleItems, { once: true });
-  window.addEventListener("hashchange", revealVisibleItems);
-  window.setTimeout(revealVisibleItems, 160);
-  window.setTimeout(revealVisibleItems, 700);
+  window.setTimeout(revealVisibleItems, 220);
 
-  const parallaxItems = [...document.querySelectorAll("[data-parallax]")];
+  const floating = document.querySelectorAll("[data-float]");
   let ticking = false;
-  const updateParallax = () => {
+  const update = () => {
     const y = window.scrollY;
-    for (const el of parallaxItems) {
-      const depth = Number(el.dataset.parallax || 0);
-      el.style.transform = `translate3d(0, ${y * depth}px, 0)`;
-    }
+    floating.forEach((el, index) => {
+      const depth = index === 0 ? .035 : -.025;
+      el.style.transform = `translate3d(0, ${y * depth}px, 0) rotate(${index === 0 ? 0 : -6}deg)`;
+    });
     ticking = false;
   };
+
   window.addEventListener("scroll", () => {
     if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
+      window.requestAnimationFrame(update);
       ticking = true;
     }
   }, { passive: true });
