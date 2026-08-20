@@ -27,6 +27,15 @@
   </url>
   <url>
     <loc>https://folderlyapp.com/blog/folderly-how-to/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folderly-how-to/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folderly-how-to/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folderly-how-to/"/>
+  </url>
+  <url>
+    <loc>https://folderlyapp.com/en/blog/folderly-how-to/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://folderlyapp.com/blog/folderly-how-to/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://folderlyapp.com/en/blog/folderly-how-to/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://folderlyapp.com/en/blog/folderly-how-to/"/>
   </url>
   <url>
     <loc>https://folderlyapp.com/blog/windows-folder-icon-change/</loc>

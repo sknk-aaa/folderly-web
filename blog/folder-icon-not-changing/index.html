@@ -25,7 +25,7 @@
   "description": "反映されない・元に戻る・写真が選べない…よくある原因を症状別に解説。",
   "image": "https://folderlyapp.com/assets/showcase-explorer.png",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-07-30",
+  "dateModified": "2026-08-20",
   "inLanguage": "ja",
   "author": {"@type": "Organization", "name": "Folderly"},
   "publisher": {"@type": "Organization", "name": "Folderly"},
@@ -103,6 +103,13 @@ article{padding-top:14px;}
 .toc a{display:flex;gap:11px;align-items:baseline;color:var(--ink);font-weight:600;font-size:14.5px;}
 .toc a:hover{color:var(--blue);text-decoration:none;}
 .toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-weight:700;color:var(--blue);font-size:13px;min-width:24px;}
+
+.solution-map{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 8px;}
+.solution-map a{display:block;border:1px solid #dbe6ff;background:linear-gradient(180deg,#fff,#f7faff);border-radius:15px;padding:16px 17px;color:inherit;box-shadow:var(--shadow-sm);}
+.solution-map a:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:#bdd3ff;}
+.solution-map b{display:block;color:var(--navy);font-size:14.5px;font-weight:900;line-height:1.45;}
+.solution-map span{display:block;color:var(--muted);font-size:12.5px;font-weight:600;line-height:1.55;margin-top:4px;}
+@media (max-width:560px){.solution-map{grid-template-columns:1fr;}}
 
 /* section headings */
 article h2{font-family:var(--sans);font-weight:900;font-size:clamp(23px,3.1vw,32px);color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
@@ -183,7 +190,7 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>アイコンを変えたはずなのに、なぜか反映されない。せっかく設定したのに、再起動したら元の黄色いフォルダに逆戻り——。Windowsのアイコン変更は、実はつまずく人がとても多いところです。</p>
       <p>でも安心してください。原因は<strong>いくつかの決まったパターン</strong>に分かれていて、わかってしまえば対処はかんたんです。この記事では、よくある症状ごとに「<strong>なぜ起きるか</strong>」と「<strong>どう直すか</strong>」を順番に解説します。</p>
     </div>
-    <div class="byline fade d3">6分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-06-01</div>
+    <div class="byline fade d3">6分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-08-20 更新</div>
   </div>
 </section>
 
@@ -202,6 +209,13 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
           <li><a href="#folderly">二度とつまずかない方法</a></li>
         </ol>
       </nav>
+
+      <div class="solution-map" aria-label="症状別の近道">
+        <a href="#cache"><b>変えたのに表示されない</b><span>まずはキャッシュ更新。Folderlyなら適用後の表示更新も行います。</span></a>
+        <a href="#revert"><b>再起動後に元に戻る</b><span>原因は参照切れが多め。画像を安全に管理する方法を確認できます。</span></a>
+        <a href="#format"><b>JPG/PNGが選べない</b><span>Windows標準は.ico前提。変換なしで使う選択肢もあります。</span></a>
+        <a href="#missing"><b>変更メニューが出ない</b><span>特殊フォルダ・権限・ネットワーク場所を切り分けます。</span></a>
+      </div>
 
       <h2 id="causes"><span class="eyebrow">はじめに</span>まず確認：つまずく原因は4つ</h2>
       <p>フォルダアイコンの変更がうまくいかないとき、原因はたいてい次の4つのどれかです。自分の症状がどれに当てはまるか、目星をつけてから読み進めると早いです。</p>
@@ -283,9 +297,13 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>プロパティを開いても「カスタマイズ」タブや「アイコンの変更」が見当たらない場合、<strong>そのフォルダが対象外</strong>のことがあります。</p>
       <ul class="plain">
         <li><strong>特殊フォルダ</strong>（ドキュメント・ピクチャ等）や<strong>ライブラリ</strong>を操作している → 設定箇所が異なります</li>
-        <li><strong>ネットワークドライブ・読み取り専用・権限不足</strong> → 書き込みできず変更が反映されません</li>
+        <li><strong>ネットワークドライブ・読み取り専用・権限不足</strong> → 書き込みできず変更が反映されない、またはWindows側が表示を無視することがあります</li>
       </ul>
       <p>通常のフォルダを右クリック →「プロパティ」→「<strong>カスタマイズ</strong>」タブの順で開けば、「アイコンの変更」が出てきます。カスタマイズタブ自体が無いフォルダは、標準機能では変更できません。</p>
+      <div class="callout">
+        <span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+        <div><b>ネットワークフォルダについて</b><br />NAS・共有フォルダ・ネットワークドライブは、Windowsやファイルサーバーの設定によって <code>desktop.ini</code> による見た目の変更が表示されない場合があります。Folderlyはローカルフォルダでの利用を推奨しています。</div>
+      </div>
 
       <h2 id="folderly"><span class="eyebrow">根本解決</span>二度とつまずかないために</h2>
       <p>ここまでの原因——<strong>形式の制限・ファイル移動で戻る・キャッシュで反映されない</strong>——は、その多くが標準機能の仕組みに由来します。私たちが作った <a href="/">Folderly</a> は、ここを構造から解決しています。</p>

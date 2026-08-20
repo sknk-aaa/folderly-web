@@ -1,5 +1,28 @@
 # folderly-web
 
+## 2026-08-20 Update
+
+### 今回反映したこと
+
+- 日本語/英語LPのファーストビューに、写真カバー・色タグ・ローカル処理・履歴復元の訴求を追加。
+- LP内に用途別の見せ方（仕事、写真、制作、学習）を追加し、購入前に自分の使い道を想像しやすくした。
+- `/blog/folder-icon-not-changing/` に症状別の導線と、ネットワークフォルダ/NAS/共有フォルダの注意を追加。
+- `/blog/folderly-how-to/` にネットワークフォルダの注意と日本語問い合わせフォームへの導線を追加。
+- `/en/blog/folderly-how-to/` を新規作成し、英語ブログ一覧と `sitemap.xml` に追加。
+- `/privacy/` のサポート導線を Tally フォーム（日英）に統一。
+
+### 公開後に見るURL
+
+| URL | 見る理由 |
+|---|---|
+| `https://folderlyapp.com/` | 日本語LP。ファーストビューの訴求、用途別ブロック、価格/Store CTAが自然に見えるか確認する。 |
+| `https://folderlyapp.com/en/` | 英語LP。海外向けに写真カバー・色タグ・ローカル処理の価値が伝わるか確認する。 |
+| `https://folderlyapp.com/blog/folder-icon-not-changing/` | GSC流入が多い困りごと記事。症状別カードとネットワークフォルダの注意が強すぎないか確認する。 |
+| `https://folderlyapp.com/blog/folderly-how-to/` | 日本語の使い方記事。購入前の不安解消とサポート導線を確認する。 |
+| `https://folderlyapp.com/en/blog/folderly-how-to/` | 新規英語記事。海外向けの使い方説明として不自然な表現がないか確認する。 |
+| `https://folderlyapp.com/en/blog/` | 英語ブログ一覧。新規記事が先頭に出ているか確認する。 |
+| `https://folderlyapp.com/privacy/#support` | Tallyの日英問い合わせフォーム導線が正しいか確認する。 |
+
 ## 2026-07-30 Update
 
 ### 今日反映したこと
