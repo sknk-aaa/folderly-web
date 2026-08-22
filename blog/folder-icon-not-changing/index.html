@@ -160,6 +160,24 @@ article{padding-top:14px;}
 .toc a:hover{color:var(--blue);text-decoration:none;}
 .toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-weight:700;color:var(--blue);font-size:13px;min-width:24px;}
 
+.reader-path{border:1px solid #dbe6ff;background:radial-gradient(520px 260px at 100% 0%,#fff1e2 0%,transparent 58%),linear-gradient(180deg,#fff,#f7faff);border-radius:20px;padding:24px;margin:30px 0 18px;box-shadow:var(--shadow-md);}
+.reader-path h2,.symptom-router h2{margin:0;color:var(--navy);font-size:clamp(21px,2.8vw,28px);line-height:1.45;letter-spacing:-.02em;}
+.path-kicker{font-size:11.5px;font-weight:900;letter-spacing:.14em;color:var(--blue);margin-bottom:8px;}
+.path-lead{margin:10px 0 0;color:#3a4566;font-size:15px;line-height:1.85;}
+.path-steps{list-style:none;display:grid;gap:12px;margin:20px 0 0;}
+.path-steps li{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start;border:1px solid #e3ebfb;background:#fff;border-radius:14px;padding:14px 15px;box-shadow:var(--shadow-sm);}
+.path-steps .num{width:38px;height:38px;border-radius:11px;background:var(--blue-grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;box-shadow:0 5px 13px rgba(31,95,225,.24);}
+.path-steps b{display:block;color:var(--navy);font-size:15px;line-height:1.5;}
+.path-steps p{margin:3px 0 0;color:var(--muted);font-size:13px;line-height:1.7;}
+.symptom-router{border:1px solid var(--line);background:#fff;border-radius:20px;padding:24px;margin:22px 0 8px;box-shadow:var(--shadow-sm);}
+.symptom-list{display:grid;gap:10px;margin-top:18px;}
+.symptom-list a{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border:1px solid #e3ebfb;border-radius:14px;padding:14px 16px;color:inherit;background:#fafcff;transition:transform .15s,box-shadow .2s,border-color .2s,background .2s;}
+.symptom-list a:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:#bdd3ff;background:#fff;}
+.symptom-list strong{display:block;color:var(--navy);font-size:15px;line-height:1.5;}
+.symptom-list span{display:block;color:var(--muted);font-size:12.5px;line-height:1.6;margin-top:2px;}
+.symptom-list a::after{content:"読む";color:var(--blue);font-weight:900;font-size:12px;background:#eef4ff;border-radius:999px;padding:5px 10px;}
+@media (max-width:560px){.path-steps li{grid-template-columns:34px 1fr}.path-steps .num{width:34px;height:34px}.symptom-list a{grid-template-columns:1fr}.symptom-list a::after{justify-self:start;}}
+
 .answer-box{border:1px solid #dbe6ff;background:radial-gradient(520px 260px at 100% 0%,#fff1e2 0%,transparent 58%),linear-gradient(180deg,#fff,#f7faff);border-radius:18px;padding:24px;margin:28px 0 8px;box-shadow:var(--shadow-md);}
 .answer-box h2{margin:0 0 10px;font-size:clamp(22px,3vw,29px);scroll-margin-top:90px;}
 .answer-box p{margin:0 0 16px;color:#3a4566;font-size:15.5px;}
@@ -280,41 +298,28 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
   <div class="wrap">
     <article>
 
-      <nav class="toc">
-        <div class="t">この記事でわかること</div>
-        <ol>
-          <li><a href="#quick-answer">まず結論：手順確認から切り分ける</a></li>
-          <li><a href="#standard-check">Windows標準の変更手順を確認</a></li>
-          <li><a href="#mechanism">フォルダアイコン変更の仕組み</a></li>
-          <li><a href="#causes">症状別の原因早見表</a></li>
-          <li><a href="#cache">変更したのに反映されない</a></li>
-          <li><a href="#revert">設定しても元に戻る</a></li>
-          <li><a href="#format">写真（JPG/PNG）が選べない</a></li>
-          <li><a href="#missing">「アイコンの変更」が見つからない</a></li>
-          <li><a href="#windows-update">Windows更新・ネットワークフォルダ</a></li>
-          <li><a href="#folderly">二度とつまずかない方法</a></li>
+      <section class="reader-path" aria-labelledby="path-title">
+        <div class="path-kicker">読む順番</div>
+        <h2 id="path-title">このページでは、先に「設定方法」を確認してから原因を切り分けます。</h2>
+        <p class="path-lead">フォルダアイコンが変わらない時は、最初からキャッシュ削除や難しい設定に進まなくて大丈夫です。まず標準手順が合っているかを見て、そのあと症状に合わせて原因を潰します。</p>
+        <ol class="path-steps">
+          <li><span class="num">1</span><div><b>標準の変更手順を確認する</b><p>プロパティ、カスタマイズ、アイコンの変更、.ico選択。この流れになっているかを確認します。</p></div></li>
+          <li><span class="num">2</span><div><b>今起きている症状を選ぶ</b><p>反映されない、元に戻る、写真が選べない、変更ボタンがない、のどれかに分けます。</p></div></li>
+          <li><span class="num">3</span><div><b>原因に合った対処だけ試す</b><p>キャッシュ更新、参照先の見直し、.ico形式の確認、フォルダの種類確認。不要な作業は飛ばします。</p></div></li>
         </ol>
-      </nav>
-
-      <section class="answer-box" aria-labelledby="quick-answer">
-        <div class="answer-label">まず結論</div>
-        <h2 id="quick-answer">まず手順を確認。その後「キャッシュ」「参照切れ」「形式」「場所」を切り分ける。</h2>
-        <p>フォルダアイコンが変わらない時は、いきなりキャッシュ削除に進むより、最初に「標準の手順で <code>.ico</code> を指定できているか」を確認するのが近道です。手順が合っているのに反映されないならキャッシュ、再起動後に戻るなら <code>desktop.ini</code> やアイコンファイルの参照切れを疑います。</p>
-        <div class="answer-actions">
-          <a href="#standard-check">標準手順を確認する</a>
-          <a href="#cache">変更したのに表示されない</a>
-          <a href="#revert">再起動後に元に戻る</a>
-          <a href="#format">JPG / PNG が選べない</a>
-          <a href="#missing">変更メニューが見つからない</a>
-        </div>
       </section>
 
-      <div class="solution-map" aria-label="症状別の近道">
-        <a href="#cache"><b>変えたのに表示されない</b><span>まずはキャッシュ更新。Folderlyなら適用後の表示更新も行います。</span></a>
-        <a href="#revert"><b>再起動後に元に戻る</b><span>原因は参照切れが多め。画像を安全に管理する方法を確認できます。</span></a>
-        <a href="#format"><b>JPG/PNGが選べない</b><span>Windows標準は.ico前提。変換なしで使う選択肢もあります。</span></a>
-        <a href="#missing"><b>変更メニューが出ない</b><span>特殊フォルダ・権限・ネットワーク場所を切り分けます。</span></a>
-      </div>
+      <section class="symptom-router" aria-labelledby="symptom-title">
+        <div class="path-kicker">最初に選ぶ</div>
+        <h2 id="symptom-title">今の状態に近いものはどれですか？</h2>
+        <div class="symptom-list">
+          <a href="#standard-check"><div><strong>そもそも変更手順が合っているか不安</strong><span>まず標準の操作手順をスクショ付きで確認します。</span></div></a>
+          <a href="#cache"><div><strong>OKを押したのに、見た目が変わらない</strong><span>設定はできていて、表示キャッシュだけ古い可能性があります。</span></div></a>
+          <a href="#revert"><div><strong>再起動後や数日後に、元の黄色いフォルダへ戻る</strong><span>.icoファイルやdesktop.iniの参照が切れている可能性があります。</span></div></a>
+          <a href="#format"><div><strong>JPGやPNGの写真が選べない</strong><span>Windows標準機能は基本的に.ico形式を指定する仕組みです。</span></div></a>
+          <a href="#missing"><div><strong>「カスタマイズ」や「アイコンの変更」が見つからない</strong><span>特殊フォルダ、権限、ネットワークフォルダなどを確認します。</span></div></a>
+        </div>
+      </section>
 
       <h2 id="standard-check"><span class="eyebrow">手順確認</span>まず、Windows標準の変更方法が合っているか確認</h2>
       <p>「変更できない」と感じる時でも、実は<strong>手順の途中で違う場所を開いている</strong>、または<strong>選べるファイル形式が違う</strong>だけのことがあります。まずは、通常のフォルダで次の流れになっているか確認してください。</p>
