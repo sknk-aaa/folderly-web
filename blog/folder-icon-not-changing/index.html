@@ -102,6 +102,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/assets/hero.webp" />
 <style>
 :root{
   --blue:#2566EB;--blue-deep:#1455D6;
@@ -136,6 +137,8 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(34px,5vw,52px);color:
 .lead p{margin-bottom:14px;}
 .byline{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--muted-2);font-weight:600;}
 .byline .dot{width:4px;height:4px;border-radius:50%;background:#cdd4e3;}
+.hero-img{margin:26px 0 0;}
+.hero-img img{width:100%;border-radius:12px;border:1px solid rgba(20,40,90,.08);}
 
 /* article */
 main{padding:8px 0 44px;}
@@ -148,18 +151,20 @@ article{padding-top:14px;}
 .path-lead{margin:10px 0 0;color:#3a4566;font-size:15px;line-height:1.85;}
 .path-steps{list-style:none;display:grid;gap:0;margin:22px 0 0;border-top:1px solid var(--line);}
 .path-steps li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;border-bottom:1px solid var(--line);padding:16px 0;}
-.path-steps .num{width:28px;height:28px;border-radius:50%;background:#f1f4f9;color:var(--muted);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;}
+.path-steps .num{width:28px;height:28px;border-radius:8px;background:#f1f4f9;color:var(--muted);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;}
 .path-steps b{display:block;color:var(--navy);font-size:15px;line-height:1.5;}
 .path-steps p{margin:3px 0 0;color:var(--muted);font-size:13px;line-height:1.7;}
 .symptom-router{padding:22px 0 0;margin:20px 0 8px;}
 .symptom-list{display:grid;gap:10px;margin-top:18px;}
 .symptom-list{border-top:1px solid var(--line);gap:0;}
-.symptom-list a{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:16px 0;color:inherit;background:transparent;transition:color .15s;}
+.symptom-list a{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:16px 0;color:inherit;background:transparent;transition:color .15s;}
 .symptom-list a:hover{text-decoration:none;color:var(--blue);}
+.symptom-icon{width:32px;height:32px;border-radius:8px;background:#f1f4f9;color:var(--blue);display:flex;align-items:center;justify-content:center;flex:none;}
+.symptom-icon svg{width:17px;height:17px;stroke:currentColor;}
 .symptom-list strong{display:block;color:var(--navy);font-size:15px;line-height:1.5;}
 .symptom-list span{display:block;color:var(--muted);font-size:12.5px;line-height:1.6;margin-top:2px;}
 .symptom-list a::after{content:"→";color:var(--muted-2);font-weight:900;font-size:18px;}
-@media (max-width:560px){.path-steps li{grid-template-columns:32px 1fr}.path-steps .num{width:28px;height:28px}.symptom-list a{grid-template-columns:1fr auto;}}
+@media (max-width:560px){.path-steps li{grid-template-columns:32px 1fr}.path-steps .num{width:28px;height:28px}.symptom-list a{grid-template-columns:34px 1fr auto;}}
 
 /* section headings */
 article h2{font-family:var(--sans);font-weight:900;font-size:clamp(24px,3.1vw,32px);color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
@@ -253,6 +258,9 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
       <p>この記事では、まず<strong>Windows標準の正しい変更手順</strong>を確認し、そのうえで「<strong>なぜ反映されないか</strong>」「<strong>なぜ元に戻るか</strong>」「<strong>どう直すか</strong>」を症状別に切り分けます。</p>
     </div>
     <div class="byline fade d3">8分で読めます<span class="dot"></span>Windows 10 / 11 対応<span class="dot"></span>2026-08-22 更新</div>
+    <figure class="hero-img">
+      <img src="/assets/hero.webp" alt="フォルダアイコンを画像に変更した例" width="1400" height="788" fetchpriority="high" />
+    </figure>
   </div>
 </section>
 
@@ -275,11 +283,11 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <div class="path-kicker">最初に選ぶ</div>
         <h2 id="symptom-title">今の状態に近いものはどれですか？</h2>
         <div class="symptom-list">
-          <a href="#standard-check"><div><strong>そもそも変更手順が合っているか不安</strong><span>まず標準の操作手順をスクショ付きで確認します。</span></div></a>
-          <a href="#cache"><div><strong>OKを押したのに、見た目が変わらない</strong><span>設定はできていて、表示キャッシュだけ古い可能性があります。</span></div></a>
-          <a href="#revert"><div><strong>再起動後や数日後に、元の黄色いフォルダへ戻る</strong><span>.icoファイルやdesktop.iniの参照が切れている可能性があります。</span></div></a>
-          <a href="#format"><div><strong>JPGやPNGの写真が選べない</strong><span>Windows標準機能は基本的に.ico形式を指定する仕組みです。</span></div></a>
-          <a href="#missing"><div><strong>「カスタマイズ」や「アイコンの変更」が見つからない</strong><span>特殊フォルダ、権限、ネットワークフォルダなどを確認します。</span></div></a>
+          <a href="#standard-check"><span class="symptom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h10"/></svg></span><div><strong>そもそも変更手順が合っているか不安</strong><span>まず標準の操作手順をスクショ付きで確認します。</span></div></a>
+          <a href="#cache"><span class="symptom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></span><div><strong>OKを押したのに、見た目が変わらない</strong><span>設定はできていて、表示キャッシュだけ古い可能性があります。</span></div></a>
+          <a href="#revert"><span class="symptom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12a9 9 0 0 1 15.5-6.2"/><path d="M18.5 3v4.8h-4.8"/><path d="M21 12a9 9 0 0 1-15.5 6.2"/><path d="M5.5 21v-4.8h4.8"/></svg></span><div><strong>再起動後や数日後に、元の黄色いフォルダへ戻る</strong><span>.icoファイルやdesktop.iniの参照が切れている可能性があります。</span></div></a>
+          <a href="#format"><span class="symptom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="m4 16 5-5 4 4 2-2 5 5"/><circle cx="16" cy="9" r="1.5"/></svg></span><div><strong>JPGやPNGの写真が選べない</strong><span>Windows標準機能は基本的に.ico形式を指定する仕組みです。</span></div></a>
+          <a href="#missing"><span class="symptom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 8v4"/><path d="M12 16h.01"/><path d="M10.3 4 2.3 18a2 2 0 0 0 1.7 3h16a2 2 0 0 0 1.7-3L13.7 4a2 2 0 0 0-3.4 0z"/></svg></span><div><strong>「カスタマイズ」や「アイコンの変更」が見つからない</strong><span>特殊フォルダ、権限、ネットワークフォルダなどを確認します。</span></div></a>
         </div>
       </section>
 
