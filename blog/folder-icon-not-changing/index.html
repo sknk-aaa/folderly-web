@@ -102,62 +102,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="/assets/hero.webp" />
 <style>
 :root{
-  --blue:#2566EB;--blue-deep:#1455D6;--blue-grad:#2566EB;
+  --blue:#2566EB;--blue-deep:#1455D6;
   --navy:#0E1A3C;--ink:#222a44;--muted:#5b6680;--muted-2:#8a93a8;
   --line:#e7ecf7;--line-2:#eef2fb;--paper:#fbfcfe;
   --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  --shadow-sm:0 1px 2px rgba(16,26,60,.05),0 4px 14px rgba(16,26,60,.05);
-  --shadow-md:0 8px 30px rgba(20,50,120,.10);--shadow-lg:0 24px 70px rgba(20,50,120,.14);
-  --measure:700px;
+  --measure:760px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.95;font-size:16.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.9;font-size:16.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 img{max-width:100%;height:auto;display:block;}
 a{color:var(--blue);text-decoration:none;}
 a:hover{text-decoration:underline;text-underline-offset:3px;}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 24px;}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line-2);}
 .nav{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1080px;margin:0 auto;padding:0 24px;}
 .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;color:var(--navy);}
 .brand img{width:30px;height:30px;}
-.nav-cta{background:var(--blue);color:#fff;font-weight:800;font-size:13px;padding:9px 15px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;}
-.nav-cta:hover{text-decoration:none;}
+.nav-cta{color:var(--blue);font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:8px;}
+.nav-cta:hover{text-decoration:underline;text-underline-offset:3px;}
 
 /* hero / opening */
-.hero{background:#f7f9fc;border-bottom:1px solid var(--line-2);}
-.hero-in{max-width:var(--measure);margin:0 auto;padding:44px 24px 40px;}
+.hero{background:#fff;border-bottom:1px solid var(--line-2);}
+.hero-in{max-width:var(--measure);margin:0 auto;padding:42px 24px 34px;}
 .crumbs{font-size:12px;color:var(--muted-2);margin-bottom:22px;letter-spacing:.01em;}
 .crumbs a{color:var(--muted);}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);background:#e9f0ff;padding:6px 13px;border-radius:999px;margin-bottom:18px;}
-h1{font-family:var(--sans);font-weight:900;font-size:clamp(30px,4.7vw,46px);color:var(--navy);line-height:1.28;letter-spacing:-.02em;margin-bottom:18px;}
+h1{font-family:var(--sans);font-weight:900;font-size:clamp(34px,5vw,52px);color:var(--navy);line-height:1.22;letter-spacing:-.02em;margin-bottom:18px;}
 .lead{font-size:clamp(16px,1.8vw,18px);color:#3a4566;line-height:1.95;}
 .lead p{margin-bottom:14px;}
 .byline{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--muted-2);font-weight:600;}
 .byline .dot{width:4px;height:4px;border-radius:50%;background:#cdd4e3;}
-.hero-img{margin:0 0 28px;}
-.hero-img img{width:100%;border-radius:8px;box-shadow:none;border:1px solid rgba(20,40,90,.08);}
 
 /* article */
-main{padding:8px 0 40px;}
+main{padding:8px 0 44px;}
 article{padding-top:14px;}
-.fade{opacity:0;transform:translateY(14px);animation:fade .7s cubic-bezier(.2,.7,.2,1) forwards;}
-.fade.d1{animation-delay:.05s}.fade.d2{animation-delay:.12s}.fade.d3{animation-delay:.19s}
-@keyframes fade{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+.fade{opacity:1;transform:none;animation:none;}
 
-.reader-path{border-top:2px solid var(--navy);border-bottom:1px solid var(--line);padding:26px 0 28px;margin:34px 0 18px;}
+.reader-path{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0 28px;margin:34px 0 18px;}
 .reader-path h2,.symptom-router h2{margin:0;color:var(--navy);font-size:clamp(21px,2.8vw,28px);line-height:1.45;letter-spacing:-.02em;}
-.path-kicker{font-size:11.5px;font-weight:900;letter-spacing:.14em;color:var(--blue);margin-bottom:8px;}
+.path-kicker{font-size:12px;font-weight:800;color:var(--muted-2);margin-bottom:8px;}
 .path-lead{margin:10px 0 0;color:#3a4566;font-size:15px;line-height:1.85;}
 .path-steps{list-style:none;display:grid;gap:0;margin:22px 0 0;border-top:1px solid var(--line);}
 .path-steps li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;border-bottom:1px solid var(--line);padding:16px 0;}
-.path-steps .num{width:28px;height:28px;border-radius:50%;background:#eef4ff;color:var(--blue);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;}
+.path-steps .num{width:28px;height:28px;border-radius:50%;background:#f1f4f9;color:var(--muted);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;}
 .path-steps b{display:block;color:var(--navy);font-size:15px;line-height:1.5;}
 .path-steps p{margin:3px 0 0;color:var(--muted);font-size:13px;line-height:1.7;}
 .symptom-router{padding:22px 0 0;margin:20px 0 8px;}
@@ -167,12 +158,12 @@ article{padding-top:14px;}
 .symptom-list a:hover{text-decoration:none;color:var(--blue);}
 .symptom-list strong{display:block;color:var(--navy);font-size:15px;line-height:1.5;}
 .symptom-list span{display:block;color:var(--muted);font-size:12.5px;line-height:1.6;margin-top:2px;}
-.symptom-list a::after{content:"→";color:var(--blue);font-weight:900;font-size:18px;}
+.symptom-list a::after{content:"→";color:var(--muted-2);font-weight:900;font-size:18px;}
 @media (max-width:560px){.path-steps li{grid-template-columns:32px 1fr}.path-steps .num{width:28px;height:28px}.symptom-list a{grid-template-columns:1fr auto;}}
 
 /* section headings */
-article h2{font-family:var(--sans);font-weight:900;font-size:clamp(23px,3.1vw,32px);color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
-.eyebrow{display:block;font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--blue);margin-bottom:10px;}
+article h2{font-family:var(--sans);font-weight:900;font-size:clamp(24px,3.1vw,32px);color:var(--navy);line-height:1.36;letter-spacing:-.02em;margin:64px 0 6px;scroll-margin-top:80px;}
+.eyebrow{display:block;font-family:var(--sans);font-size:12px;font-weight:800;color:var(--muted-2);margin-bottom:10px;}
 article h2 + p{margin-top:14px;}
 article h3{font-size:18px;font-weight:800;color:var(--navy);margin:34px 0 10px;}
 article p{margin:0 0 18px;}
@@ -182,7 +173,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2fb;
 /* numbered steps */
 .steps{counter-reset:step;list-style:none;margin:18px 0 6px;display:flex;flex-direction:column;gap:14px;}
 .steps>li{counter-increment:step;position:relative;padding:16px 0 16px 48px;border-bottom:1px solid var(--line);background:#fff;box-shadow:none;}
-.steps>li::before{content:counter(step);position:absolute;left:0;top:17px;width:28px;height:28px;border-radius:50%;background:#eef4ff;color:var(--blue);font-family:var(--serif);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:none;}
+.steps>li::before{content:counter(step);position:absolute;left:0;top:17px;width:28px;height:28px;border-radius:50%;background:#f1f4f9;color:var(--muted);font-family:var(--serif);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:none;}
 .steps>li b{color:var(--navy);}
 
 /* generic lists */
@@ -213,7 +204,7 @@ figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10
 .source-note a{font-weight:700;color:var(--muted);}
 
 /* callouts */
-.callout{display:flex;gap:14px;background:#fff;border:0;border-left:3px solid var(--blue);border-radius:0;padding:4px 0 4px 18px;margin:26px 0;font-size:14.5px;}
+.callout{display:flex;gap:14px;background:#fff;border:0;border-left:3px solid #d8e0ef;border-radius:0;padding:4px 0 4px 18px;margin:26px 0;font-size:14.5px;}
 .callout>*{min-width:0;}
 .callout .ic{display:none;}
 .callout b{color:var(--navy);}
@@ -229,10 +220,10 @@ figcaption{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:10
 .tip-app .go{margin-left:auto;color:var(--blue);font-weight:900;font-size:20px;flex:none;}
 
 /* CTA */
-.cta{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:34px 30px;margin:48px 0 10px;text-align:center;}
+.cta{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:0;border-right:0;border-radius:0;padding:34px 0;margin:48px 0 10px;text-align:left;}
 .cta h3{font-family:var(--sans);font-weight:900;font-size:23px;letter-spacing:-.01em;color:var(--navy);margin-bottom:8px;}
 .cta p{font-size:14px;color:var(--muted);margin-bottom:20px;}
-.btn-store{display:inline-flex;align-items:center;gap:11px;background:var(--blue);color:#fff;font-weight:800;font-size:15.5px;padding:15px 26px;border-radius:8px;box-shadow:none;transition:background .15s;}
+.btn-store{display:inline-flex;align-items:center;gap:11px;background:var(--blue);color:#fff;font-weight:800;font-size:15px;padding:12px 20px;border-radius:8px;box-shadow:none;transition:background .15s;}
 .btn-store:hover{text-decoration:none;background:var(--blue-deep);}
 .btn-store .l{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;}
 .btn-store .sub{font-size:11px;font-weight:600;opacity:.85;}
@@ -256,10 +247,6 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
 <section class="hero">
   <div class="hero-in">
     <nav class="crumbs"><a href="/">ホーム</a> › <a href="/blog/">ブログ</a> › 変更できない・反映されない時の直し方</nav>
-    <figure class="hero-img fade">
-      <img src="/assets/hero.webp" alt="フォルダアイコンを画像に変更した例" width="1400" height="788" fetchpriority="high" />
-    </figure>
-    <span class="kicker fade">トラブル解決</span>
     <h1 class="fade d1">フォルダアイコンが変更できない・<br />反映されない時の対処法</h1>
     <div class="lead fade d2">
       <p>アイコンを変えたはずなのに反映されない。せっかく設定したのに、再起動したら元の黄色いフォルダに逆戻り——。Windowsのフォルダアイコン変更は、実はつまずく人がとても多いところです。</p>
@@ -367,15 +354,6 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <div><b>上級者向け：アイコンキャッシュを手動でクリア</b><br />タスクマネージャーでエクスプローラーを終了 → コマンドプロンプトで <code>del /a %localappdata%\IconCache.db</code> と <code>del /a %localappdata%\Microsoft\Windows\Explorer\iconcache*</code> を実行 → エクスプローラーを再起動。コマンド操作に慣れている場合のみどうぞ。</div>
       </div>
 
-      <a class="tip-app" href="/">
-        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
-        <div class="x">
-          <div class="h">毎回キャッシュ更新でつまずく場合</div>
-          <div class="d">Folderlyは適用後に表示更新まで行うので、変更したのに反映されないストレスを減らせます。</div>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
-      </a>
-
       <h2 id="revert"><span class="eyebrow">症状 2</span>設定しても、しばらくすると元に戻る</h2>
       <p>「変えたのに、再起動したら元通り」「数日後に黄色いフォルダに戻っていた」。これは標準のアイコン変更が、<strong>指定したファイルの“場所を覚えているだけ”</strong>という仕組みだからです。次のどれかが起きると、参照が切れて元に戻ります。</p>
       <ul class="plain">
@@ -392,17 +370,6 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         </div>
       </div>
 
-      <p class="pull">そもそも「ファイルの場所を覚えているだけ」が原因。<br />画像を内部で抱えてくれる方法なら、移動しても削除しても戻りません。</p>
-
-      <a class="tip-app" href="/">
-        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
-        <div class="x">
-          <div class="h">画像を移動しても戻りにくくしたい場合</div>
-          <div class="d">Folderlyは選んだ画像をアプリ側で管理します。元画像を整理しても、設定したフォルダアイコンを保ちやすくなります。</div>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
-      </a>
-
       <h2 id="format"><span class="eyebrow">症状 3</span>写真（JPG / PNG）が選べない</h2>
       <p>「アイコンの変更」を開いても、手持ちの写真が一覧に出てこない——これは仕様です。標準機能が受け付けるのは <strong><code>.ico</code> という専用形式（と一部の <code>.exe</code> / <code>.dll</code>）だけ</strong>。スマホやカメラの JPG・PNG は、そのままでは指定できません。</p>
 
@@ -416,15 +383,6 @@ footer{border-top:1px solid var(--line-2);padding:32px 0;margin-top:30px;backgro
         <li>画像を <strong><code>.ico</code> に変換</strong>するツールを探して使う（ひと手間かかります）</li>
         <li><strong>変換が不要なアプリ</strong>を使い、写真をそのままドラッグして指定する</li>
       </ul>
-
-      <a class="tip-app" href="/">
-        <img src="/assets/app-icon.webp" alt="Folderly" width="48" height="48" />
-        <div class="x">
-          <div class="h">写真やPNG/JPGをそのまま使いたい場合</div>
-          <div class="d">Folderlyなら.ico変換なし。写真と色タグで、仕事・写真・資料フォルダを見分けやすくできます。</div>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
-      </a>
 
       <h2 id="missing"><span class="eyebrow">症状 4</span>「アイコンの変更」が見つからない・押せない</h2>
       <p>プロパティを開いても「カスタマイズ」タブや「アイコンの変更」が見当たらない場合、<strong>そのフォルダが対象外</strong>のことがあります。</p>
